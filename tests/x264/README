@@ -1,0 +1,5 @@
+before make :
+	mkdir -p obj/common
+	mkdir -p obj/encoder
+
+// need to fix the Default.mk

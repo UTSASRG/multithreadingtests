@@ -1,0 +1,289 @@
+time ./pfscan-pthread -n8 "mtest" ../../datasets/pfscan/ 
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+8648: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+8648: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 8
+8648: getting the work ../../datasets/pfscan/word_100MB.txt
+8648: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 7
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 6
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 5
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 4
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 3
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 2
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+hihi, i (8648) am going to sleep. aworkers 0x60380c with aworkers 1
+hihi, i (8648) am going to wakeup. aworkers 0x60380c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+
+real	0m0.504s
+user	0m1.681s
+sys	0m0.422s
+time ./pfscan-defaults -n8 "mtest" ../../datasets/pfscan/
+XHEAP:_start 0x40000000 end is 0x240000000
+Initially, startaddr 0x604000 endaddr 0x605000
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+12431: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+12431: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+12431: getting the work ../../datasets/pfscan/word_100MB.txt
+12431: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 8
+12431: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 7
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 6
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 5
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 4
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 3
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 2
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+hihi, i (12431) am going to sleep. aworkers 0x604a0c with aworkers 1
+hihi, i (12431) am going to wakeup. aworkers 0x604a0c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+reporting start 0x604000 end 0x605000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reportGlobalObjects now. globalstart 604000 globalend 605000
+reporting start 0x40000000 end 0x40101000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+
+real	0m4.517s
+user	0m19.616s
+sys	0m0.493s
+time ./pfscan-pthread -n8 "mtest" ../../datasets/pfscan/ 
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+13401: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+13401: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 8
+13401: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+13401: getting the work ../../datasets/pfscan/word_100MB.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+13401: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 7
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 6
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 5
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 3
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 2
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+hihi, i (13401) am going to sleep. aworkers 0x60380c with aworkers 1
+hihi, i (13401) am going to wakeup. aworkers 0x60380c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+
+real	0m13.690s
+user	0m1.839s
+sys	0m0.666s
+time ./pfscan-defaults -n8 "mtest" ../../datasets/pfscan/
+XHEAP:_start 0x40000000 end is 0x240000000
+Initially, startaddr 0x604000 endaddr 0x605000
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+21440: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+21440: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 8
+21440: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+21440: getting the work ../../datasets/pfscan/word_100MB.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+21440: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 7
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 6
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 5
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 4
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 3
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 2
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+hihi, i (21440) am going to sleep. aworkers 0x604a0c with aworkers 1
+hihi, i (21440) am going to wakeup. aworkers 0x604a0c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+reporting start 0x604000 end 0x605000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reportGlobalObjects now. globalstart 604000 globalend 605000
+reporting start 0x40000000 end 0x40101000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+
+real	0m25.916s
+user	0m19.872s
+sys	0m1.162s
+time ./pfscan-defaults -n8 "mtest" ../../datasets/pfscan/
+XHEAP:_start 0x40000000 end is 0x240000000
+Initially, startaddr 0x604000 endaddr 0x605000
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+27591: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+27591: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 8
+27591: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+27591: getting the work ../../datasets/pfscan/word_100MB.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+27591: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 7
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 6
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 5
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 4
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 3
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 2
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+hihi, i (27591) am going to sleep. aworkers 0x604a0c with aworkers 1
+hihi, i (27591) am going to wakeup. aworkers 0x604a0c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+reporting start 0x604000 end 0x605000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reportGlobalObjects now. globalstart 604000 globalend 605000
+reporting start 0x40000000 end 0x40101000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+
+real	0m25.978s
+user	0m19.881s
+sys	0m1.184s
+time ./pfscan-pthread -n8 "mtest" ../../datasets/pfscan/ 
+max_depth = 4072, nworkers = 8
+create the worker thread 8************
+main thread, path ../../datasets/pfscan/, max_depth 4072
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB1.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB5.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB1.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB7.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB5.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB4.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB3.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB2.txt
+1363: pqueue_put path ../../datasets/pfscan/word_100MB.txt
+1363: pqueue_put path ../../datasets/pfscan/key_file_100MB6.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB3.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB7.txt
+after checking all path
+trying to pqueue close
+Waiting for workers to finish...
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 8
+1363: getting the work ../../datasets/pfscan/key_file_100MB4.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB2.txt
+1363: getting the work ../../datasets/pfscan/word_100MB.txt
+1363: getting the work ../../datasets/pfscan/key_file_100MB6.txt
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 7
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 6
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 5
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 4
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 3
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 2
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+hihi, i (1363) am going to sleep. aworkers 0x60380c with aworkers 1
+hihi, i (1363) am going to wakeup. aworkers 0x60380c
+n_files = 10, n_matches = 0, n_workers = 8, n_Mbytes = 973
+
+real	0m13.935s
+user	0m1.826s
+sys	0m0.650s

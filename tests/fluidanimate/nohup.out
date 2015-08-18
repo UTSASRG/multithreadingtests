@@ -1,0 +1,120 @@
+time ./fluidanimate-defaults 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid
+XHEAP:_start 0x40000000 end is 0x240000000
+Initially, startaddr 0x60c000 endaddr 0x60d000
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+reporting start 0x60c000 end 0x60d000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reporting start 0x40000000 end 0x52829000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+56.53user 0.21system 0:09.15elapsed 619%CPU (0avgtext+0avgdata 713760maxresident)k
+0inputs+0outputs (0major+48309minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.79user 0.18system 0:01.76elapsed 564%CPU (0avgtext+0avgdata 492528maxresident)k
+0inputs+0outputs (0major+30984minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.71user 0.19system 0:01.79elapsed 550%CPU (0avgtext+0avgdata 492528maxresident)k
+0inputs+0outputs (0major+31060minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.68user 0.76system 0:01.87elapsed 558%CPU (0avgtext+0avgdata 965968maxresident)k
+21864inputs+21504outputs (1major+6529minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.69user 0.77system 0:01.81elapsed 578%CPU (0avgtext+0avgdata 965968maxresident)k
+0inputs+21504outputs (0major+6515minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.69user 0.77system 0:01.81elapsed 575%CPU (0avgtext+0avgdata 965968maxresident)k
+0inputs+21504outputs (0major+6538minor)pagefaults 0swaps
+time ./fluidanimate-defaults 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid
+Internal malloc ptr 0x100000000000Nthreadindex 0
+XHEAP:ptr 0x3fc00000 start 0x40000000 end 0x240000000
+Initially, startaddr 0x60c000 endaddr 0x60d000
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Big heap sz 108800
+Big heap sz 6b74000
+Big heap sz 6b74000
+Number of particles: 305809 (0 skipped)
+threadindex 1
+threadindex 2
+threadindex 3
+threadindex 4
+threadindex 5
+threadindex 6
+threadindex 7
+threadindex 8
+Saving file "out.fluid"...
+Big heap free thread 7ffff7db4720 ptr 0x40101038
+reporting start 0x60c000 end 0x60d000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reportGlobalObjects now. globalstart 60c000 globalend 60d000
+reporting start 0x40000000 end 0x52829000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+56.51user 0.60system 0:09.39elapsed 608%CPU (0avgtext+0avgdata 1260288maxresident)k
+312inputs+21504outputs (1major+757minor)pagefaults 0swaps
+time ./fluidanimate-defaults 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid
+Internal malloc ptr 0x100000000000Nthreadindex 0
+XHEAP:ptr 0x3fc00000 start 0x40000000 end 0x240000000
+Initially, startaddr 0x60c000 endaddr 0x60d000
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Big heap sz 108800
+Big heap sz 6b74000
+Big heap sz 6b74000
+Number of particles: 305809 (0 skipped)
+threadindex 1
+threadindex 2
+threadindex 3
+threadindex 4
+threadindex 5
+threadindex 6
+threadindex 7
+threadindex 8
+Saving file "out.fluid"...
+Big heap free thread 7ffff7db4720 ptr 0x40101038
+reporting start 0x60c000 end 0x60d000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+reportGlobalObjects now. globalstart 60c000 globalend 60d000
+reporting start 0x40000000 end 0x52829000 cacheWrites 0x200000000000 cacheTrackings 0x200080000000
+56.53user 0.63system 0:09.30elapsed 614%CPU (0avgtext+0avgdata 1260288maxresident)k
+0inputs+21512outputs (0major+770minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.69user 0.75system 0:01.80elapsed 578%CPU (0avgtext+0avgdata 965968maxresident)k
+0inputs+21504outputs (0major+6541minor)pagefaults 0swaps
+time ./fluidanimate-pthread 8 8 ../../datasets/fluidanimate/in_300K.fluid out.fluid 
+PARSEC Benchmark Suite
+Loading file "../../datasets/fluidanimate/in_300K.fluid"...
+Number of cells: 135424
+Number of particles: 305809 (0 skipped)
+Saving file "out.fluid"...
+9.67user 0.73system 0:01.82elapsed 569%CPU (0avgtext+0avgdata 965968maxresident)k
+0inputs+21504outputs (0major+6513minor)pagefaults 0swaps

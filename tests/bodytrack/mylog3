@@ -1,0 +1,23 @@
+time ./bodytrack-defaults ../../datasets/bodytrack/sequenceB_261 4 261 4000 5 0 8
+XHEAP:_start 0x40000000 end is 0x240000000
+Initially, startaddr 0x66d000 endaddr 0x66f000
+PARSEC Benchmark Suite
+Threading with Posix Threads
+Number of threads : 8
+Using dataset : ../../datasets/bodytrack/sequenceB_261/
+4000 particles with 5 annealing layers
+
+Processing frame 0
+Processing frame 1
+Processing frame 2
+Processing frame 3
+Processing frame 4
+Processing frame 5
+Processing frame 6
+Processing frame 7
+Processing frame 8
+Evaluating Potential False Sharing on address 0x4182a798
+Command terminated by signal 11
+205.20user 0.94system 0:30.81elapsed 668%CPU (0avgtext+0avgdata 4373568maxresident)k
+0inputs+0outputs (0major+275460minor)pagefaults 0swaps
+make: *** [eval-defaults] Error 11

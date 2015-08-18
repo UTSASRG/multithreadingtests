@@ -1,0 +1,2 @@
+Copy datasets/facesim/input_simlarge.tar in the src directory of facesim and untar
+Face_Data input directory has to be present in the current src directory for "make eval-lockperf"

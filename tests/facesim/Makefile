@@ -5,7 +5,13 @@ TEST_FILES = FACE_DRIVER FACE_LANDMARK_OPTIMIZATION_GOAL FACE_OPTIMIZATION LANDM
 
 THREADS = $(NCORES)
 
-TEST_ARGS = -timing -threads $(THREADS) 
+
+ifeq ($(DATASET), native)
+	TEST_ARGS = -timing -threads $(THREADS) -lastframe 100
+else ifeq ($(DATASET), large)
+	TEST_ARGS = -timing -threads $(THREADS) 
+endif
+
 
 CFLAGS = -fexceptions -DENABLE_PTHREADS -DUSE_THREADS -DPARALLEL -DHAVE_LIBPTHREAD -I./ -I./FlexImageLib/  -fpermissive -DTASKQ_DIST_FIXED
 #LIBS = -lm -lstdc++ -Llib -lflex -lthreads

@@ -1,8 +1,7 @@
 include ../defines.mk
 
 
-#THREADS = $(NCORES)
-THREADS = $(shell echo $(NCORES)-1 | bc)
+THREADS = $(NCORES)
 TEST_NAME = swaptions
 TEST_FILES = CumNormalInv MaxFunction RanUnif icdf HJM_SimPath_Forward_Blocking HJM HJM_Swaption_Blocking HJM_Securities nr_routines
 TEST_ARGS = -ns 128 -sm 50000 -nt $(THREADS)

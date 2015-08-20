@@ -1,10 +1,13 @@
-LOCKPERFS_HOME = ../../..
+# FIXME: these two lines that need to be changed correspondingly. Another file is 
+# tests/config.mk if you want to change the number of threads or input set (native | large)
+MYLIB_WITH_DIR = /home/tongpingliu/projects/lockperf/src/liblockperf.so
+MYLIB = lockperf
 
 CC = gcc 
 CXX = g++ 
 CFLAGS += -O2 -lm
 
-CONFIGS = pthread lockperf
+CONFIGS = pthread $(MYLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))
 
 .PHONY: default all clean
@@ -47,35 +50,33 @@ eval-pthread: $(TEST_NAME)-pthread
 	time ./$(TEST_NAME)-pthread $(TEST_ARGS)
 #time ./$(TEST_NAME)-pthread $(TEST_ARGS) &> /dev/null
 
-############ lockperf builders ############
+############ $(MYLIB) builders ############
 
-LOCKPERF_CFLAGS = $(CFLAGS) -DNDEBUG
-#LOCKPERF_LIBS += -rdynamic $(LOCKPERFS_HOME)/src/liblockperf.so -ldl -lpthread $(LIBS)
-LOCKPERF_LIBS += $(LIBS) -rdynamic $(LOCKPERFS_HOME)/src/liblockperf.so -lpthread -ldl
+MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
+MYLIB_LIBS += $(LIBS) -rdynamic $(MYLIB_WITH_DIR) -lpthread -ldl
 
-LOCKPERF_OBJS = $(addprefix obj/, $(addsuffix -lockperf.o, $(TEST_FILES)))
+MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))
 
-obj/%-lockperf.o: %-pthread.c
+obj/%-$(MYLIB).o: %-pthread.c
 	mkdir -p obj
-	$(CC) $(LOCKPERF_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
-obj/%-lockperf.o: %.c
+obj/%-$(MYLIB).o: %.c
 	mkdir -p obj
-	$(CC) $(LOCKPERF_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
-obj/%-lockperf.o: %-pthread.cpp
+obj/%-$(MYLIB).o: %-pthread.cpp
 	mkdir -p obj
-	$(CC) $(LOCKPERF_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
-obj/%-lockperf.o: %.cpp
+obj/%-$(MYLIB).o: %.cpp
 	mkdir -p obj
-	$(CXX) $(LOCKPERF_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
 ### FIXME, put the 
-$(TEST_NAME)-lockperf: $(LOCKPERF_OBJS) $(LOCKPERFS_HOME)/src/liblockperf.so
-	$(CC) $(LOCKPERF_CFLAGS) -o $@ $(LOCKPERF_OBJS) $(LOCKPERF_LIBS)
+$(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
+	$(CC) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
-eval-lockperf: $(TEST_NAME)-lockperf
-	time ./$(TEST_NAME)-lockperf $(TEST_ARGS)
-#	time ./$(TEST_NAME)-lockperf $(TEST_ARGS) &> /dev/null
+eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
+	time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 

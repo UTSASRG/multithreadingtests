@@ -7,6 +7,10 @@ import re
 
 all_benchmarks = os.listdir('tests')
 all_benchmarks.remove('Makefile')
+all_benchmarks.remove('defines.mk')
+all_benchmarks.remove('aget')
+all_benchmarks.remove('pbzip2')
+all_benchmarks.remove('pfscan')
 all_benchmarks.sort()
 
 all_configs = ['pthread', 'lockperf']
@@ -22,8 +26,9 @@ if len(sys.argv) == 1:
 	print 'Benchmarks:'
 	for b in all_benchmarks:
 		print '  '+b
-	sys.exit(1)
+#	sys.exit(1)
 
+#print 'cores: ' + cores
 benchmarks = []
 configs = []
 
@@ -89,7 +94,8 @@ try:
 				
 				start_time = os.times()[4]
 				
-				p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+				p = subprocess.Popen(['make', 'eval-'+config])
+			#	p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 				p.wait()
 				
 				time = os.times()[4] - start_time

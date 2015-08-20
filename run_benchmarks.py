@@ -28,6 +28,7 @@ if len(sys.argv) == 1:
 		print '  '+b
 #	sys.exit(1)
 
+#print 'cores: ' + cores
 benchmarks = []
 configs = []
 
@@ -93,7 +94,8 @@ try:
 				
 				start_time = os.times()[4]
 				
-				p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+				p = subprocess.Popen(['make', 'eval-'+config])
+			#	p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 				p.wait()
 				
 				time = os.times()[4] - start_time

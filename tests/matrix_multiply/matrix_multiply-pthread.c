@@ -64,11 +64,11 @@ void *matrixmult_map(void *args_in);
 /** matrixmul_splitter()
  *  Assign a set of rows of the output matrix to each thread
  */
-void matrixmult_splitter(void *data_in)
+void matrixmult_splitter(void *data_in, int num_procs)
 {
    pthread_attr_t attr;
    pthread_t * tid;
-   int i, num_procs;
+   int i;
 
 	/* Make a copy of the mm_data structure */
    mm_data_t * data = (mm_data_t *)data_in; 
@@ -80,7 +80,7 @@ void matrixmult_splitter(void *data_in)
    assert(data->matrix_B);
    assert(data->output);
 
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   //CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
    dprintf("THe number of processors is %d\n", num_procs);
 
    tid = (pthread_t *)MALLOC(num_procs * sizeof(pthread_t));
@@ -172,6 +172,7 @@ int main(int argc, char *argv[]) {
    struct stat finfo_A, finfo_B;
    char * fname_A, *fname_B,*fname_out;
    int *matrix_A_ptr, *matrix_B_ptr;
+	 int num_procs;
 
    struct timeval starttime,endtime;
    
@@ -197,6 +198,7 @@ int main(int argc, char *argv[]) {
    else
 	   create_files = 0;
 
+   num_procs = atoi(argv[3]);
    printf("MatrixMult_pthreads: Side of the matrix is %d\n", matrix_len);
    printf("MatrixMult_pthreads: Running...\n");
 
@@ -255,6 +257,7 @@ int main(int argc, char *argv[]) {
    CHECK_ERROR((fdata_B= mmap(0, file_size + 1,
       PROT_READ | PROT_WRITE, MAP_PRIVATE, fd_B, 0)) == NULL);
 
+   
    // Setup splitter args
    mm_data_t mm_data;
    mm_data.matrix_len = matrix_len;
@@ -271,7 +274,7 @@ int main(int argc, char *argv[]) {
 
 	gettimeofday(&starttime,0);
    
-   matrixmult_splitter(&mm_data);
+   matrixmult_splitter(&mm_data, num_procs);
    
 
    gettimeofday(&endtime,0);

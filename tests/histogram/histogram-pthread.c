@@ -23,11 +23,6 @@
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */ 
-
-#if defined(ENABLE_DMP)
-#include "dmp.h"
-#endif
-
 #include <stdio.h>
 #include <strings.h>
 #include <string.h>
@@ -170,7 +165,8 @@ int main(int argc, char *argv[]) {
    // Memory map the file
    CHECK_ERROR((fdata = mmap(0, finfo.st_size + 1, 
       PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) == NULL);
-   
+
+	   
    if ((fdata[0] != 'B') || (fdata[1] != 'M')) {
       printf("File is not a valid bitmap file. Exiting\n");
       exit(1);
@@ -193,9 +189,9 @@ int main(int argc, char *argv[]) {
       swap_bytes((char *)(data_pos), sizeof(*data_pos));
    }
    
-   int imgdata_bytes = (int)finfo.st_size - (int)(*(data_pos));
-   int num_pixels = ((int)finfo.st_size - (int)(*(data_pos))) / 3;
-   printf("This file has %d bytes of image data, %d pixels\n", imgdata_bytes,
+   long imgdata_bytes = (long)finfo.st_size - (long)(*(data_pos));
+   long num_pixels = ((long)finfo.st_size - (long)(*(data_pos))) / 3;
+   printf("This file has %ld bytes of image data, %ld pixels\n", imgdata_bytes,
                                                             num_pixels);
 
    printf("Starting pthreads histogram\n");
@@ -209,7 +205,8 @@ int main(int argc, char *argv[]) {
    pthread_attr_init(&attr);
    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
    
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   num_procs = atoi(argv[2]);
+   //CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
    num_per_thread = num_pixels / num_procs;
    excess = num_pixels % num_procs;
    

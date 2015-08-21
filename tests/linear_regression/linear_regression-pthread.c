@@ -111,6 +111,7 @@ int main(int argc, char *argv[])
    
    fname = argv[1];
 
+	
    // Read in the file
    CHECK_ERROR((fd = open(fname, O_RDONLY)) < 0);
    // Get the file info (for file length)
@@ -119,7 +120,8 @@ int main(int argc, char *argv[])
    CHECK_ERROR((fdata = mmap(0, finfo.st_size + 1, 
       PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) == NULL);
 
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+	 num_procs = atoi(argv[2]);
+   //CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
    printf("The number of processors is %d\n\n", num_procs);
 
    pthread_attr_init(&attr);

@@ -3,10 +3,6 @@
 
 #include <cass.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #ifndef CHAN
 #define CHAN 3
 #define	MNTS 3
@@ -26,7 +22,7 @@ int image_write_rgb (const char *filename, int width, int height, unsigned char 
 
 /* dataset has only 1 vecset */
 int image_extract_helper (unsigned char *HSV, unsigned char *mask, int width, int height, int nrgn, cass_dataset_t *ds);
-//int image_extract (const char *filename, cass_dataset_t *dataset);
+int image_extract (const char *filename, cass_dataset_t *dataset);
 
 int image_segment (void **output, int *num_ccs, void *pixels, int width, int height);
 /* for feature extraction */
@@ -71,10 +67,6 @@ void box_set_free(box_set_t **box_set);
 void box_set_insert_pxl(box_set_t *box_set, int r, int a, int b); 
 
 void img_map_free(img_map_t **img_map); 
-
-#ifdef __cplusplus
-};
-#endif
 
 #endif
 

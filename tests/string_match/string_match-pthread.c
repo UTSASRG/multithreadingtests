@@ -77,7 +77,7 @@ typedef struct {
  char *key4_final;
 
 
-void string_match_splitter(void *data_in);
+void string_match_splitter(void *data_in, int num_procs);
 int getnextline(char* output, int max_len, char* file);
 void *string_match_map(void *args);
 void string_match_reduce(void *key_in, void **vals_in, int vals_len);
@@ -127,7 +127,7 @@ void compute_hashes(char* word, char* final_word)
 /** string_match_splitter()
  *  Splitter Function to assign portions of the file to each thread
  */
-void string_match_splitter(void *data_in)
+void string_match_splitter(void *data_in, int num_procs)
 {
 	key1_final = malloc(strlen(key1) + 1);
 	key2_final = malloc(strlen(key2) + 1);
@@ -141,9 +141,9 @@ void string_match_splitter(void *data_in)
 
    pthread_attr_t attr;
    pthread_t * tid;
-   int i, num_procs;
+   int i;
 
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+//   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
    printf("THe number of processors is %d\n", num_procs);
 
    str_data_t * data = (str_data_t *)data_in; 
@@ -273,6 +273,7 @@ int main(int argc, char *argv[]) {
       exit(1);
    }
    fname_keys = argv[1];
+	 int num_procs = atoi(argv[2]);
 
    struct timeval starttime,endtime;
    srand( (unsigned)time( NULL ) );
@@ -311,7 +312,7 @@ int main(int argc, char *argv[]) {
    printf("String Match: Calling Serial String Match\n");
 
    gettimeofday(&starttime,0);
-   string_match_splitter(&str_data);
+   string_match_splitter(&str_data, num_procs);
    gettimeofday(&endtime,0);
 
    printf("String Match: Completed %ld\n",(endtime.tv_sec - starttime.tv_sec));

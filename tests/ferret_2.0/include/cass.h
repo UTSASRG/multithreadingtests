@@ -441,7 +441,7 @@ typedef struct {
 	cass_size_t topk;
 	cass_dist_t range;
 
-	const char *extra_params;  // note: we can use more efficient repre if needed.
+	char *extra_params;  // note: we can use more efficient repre if needed.
 	cass_result_t *candidate; // NULL means no filter.
 
 	int32_t vec_dist_id;

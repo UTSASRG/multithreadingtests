@@ -356,7 +356,8 @@ int image_extract_helper (unsigned char *HSV, unsigned char *mask, int width, in
 	return 0;
 }
 
-
+//NOTE: Disable image_extract b/c not needed for ferret benchmark
+#if 0 
 int image_extract (const char *fname, cass_dataset_t *ds)
 {
 	unsigned char *HSV, *RGB;
@@ -379,4 +380,4 @@ int image_extract (const char *fname, cass_dataset_t *ds)
 
 	return 0;
 }
-
+#endif

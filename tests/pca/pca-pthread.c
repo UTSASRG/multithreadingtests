@@ -363,7 +363,8 @@ int main(int argc, char **argv) {
 
 	 // Compute the mean and the covariance
 
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   //CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   num_procs = atoi(argv[7]);
 
    // goes faster with more threads
    // maknum_procs = 48;

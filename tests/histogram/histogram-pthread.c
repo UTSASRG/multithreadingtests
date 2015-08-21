@@ -109,7 +109,7 @@ void *calc_hist(void *arg) {
    blue = thread_arg->blue;
    
    
-   //printf("Starting at %ld, doing %ld bytes\n", thread_arg->data_pos, thread_arg->data_len);
+   printf("Starting at %ld, doing %ld bytes\n", thread_arg->data_pos, thread_arg->data_len);
    for (i= thread_arg->data_pos; 
         i < thread_arg->data_pos + thread_arg->data_len; 
         i+=3) {

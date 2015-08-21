@@ -23,10 +23,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * Functions to start, manage and terminate a thread pool
  */
 
-#if defined(ENABLE_DMP)
-#include "dmp.h"
-#endif
-
 #include <stdlib.h>
 #include <assert.h>
 #include <pthread.h>

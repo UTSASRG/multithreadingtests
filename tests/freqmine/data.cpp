@@ -2,7 +2,6 @@
 File     : data.cpp
 Contents : data set management
 ----------------------------------*/
-
 #include "data.h"
 #include "common.h"
 

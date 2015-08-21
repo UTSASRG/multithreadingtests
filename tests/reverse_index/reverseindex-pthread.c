@@ -24,10 +24,6 @@
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */ 
 
-#if defined(ENABLE_DMP)
-#include "dmp.h"
-#endif
-
 #include <stddef.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -467,8 +463,8 @@ int main(int argc, char **argv)
    pthread_attr_t attr;
    int i;
    //int num_per_thread, excess;     
-   if (argc != 2) {
-      fprintf(stderr, "Usage: %s <start directory>\n",argv[0]); 
+   if (argc != 3) {
+      fprintf(stderr, "Usage: %s <start directory> <threads>\n",argv[0]); 
       exit(-1);  
    }   
    CHECK_ERROR(argv[1] == NULL);
@@ -498,7 +494,8 @@ int main(int argc, char **argv)
    
    pthread_attr_init(&attr);
    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
-   CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   //CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
+   num_procs = atoi(argv[2]);
    
    CHECK_ERROR( (pid = (pthread_t *)malloc(sizeof(pthread_t) * num_procs)) == NULL);
    pthread_mutex_init(&file_lock, NULL);

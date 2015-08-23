@@ -776,12 +776,12 @@ DataProcess(void * targs){
       tmpbuf[tmp_count]->start[p-anchor] = 0;
       tmp_count ++;
 
-	  fprintf(stderr, "%d : try to enqueue\n", getpid());
+	  //fprintf(stderr, "%d : try to enqueue\n", getpid());
 
       //send a group of items into the next queue in round-robin fashion
       if (tmp_count >= ANCHOR_DATA_PER_INSERT) { 
         enqueue(&anchor_que[qid], &tmp_count, (void **)tmpbuf);
-	  	fprintf(stderr, "%d : after enqueue 1\n", getpid());
+	  //	fprintf(stderr, "%d : after enqueue 1\n", getpid());
         qid = (qid+1) % args->nqueues;
       }
 

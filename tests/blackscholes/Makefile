@@ -10,8 +10,9 @@ else ifeq ($(DATASET), large)
 endif
 
 CFLAGS = -DENABLE_THREADS -DPARALLEL -DNCO=2 -DN=960
-PTHREAD_LIBS = -lm -lstdc++
-LOCKPERF_LIBS = -lm -lstdc++
+#PTHREAD_LIBS = -lm -lstdc++
+#LOCKPERF_LIBS = -lm -lstdc++
+LIBS = -lm -lstdc++
 SRC_SUFFIX=.cpp
 
 

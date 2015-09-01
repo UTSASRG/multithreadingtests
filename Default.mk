@@ -1,11 +1,11 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /home/tongpingliu/projects/lockperf/src/liblockperf.so
-MYLIB = lockperf
+MYLIB_WITH_DIR = /home/tongpingliu/projects/SC-FS-Paper/source/cheetah/libdefault64.so
+MYLIB = default
 
 CC = gcc 
 CXX = g++ 
-CFLAGS += -O2 -lm
+CFLAGS += -O2 -fomit-frame-pointer -lm
 
 CONFIGS = pthread $(MYLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))

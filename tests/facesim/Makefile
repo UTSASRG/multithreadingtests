@@ -3,13 +3,10 @@ include ../defines.mk
 TEST_NAME = facesim
 TEST_FILES = FACE_DRIVER FACE_LANDMARK_OPTIMIZATION_GOAL FACE_OPTIMIZATION LANDMARK_PROXIMITY_OPTIMIZATION main taskQ
 
-THREADS = $(NCORES)
-
-
 ifeq ($(DATASET), native)
-	TEST_ARGS = -timing -threads $(THREADS) -lastframe 100
+	TEST_ARGS = -timing -threads $(NCORES) -lastframe 100
 else ifeq ($(DATASET), large)
-	TEST_ARGS = -timing -threads $(THREADS) 
+	TEST_ARGS = -timing -threads $(NCORES) 
 endif
 
 

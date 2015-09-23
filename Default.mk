@@ -45,7 +45,7 @@ obj/%-pthread.o: %.cpp
 	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
 $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
-	$(CC) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
+	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
 	time ./$(TEST_NAME)-pthread $(TEST_ARGS)

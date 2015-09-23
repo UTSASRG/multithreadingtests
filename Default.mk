@@ -1,5 +1,6 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/Course/CS5523Project/project1/processes-as-threads/libmem64.so
 MYLIB_WITH_DIR = /home/tongpingliu/projects/SC-FS-Paper/source/cheetah/libdefault64.so
 MYLIB = default
 
@@ -67,7 +68,7 @@ obj/%-$(MYLIB).o: %.c
 
 obj/%-$(MYLIB).o: %-pthread.cpp
 	mkdir -p obj
-	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
 obj/%-$(MYLIB).o: %.cpp
 	mkdir -p obj
@@ -75,7 +76,7 @@ obj/%-$(MYLIB).o: %.cpp
 
 ### FIXME, put the 
 $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
-	$(CC) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
+	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
 	time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)

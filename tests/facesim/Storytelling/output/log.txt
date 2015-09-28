@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Simulation                                        
   Frame 1                                         
     ADB                                           
@@ -5136,3 +5137,6 @@ SIMULATION                                          0.0000
               AVIF (CPF)                            0.0210 s
             AOTSQ - NR loop - Boundary conditions   0.0576 s
             AOTSQ - NR loop - Compute residual      0.0553 s
+=======
+Simulation                                        
+>>>>>>> 6e20cff196ba8aa2926e9eeb8005f392433c42f6

@@ -11,8 +11,8 @@ else ifeq ($(DATASET), large)
 	TEST_ARGS = $(THREADS) 15000 2000 $(DATASET_HOME)/canneal/400000.nets 128
 endif
 
-
 CFLAGS = -DENABLE_THREADS #-DEFF_SYNC
+
 LIBS = -lm -lstdc++
 
 include $(HOME)/Default.mk

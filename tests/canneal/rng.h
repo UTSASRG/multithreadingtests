@@ -54,6 +54,7 @@ public:
 		_rng = new MTRand(seed++);
 		pthread_mutex_unlock(&seed_lock);
 #endif
+
 #else
 		_rng = new MTRand(seed++);
 #endif //ENABLE_THREADS

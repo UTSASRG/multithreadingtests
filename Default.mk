@@ -54,6 +54,7 @@ eval-pthread: $(TEST_NAME)-pthread
 MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
 MYLIB_LIBS += $(LIBS) $(MYLIB_WITH_DIR) -lpthread -ldl -rdynamic
 
+
 MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))
 
 obj/%-$(MYLIB).o: %-pthread.c

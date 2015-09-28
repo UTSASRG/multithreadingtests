@@ -44,9 +44,16 @@ public:
 	Rng() {
 #ifdef ENABLE_THREADS
 //		fprintf(stderr, "Rng with seelock %p\n", &seed_lock);
+#ifdef EFF_SYNC
+		pthread_mutex_lock(&seed_lock);
+		int x = seed++;
+		pthread_mutex_unlock(&seed_lock);
+		_rng = new MTRand(x);
+#else
 		pthread_mutex_lock(&seed_lock);
 		_rng = new MTRand(seed++);
 		pthread_mutex_unlock(&seed_lock);
+#endif
 #else
 		_rng = new MTRand(seed++);
 #endif //ENABLE_THREADS

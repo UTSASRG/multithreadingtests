@@ -5,7 +5,7 @@ MYLIB = lockperf
 
 CC = gcc 
 CXX = g++ 
-CFLAGS += -O2 
+CFLAGS += -g -O0 -fno-omit-frame-pointer
 
 CONFIGS = pthread $(MYLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))
@@ -53,7 +53,7 @@ eval-pthread: $(TEST_NAME)-pthread
 ############ $(MYLIB) builders ############
 
 MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
-MYLIB_LIBS += $(LIBS) -rdynamic $(MYLIB_WITH_DIR) -lpthread -ldl
+MYLIB_LIBS += $(LIBS) $(MYLIB_WITH_DIR) -lpthread -ldl -rdynamic
 
 MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))
 

@@ -6,11 +6,6 @@
  * streamcluster - Online clustering algorithm
  *
  */
-
-#if defined(ENABLE_DMP)
-#include "dmp.h"
-#endif
-
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -23,7 +18,7 @@
 
 #ifdef ENABLE_THREADS
 #include <pthread.h>
-//#include "parsec_barrier.hpp"
+#include "parsec_barrier.hpp"
 #endif
 
 #ifdef TBB_VERSION
@@ -78,8 +73,7 @@ static int* center_table; //index table of centers
 
 static int nproc; //# of threads
 
-static pthread_mutex_t mutex;
-static pthread_cond_t cond;
+
 #ifdef TBB_VERSION
 tbb::cache_aligned_allocator<float> memoryFloat;
 tbb::cache_aligned_allocator<Point> memoryPoint;
@@ -723,6 +717,11 @@ float pspeedy(Points *points, float z, long *kcenter, int pid, pthread_barrier_t
   static double* costs; //cost for each thread. 
   static int i;
 
+#ifdef ENABLE_THREADS
+  static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+  static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+#endif
+
   /* create center at first point, send it to itself */
   for( int k = k1; k < k2; k++ )    {
     float distance = dist(points->p[k],points->p[0],points->dim);
@@ -734,6 +733,10 @@ float pspeedy(Points *points, float z, long *kcenter, int pid, pthread_barrier_t
     *kcenter = 1;
     costs = (double*)malloc(sizeof(double)*nproc);
   }
+
+#ifdef ENABLE_THREADS
+  pthread_barrier_wait(barrier);
+#endif
     
   if( pid != 0 ) { // we are not the master threads. we wait until a center is opened.
     while(1) {
@@ -1880,7 +1883,7 @@ void streamCluster( PStream* stream,
   }
 
   long IDoffset = 0;
-  static long kfinal;
+  long kfinal;
   while(1) {
 
     size_t numRead  = stream->read(block, dim, chunksize ); 
@@ -2022,11 +2025,6 @@ int main(int argc, char **argv)
 
 #ifdef ENABLE_PARSEC_HOOKS
   __parsec_roi_begin();
-#endif
-
-#ifdef ENABLE_THREADS
-  pthread_mutex_init(&mutex, NULL);
-  pthread_cond_init(&cond, NULL);
 #endif
 
   streamCluster(stream, kmin, kmax, dim, chunksize, clustersize, outfilename );

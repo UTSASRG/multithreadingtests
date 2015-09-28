@@ -12,7 +12,7 @@ else ifeq ($(DATASET), large)
 endif
 
 
-CFLAGS = -DENABLE_THREADS 
+CFLAGS = -DENABLE_THREADS #-DEFF_SYNC
 LIBS = -lm -lstdc++
 
 include $(HOME)/Default.mk

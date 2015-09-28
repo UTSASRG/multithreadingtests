@@ -2,7 +2,7 @@ include ../defines.mk
 
 THREADS = $(NCORES)
 TEST_NAME = streamcluster
-TEST_FILES = streamcluster
+TEST_FILES = streamcluster parsec_barrier
 
 ifeq ($(DATASET), native)
 	TEST_ARGS = 10 20 128 1000000 200000 5000 none output.txt $(THREADS)

@@ -2,7 +2,6 @@
 # tests/config.mk if you want to change the number of threads or input set (native | large)
 MYLIB_WITH_DIR = /home/mejbah/projects/lockperf/src/liblockperf.so
 MYLIB = lockperf
-
 CC = gcc 
 CXX = g++ 
 CFLAGS += -g -O0 -fno-omit-frame-pointer

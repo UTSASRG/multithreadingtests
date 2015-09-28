@@ -5,7 +5,7 @@ TEST_NAME = fluidanimate
 TEST_FILES = pthreads parsec_barrier 
 
 CFLAGS = -g -O0 -fno-omit-frame-pointer -DENABLE_THREADS -DPARALLEL #-DENABLE_SPIN_BARRIER
-#-DENABLE_SPIN_BARRIER
+
 LIBS = -lm -lstdc++
 
 #THREADS = $(shell echo $(NCORES)-1 | bc)

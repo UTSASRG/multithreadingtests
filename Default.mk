@@ -44,7 +44,7 @@ obj/%-pthread.o: %.cpp
 	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
 $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
-	$(CC) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
+	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
 	time ./$(TEST_NAME)-pthread $(TEST_ARGS)
@@ -67,7 +67,7 @@ obj/%-$(MYLIB).o: %.c
 
 obj/%-$(MYLIB).o: %-pthread.cpp
 	mkdir -p obj
-	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
 obj/%-$(MYLIB).o: %.cpp
 	mkdir -p obj
@@ -75,7 +75,7 @@ obj/%-$(MYLIB).o: %.cpp
 
 ### FIXME, put the 
 $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
-	$(CC) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
+	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
 	time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)

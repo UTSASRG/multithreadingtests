@@ -66,9 +66,11 @@ unsigned int
 hash_from_key_fn( void *k ){
   int i = 0;
   int hash = 0;
-  unsigned char* sha1name = ((CacheKey*)k)->sha1name;
-  for (i = 0; i < SHA1_LEN; i++) {
-    hash += *(((unsigned char*)sha1name) + i);
+  //unsigned char* sha1name = ((CacheKey*)k)->sha1name;
+	uint32_t* sha1name = ((CacheKey*)k)->sha1name;	
+  for (i = 0; i*4 < SHA1_LEN; i++) {
+    //hash += *(((unsigned char*)sha1name) + i);
+		hash ^= sha1name[i];	
   }
   return hash;
 }

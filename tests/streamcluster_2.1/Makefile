@@ -1,30 +1,17 @@
-# Makefile for streamcluster
+include ../defines.mk
 
-PREFIX=${PARSECDIR}/pkgs/kernels/streamcluster/inst/${PARSECPLAT}
+THREADS = $(NCORES)
+TEST_NAME = streamcluster
 
-TARGET=streamcluster
-OBJS=streamcluster.o
+TEST_FILES = streamcluster parsec_barrier
 
-ifdef version
-  ifeq "$(version)" "pthreads"
-    CXXFLAGS :=	$(CXXFLAGS) -DENABLE_THREADS -pthread
-    OBJS += parsec_barrier.o
-  endif
-  ifeq "$(version)" "tbb"
-    CXXFLAGS := $(CXXFLAGS) -DTBB_VERSION
-  endif
+ifeq ($(DATASET), native)
+	TEST_ARGS = 10 20 128 1000000 200000 5000 none output.txt $(THREADS)
+else ifeq ($(DATASET), large)
+	TEST_ARGS = 10 20 128 16384 16384 1000 none output.txt $(THREADS)
 endif
+CFLAGS = -DENABLE_THREADS
+LIBS = -lm -lstdc++ 
 
-all: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o $(TARGET)
-
-%.o : %.cpp
-	$(CXX) $(CXXFLAGS) -c $<
-
-clean:
-	rm -f *.o $(TARGET)
-
-install:
-	mkdir -p $(PREFIX)/bin
-	cp -f $(TARGET) $(PREFIX)/bin/$(TARGET)
+include $(HOME)/Default.mk
 

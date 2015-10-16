@@ -7,7 +7,10 @@
 #ifndef __SYMMETRIC_MATRIX_3X3__
 #define __SYMMETRIC_MATRIX_3X3__
 
+#include <stdlib.h>
 #include "VECTOR_3D.h"
+#include "DIAGONAL_MATRIX_3X3.h"
+#include "MATRIX_3X3.h"
 #include "../Read_Write/READ_WRITE_FUNCTIONS.h"
 namespace PhysBAM
 {

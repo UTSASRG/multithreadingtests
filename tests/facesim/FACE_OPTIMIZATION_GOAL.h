@@ -8,6 +8,7 @@
 #define __FACE_OPTIMIZATION_GOAL__
 
 #include <iostream>
+#include <stdlib.h>
 
 namespace PhysBAM
 {

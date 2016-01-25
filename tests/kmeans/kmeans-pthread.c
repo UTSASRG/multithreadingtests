@@ -403,7 +403,7 @@ int main(int argc, char **argv)
       
       assert (num_threads == num_procs);
       for (i = 0; i < num_threads; i++) {
-	     int m;
+	     long m;
 	     pthread_join(pid[i], (void *) &m);
 	     modified |= m;
       }

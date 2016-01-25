@@ -548,7 +548,7 @@ int main(int argc, char **argv)
 	   /* Barrier, wait for all threads to finish */
 	   for (i = 0; i < num_threads; i++)
 	   {
-		  int ret_val;
+		  long ret_val;
 		  CHECK_ERROR(pthread_join(pid[i], (void **)(void*)&ret_val) != 0);
 		  CHECK_ERROR(ret_val != 0);
 

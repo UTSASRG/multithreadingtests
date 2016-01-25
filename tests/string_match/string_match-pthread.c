@@ -202,7 +202,7 @@ void string_match_splitter(void *data_in, int num_procs)
    /* Barrier, wait for all threads to finish */
    for (i = 0; i < num_procs; i++)
    {
-      int ret_val;
+      long ret_val;
       CHECK_ERROR(pthread_join(tid[i], (void **)(void*)&ret_val) != 0);
 	  CHECK_ERROR(ret_val != 0);
    }

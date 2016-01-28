@@ -453,7 +453,8 @@ int main(int argc, char *argv[]) {
 
    gettimeofday(&starttime,0);
 
-   sort_pthreads(words[0], use_len[0], sizeof(wc_count_t), num_procs, wordcount_cmp);
+   //sort_pthreads(words[0], use_len[0], sizeof(wc_count_t), num_procs, wordcount_cmp);
+   sort_pthreads(words[0], use_len[0], sizeof(wc_count_t), wordcount_cmp);
 
    gettimeofday(&endtime,0);
 

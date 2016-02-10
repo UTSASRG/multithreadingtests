@@ -3,19 +3,27 @@ CXX = g++
 AR = /usr/bin/ar cru
 CFLAGS= -DHAVE_CONFIG_H -I. -I../.. -lpthread -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -fexceptions -Wall -Wno-unknown-pragmas  -fPIC -DPIC
 
-TEST_NAME = 
-TEST_FILES = Thread ThreadGroup WorkGroup Mutex Condition Barrier RWLock
+LIB_FILES = Thread ThreadGroup WorkerGroup Mutex Condition Barrier RWLock
+LIB_OBJS = $(addprefix obj/, $(addsuffix .o, $(LIB_FILES)))
 
-all:
-	$(CXX) $(CFLAGS) -c Thread.cpp -o Thread.o 
-	$(CXX) $(CFLAGS) -c ThreadGroup.cpp -o ThreadGroup.o 
-	$(CXX) $(CFLAGS) -c WorkerGroup.cpp -o WorkerGroup.o 
-	$(CXX) $(CFLAGS) -c Mutex.cpp -o Mutex.o 
-	$(CXX) $(CFLAGS) -c Condition.cpp -o Condition.o 
-	$(CXX) $(CFLAGS) -c Barrier.cpp -o Barrier.o 
-	$(CXX) $(CFLAGS) -c RWLock.cpp -o RWLock.o 
-	$(AR) libthread.a Thread.o ThreadGroup.o WorkerGroup.o Mutex.o Condition.o Barrier.o RWLock.o 
+default: all
+all: $(LIB_OBJS)
+	$(AR) libthread.a $(LIB_OBJS)
 	/usr/bin/ranlib ./libthread.a
+	cp libthread.a ../libs
 
-Clean:
-	rm 
+clean:
+	find ./obj -name "*.o" -type f -delete
+	rm -f $(LIBRARY) #obj/*
+
+
+obj/%.o: %.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%.o: %.cpp
+	mkdir -p obj
+	$(CXX) $(CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+#libthread.a:$(LIB_OBJS)
+#	$(CXX) $(CFLAGS) -o $@ $(LIB_OBJS) 

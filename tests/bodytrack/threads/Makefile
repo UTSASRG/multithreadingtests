@@ -10,10 +10,11 @@ default: all
 all: $(LIB_OBJS)
 	$(AR) libthread.a $(LIB_OBJS)
 	/usr/bin/ranlib ./libthread.a
-	cp libthread.a ../lib
+	cp -f libthread.a ../lib
 
 clean:
 	find ./obj -name "*.o" -type f -delete
+	rm -f libthread.a libthreads.la 
 	rm -f $(LIBRARY) #obj/*
 
 

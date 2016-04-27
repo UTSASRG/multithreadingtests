@@ -10,6 +10,7 @@
 #include <cstdlib>
 
 #include <assert.h>
+#include <stdio.h>
 #include <iostream>
 #include "../Matrices_And_Vectors/VECTOR_2D.h"
 #include "../Math_Tools/exchange.h"
@@ -102,7 +103,9 @@ public:
 
 	void Deallocate_Base_Pointer()
 	{
-		delete[] (base_pointer + 1);
+    if(!(base_pointer + 1)) {
+		  delete[] (base_pointer + 1);
+    }
 	}
 
 	ARRAY<T>& operator= (const ARRAY<T>& source)

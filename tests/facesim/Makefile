@@ -4,7 +4,7 @@ TEST_NAME = facesim
 TEST_FILES = FACE_DRIVER FACE_LANDMARK_OPTIMIZATION_GOAL FACE_OPTIMIZATION LANDMARK_PROXIMITY_OPTIMIZATION main taskQ
 
 
-THREADS = $(NCORES)
+NTHREADS = $(NCORES)
 ifeq ($(DATASET), native)
 	TEST_ARGS = -timing -threads $(NTHREADS) -lastframe 100
 else ifeq ($(DATASET), large)
@@ -17,7 +17,3 @@ CFLAGS = -DMYBUG -fexceptions -DENABLE_PTHREADS -DUSE_THREADS -DPARALLEL -DHAVE_
 LIBS = -lm -lstdc++ -Llib -lPhysBAM #mejbah
 
 include $(HOME)/Default.mk
-
-
-
-

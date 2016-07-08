@@ -1,0 +1,134 @@
+# FIXME: these two lines that need to be changed correspondingly. Another file is 
+# tests/config.mk if you want to change the number of threads or input set (native | large)
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/jinpengzhou/projects/LightweightTool/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try/liblockanalyzer.so
+MYLIB_WITH_DIR = /home/tongpingliu/projects/MemPerf/src/libheapperf.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try-stack-42.5/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try-current/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try-current-slower/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try-global-46/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/LockAnalyzer/try-current-42.6/liblockanalyzer.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/NewDoubleTake/libdoubletake64.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/testDoubleTake/NewDoubleTake/libdoubletake64.so
+#MYLIB_WITH_DIR = /home/tongpingliu/projects/NewDoubleTake/libdoubletake64.so
+MYLIB = doubletake
+OTHERLIB = tcmalloc
+OTHERLIB_WITH_DIR = /home/tongpingliu/projects/Memoryallocators/tcmalloc/.libs/libtcmalloc.so
+#/home/tongpingliu/projects/symbiosis/SymbiosisRuntime
+#OTHERLIB_WITH_DIR = /home/tongpingliu/projects/symbiosis/SymbiosisRuntime
+#/libsymb.so
+CC = gcc 
+CXX = g++ 
+#CC = clang 
+#CXX = clang++ 
+CFLAGS += -DNDEBUG -g -O2 -fno-omit-frame-pointer
+
+CONFIGS = pthread $(OTHRELIB) 
+#$(OTHERLIB)
+PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))
+
+.PHONY: default all clean
+
+default: all
+all: $(PROGS)
+clean:
+	rm -f $(PROGS) obj/*
+
+eval: $(addprefix eval-, $(CONFIGS))
+
+############ pthread builders ############
+
+PTHREAD_CFLAGS = $(CFLAGS)
+PTHREAD_LIBS += $(LIBS) -lpthread
+
+PTHREAD_OBJS = $(addprefix obj/, $(addsuffix -pthread.o, $(TEST_FILES)))
+
+obj/%-pthread.o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-pthread.o: %.c
+	mkdir -p obj
+	$(CC) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-pthread.o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-pthread.o: %.cpp
+	mkdir -p obj
+	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+$(TEST_NAME)-pthread: $(PTHREAD_OBJS)
+	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
+
+eval-pthread: $(TEST_NAME)-pthread
+	time ./$(TEST_NAME)-pthread $(TEST_ARGS)
+#time ./$(TEST_NAME)-pthread $(TEST_ARGS) &> /dev/null
+
+############ $(MYLIB) builders ############
+
+MYLIB_CFLAGS = $(CFLAGS)
+MYLIB_LIBS += $(LIBS) $(MYLIB_WITH_DIR) -lpthread -ldl -rdynamic
+
+
+MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))
+
+obj/%-$(MYLIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(MYLIB).o: %.c
+	mkdir -p obj
+	$(CC) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(MYLIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(MYLIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the 
+$(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
+	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
+
+eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
+	time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
+
+############ $(OTHERLIB) builders ############
+
+OTHERLIB_CFLAGS=$(filter-out -g,$(CFLAGS))
+OTHERLIB_LIBS += $(LIBS) -rdynamic $(OTHERLIB_WITH_DIR)/libsymb.so -lpthread -ldl
+# -rdynamic
+OTHERLIB_CC_PATH=/home/tongpingliu/projects/symbiosis/llvm/llvm-2.9/Release+Asserts
+OTHERLIB_BCS = $(addprefix obj/, $(addsuffix -$(OTHERLIB).bc, $(TEST_FILES)))
+#OTHERLIB_OBJS = $(addprefix obj/, $(addsuffix -$(OTHERLIB).o, $(TEST_FILES)))
+
+obj/%-$(OTHERLIB).bc: %-pthread.c
+	mkdir -p obj
+	llvm-gcc -emit-llvm -c -g $< -o $@ 
+
+obj/%-$(OTHERLIB).bc: %.c
+	mkdir -p obj
+	llvm-gcc -emit-llvm -c -g $< -o $@ 
+
+obj/%-$(OTHERLIB).bc: %-pthread.cpp
+	mkdir -p obj
+	llvm-gcc -emit-llvm -c -g $< -o $@ 
+
+obj/%-$(OTHERLIB).bc: %.cpp
+	mkdir -p obj
+	llvm-gcc -emit-llvm -c -g $< -o $@
+
+### FIXME, put the 
+$(TEST_NAME)-$(OTHERLIB): $(OTHERLIB_BCS) 
+	$(OTHERLIB_CC_PATH)/bin/llvm-link -S $(OTHERLIB_BCS) -o obj/$(TEST_NAME)-temp.bc
+	$(OTHERLIB_CC_PATH)/bin/opt -load $(OTHERLIB_CC_PATH)/lib/SymbiosisBBPass.so -symbiosisBB obj/$(TEST_NAME)-temp.bc -o obj/$(TEST_NAME)-inst.bc
+	$(OTHERLIB_CC_PATH)/bin/llc obj/$(TEST_NAME)-inst.bc 
+	$(CXX) $(OTHERLIB_CFLAGS) obj/$(TEST_NAME)-inst.s -o $@  $(OTHERLIB_LIBS)
+
+eval-$(OTHERLIB): $(TEST_NAME)-$(OTHERLIB)
+	time ./$(TEST_NAME)-$(OTHERLIB) $(TEST_ARGS)
+

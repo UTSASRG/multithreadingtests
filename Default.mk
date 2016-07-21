@@ -1,10 +1,10 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /home/mejbah/projects/lockperf/src/liblockperf.so
-MYLIB = lockperf
+MYLIB_WITH_DIR = /home/sam/MemPerf/src/libmemperf.so
+MYLIB = memperf
 CC = gcc 
 CXX = g++ 
-CFLAGS += -g -O0 -fno-omit-frame-pointer
+CFLAGS += -g -O2 -fno-omit-frame-pointer
 
 CONFIGS = pthread $(MYLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))

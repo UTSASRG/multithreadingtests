@@ -46,8 +46,8 @@ $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
-	time ./$(TEST_NAME)-pthread $(TEST_ARGS)
-#time ./$(TEST_NAME)-pthread $(TEST_ARGS) &> /dev/null
+	/usr/bin/time ./$(TEST_NAME)-pthread $(TEST_ARGS)
+#/usr/bin/time ./$(TEST_NAME)-pthread $(TEST_ARGS) &> /dev/null
 
 ############ $(MYLIB) builders ############
 
@@ -78,5 +78,5 @@ $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
 	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
-	time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
+	/usr/bin/time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 

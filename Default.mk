@@ -52,7 +52,6 @@ eval-pthread: $(TEST_NAME)-pthread
 ############ $(MYLIB) builders ############
 
 MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
-MYLIB_LIBS += $(LIBS) $(MYLIB_WITH_DIR) -lpthread -ldl -rdynamic
 MYLIB_LIBS += -rdynamic $(MYLIB_WITH_DIR) $(LIBS) -lpthread -ldl
 
 

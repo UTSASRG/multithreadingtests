@@ -1,7 +1,7 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /home/sam/MemPerf/src/libmemperf.so
-MYLIB = memperf
+MYLIB_WITH_DIR = /home/sam/LockAnalyzer/ref/dimmunix/trunk/pthreads/src/libdimmunix.so
+MYLIB = dimmunix
 CC = gcc 
 CXX = g++ 
 CFLAGS += -g -O2 -fno-omit-frame-pointer
@@ -53,6 +53,7 @@ eval-pthread: $(TEST_NAME)-pthread
 
 MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
 MYLIB_LIBS += $(LIBS) $(MYLIB_WITH_DIR) -lpthread -ldl -rdynamic
+MYLIB_LIBS += -rdynamic $(MYLIB_WITH_DIR) $(LIBS) -lpthread -ldl
 
 
 MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))

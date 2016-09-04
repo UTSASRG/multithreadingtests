@@ -18,7 +18,6 @@
 
 #ifdef ENABLE_THREADS
 #include <pthread.h>
-#include "parsec_barrier.hpp"
 #endif
 
 #ifdef TBB_VERSION

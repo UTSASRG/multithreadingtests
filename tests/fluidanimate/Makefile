@@ -4,7 +4,7 @@ include ../defines.mk
 TEST_NAME = fluidanimate
 TEST_FILES = pthreads parsec_barrier 
 
-CFLAGS = -g -O0 -fno-omit-frame-pointer -DENABLE_THREADS -DPARALLEL #-DENABLE_SPIN_BARRIER
+CFLAGS = -g -O2 -fno-omit-frame-pointer -DENABLE_THREADS -DPARALLEL #-DENABLE_SPIN_BARRIER
 
 LIBS = -lm -lstdc++
 

@@ -11,14 +11,14 @@ Test Setup:
  http://mirror.cc.columbia.edu/pub/software/apache//httpd/httpd-2.4.23.tar.gz
   - tar xvfz httpd-2.4.23.tar.gz //extract tar ball
   - "./configure --prefix=install_path" //put custom install path here
-  - At this point, if you need to link a dynamic library, edit the following file: "build/config_vars.mk". Add your "-rdynamic statement to the line begining with: "AP_LIBS ="
+  - At this point, if you need to link a dynamic library, edit the following file: "build/config_vars.mk". Add your "-rdynamic" statement to the line begining with: "AP_LIBS ="
   - make
   - make install
 
 2. Perform Apache Initial Configuration
   - edit the following file in the apache install directory: "conf/httpd.conf"
   - Line 52: set the server to listen on a custom port ex: "Listen 1978"
-  - Line 161: set server to run with specific user account. ex: User corey"
+  - Line 161: set server to run with specific user account. ex: "User corey"
   - Line 162: set server to run with specific group. ex: "Group corey"
   - Line 192: set server name and port. ex: "ServerName 192.168.1.2:1978"
 

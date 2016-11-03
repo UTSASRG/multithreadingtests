@@ -2,8 +2,8 @@
 # egrep "^[[:digit:]]+\.[[:digit:]]+user|^/usr/bin/time|^time" parsec-output.log > filtered.log
 # Then, run using: sed -n -r -f cooklog.sed filtered.log
 
-/^\/usr\/bin\/time |^time / {
-	s///;
+/\/usr\/bin\/time |^time / {
+	s/^.*(\/usr\/bin\/time|^time) //;
 	s/ .*$//;
 	h;
 	N;

@@ -9,7 +9,7 @@ if [ "$#" -lt 1 ]; then
 fi
 
 if [ $1 == "--runs" ]; then
-	egrep "^[[:digit:]]+\.[[:digit:]]+user|^/usr/bin/time|^time" $2 | sed -n -r -f $currdir/cooklog.sed
+	egrep "^[[:digit:]]+\.[[:digit:]]+user|/usr/bin/time |^time " $2 | sed -n -r -f $currdir/cooklog.sed
 else
-	egrep "^[[:digit:]]+\.[[:digit:]]+user|^/usr/bin/time|^time" $1 | sed -n -r -f $currdir/cooklog.sed | awk -f $currdir/cooklog.awk
+	egrep "^[[:digit:]]+\.[[:digit:]]+user|/usr/bin/time |^time " $1 | sed -n -r -f $currdir/cooklog.sed | awk -f $currdir/cooklog.awk
 fi

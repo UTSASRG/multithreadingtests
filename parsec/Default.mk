@@ -9,6 +9,10 @@ CFLAGS += -g -O2 -fno-omit-frame-pointer
 CONFIGS = pthread $(MYLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))
 
+ifeq ($(strip $(SRC_SUFFIX)), .cpp)
+	SRC_SUFFIX =
+endif
+
 .PHONY: default all clean
 
 default: all
@@ -42,6 +46,10 @@ obj/%-pthread.o: %.cpp
 	mkdir -p obj
 	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
 
+obj/%-pthread.o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
 $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
@@ -72,6 +80,11 @@ obj/%-$(MYLIB).o: %-pthread.cpp
 obj/%-$(MYLIB).o: %.cpp
 	mkdir -p obj
 	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(MYLIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(MYLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
 
 ### FIXME, put the 
 $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)

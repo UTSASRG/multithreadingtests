@@ -18,9 +18,8 @@ endif
 default: all
 all: $(PROGS)
 clean:
-	find . -type f -executable -name "*-pthread" -or -name "*-$(MYLIB)" -delete
-	find ./obj -name "*.o" -type f -delete
-	rm -f $(PROGS) #obj/*
+	rm -f $(PROGS)
+	rm -rf obj/*
 	if test $(strip $(HAVE_DIR)) -eq 1; then \
     $(MAKE) .dir; \
   fi

@@ -66,7 +66,7 @@ endif
 
 CFLAGS = -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -fexceptions -fno-strict-aliasing -fno-align-labels -DNDEBUG -D_MM_NO_ALIGN_CHECK -fPIC -I./mesa/include -I. -I./RTTL -I./RTTL/common -I./RTTL/BVH -I./SG -I./LRT/include -I./LRT
 
-LIBS = -L./mesa/lib -L./lib -lLRT -lRTTL -lglut -lGLU -lGL -lXmu -lXext -lX11 -lpthread
+LIBS = -L./mesa/lib -L./lib -lLRT -lRTTL -lglut -lGLU -lGL -lXmu -lXext -lX11
 
 SRC_SUFFIX=.cxx
 

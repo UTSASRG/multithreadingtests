@@ -202,7 +202,7 @@ _INLINE void RGBAucharFrameBuffer::prefetchBlock(const int x0, const int y0,
   if (__builtin_expect(dx == 8 && dy == 8,1))
     {
       unsigned int *start = (unsigned int*)&fb_as_int32[y0*res.x+x0];
-//#pragma unroll(8)
+#pragma unroll(8)
       //for (int y=0;y<8;y++,start+=res.x) _mm_prefetch((char*)start,_MM_HINT_NTA);
       return;
     }

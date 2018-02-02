@@ -17,6 +17,11 @@ using std::copy;
 
 using namespace std;
 
+#ifdef WIN32
+// apprently windows doesn't know strcasecmp...
+#  define strcasecmp strcmp
+#endif
+
 namespace LRT {
 
 

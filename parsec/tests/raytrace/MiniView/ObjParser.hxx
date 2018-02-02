@@ -294,10 +294,10 @@ public:
 
             mFile >> dash;
 
-            if (sscanf(dash.c_str(),"%d", &ta) != 1&&
-                sscanf(dash.c_str(),"%d/%d", &ta ,&tta) != 2&&
-                sscanf(dash.c_str(),"%d//%d", &ta ,&tna) != 2&&
-                sscanf(dash.c_str(),"%d/%d/%d", &ta ,&tta, &tna) != 3
+            if (sscanf(dash.c_str(),"%d/%d/%d", &ta ,&tta, &tna) != 3 &&
+                sscanf(dash.c_str(),"%d/%d", &ta ,&tta) != 2 &&
+                sscanf(dash.c_str(),"%d//%d", &ta ,&tna) != 2 &&
+                sscanf(dash.c_str(),"%d", &ta) != 1
                 )
               {
                 printf("Parsing error v0: %i\n",count);
@@ -306,10 +306,10 @@ public:
 
             mFile >> dash;
 
-            if (sscanf(dash.c_str(),"%d", &tb) != 1&&
+            if (sscanf(dash.c_str(),"%d/%d/%d", &tb, &ttb, &tnb) != 3 &&
                 sscanf(dash.c_str(),"%d/%d", &tb ,&ttb) != 2 &&
                 sscanf(dash.c_str(),"%d//%d", &tb ,&tnb) != 2 &&
-                sscanf(dash.c_str(),"%d/%d/%d", &tb, &ttb, &tnb) != 3
+                sscanf(dash.c_str(),"%d", &tb) != 1
                 )
               {
                 printf("Parsing error v1: %i\n",count);
@@ -318,10 +318,10 @@ public:
 
             mFile >> dash;
 
-            if (sscanf(dash.c_str(),"%d", &tc) != 1 &&
+            if (sscanf(dash.c_str(),"%d/%d/%d", &tc, &ttc, &tnc) != 3 &&
                 sscanf(dash.c_str(),"%d/%d", &tc ,&ttc) != 2 &&
                 sscanf(dash.c_str(),"%d//%d", &tc ,&tnc) != 2 &&
-                sscanf(dash.c_str(),"%d/%d/%d", &tc, &ttc, &tnc) != 3
+                sscanf(dash.c_str(),"%d", &tc) != 1
                 )
               {
                 printf("Parsing error v2: %i\n",count);
@@ -341,10 +341,10 @@ public:
             else
               {
                 mFile >> dash;
-                if (sscanf(dash.c_str(),"%d", &td) != 1 &&
+                if (sscanf(dash.c_str(),"%d/%d/%d", &td, &ttd, &tnd) != 3 &&
                     sscanf(dash.c_str(),"%d/%d", &td ,&ttd) != 2 &&
                     sscanf(dash.c_str(),"%d//%d", &td ,&tnd) != 2 &&
-                    sscanf(dash.c_str(),"%d/%d/%d", &td, &ttd, &tnd) != 3
+                    sscanf(dash.c_str(),"%d", &td) != 1
                     )
                   {
                     isQuad = false;

@@ -56,15 +56,17 @@ TEST_FILES = $(SRCS)
 #THREADS = $(NCORES)
 THREADS = $(shell echo $(NCORES)-1 | bc)
 
+HAVE_DIR = 1
+
 ifeq ($(DATASET), native)
-	TEST_ARGS = $(DATASET_HOME)/raytrace/thai_statue.obj -automove -nthreads ${THREADS} -frames 200 -res 1920 1080
+	TEST_ARGS = $(DATASET_HOME)/raytrace/thai_statue.obj -nodisplay -automove -nthreads ${THREADS} -frames 200 -res 1920 1080
 else ifeq ($(DATASET), large)
-	TEST_ARGS = $(DATASET_HOME)/raytrace/happy_buddha.obj -automove -nthreads ${THREADS} -frames 3 -res 1920 1080 
+	TEST_ARGS = $(DATASET_HOME)/raytrace/happy_buddha.obj -nodisplay -automove -nthreads ${THREADS} -frames 3 -res 1920 1080
 endif
 
-CFLAGS = -O2 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -fexceptions -fno-strict-aliasing -fno-align-labels -DNDEBUG -D_MM_NO_ALIGN_CHECK -I./mesa/include -I. -I./RTTL -I./RTTL/common -I./RTTL/BVH -I./SG -I./LRT/include -I./LRT
+CFLAGS = -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -fexceptions -fno-strict-aliasing -fno-align-labels -DNDEBUG -D_MM_NO_ALIGN_CHECK -fPIC -I./mesa/include -I. -I./RTTL -I./RTTL/common -I./RTTL/BVH -I./SG -I./LRT/include -I./LRT
 
-LIBS = -L./mesa/lib -lglut -lGL -lGLU -lXmu -lXext -lXau -lX11
+LIBS = -L./mesa/lib -L./lib -lLRT -lRTTL -lglut -lGLU -lGL -lXmu -lXext -lX11 -lpthread
 
 SRC_SUFFIX=.cxx
 
@@ -72,4 +74,3 @@ SRC_SUFFIX=.cxx
 	mkdir -p obj/RTTL/BVH obj/RTTL/BVH/Builder obj/RTTL/common obj/RTTL/API obj/LRT obj/LRT/FrameBuffer obj/MiniView
 
 include $(HOME)/Default.mk
-

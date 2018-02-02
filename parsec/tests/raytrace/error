@@ -1,4 +1,0 @@
-./LRT/FrameBuffer.hxx:207:7: error: expected a for, while, or do-while loop to follow '#pragma unroll'
-      return;
-      ^
-1 error generated.

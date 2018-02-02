@@ -39,7 +39,7 @@ bool setViewer = false;
 Camera camera;
 
 bool glDisplay = true;
-int framesToRender = 1;
+int framesToRender = -1;
 bool autoMoveCamera = false;
 
 /* new LRT stuff */
@@ -262,7 +262,7 @@ void parseCommandLine(int argc, char* argv[])
     viewerUp = options.getVec3f("vu");
   }
   viewerAngle = options.get("vangle", viewerAngle);
-  glDisplay = options.defined("display");
+  glDisplay = !options.defined("nodisplay");
   framesToRender = options.get("frames", framesToRender);
   autoMoveCamera = options.defined("automove");
   if (options.defined("res")) {

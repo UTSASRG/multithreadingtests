@@ -10,7 +10,7 @@ default: all
 all: $(LIB_OBJS)
 	$(AR) libflex.a $(LIB_OBJS)
 	/usr/bin/ranlib ./libflex.a
-	g++  -g -O2 -Wall -Wno-unknown-pragmas   -o libflex.la   FlexImage.lo FlexIO.lo  -lpthread
+#	g++  -g -O2 -Wall -Wno-unknown-pragmas   -o libflex.la   FlexImage.lo FlexIO.lo  -lpthread
 	cp -f libflex.a ../lib
 
 clean:

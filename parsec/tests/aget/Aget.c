@@ -90,7 +90,7 @@ void get(struct request *req)
 
 	fprintf(stderr, "total clength %d\n", req->clength);
 	/* Get the starting time, prepare GET format string, and start the threads */
-	fmt = (char *)calloc(GETREQSIZ - 2, sizeof(char));
+	fmt = (char *)calloc(GETREQSIZ + 2, sizeof(char));
 	time(&t_start);
 	for (i = 0; i < nthreads; i++) {
 		soffset = calc_offset(req->clength, i, nthreads);
@@ -145,7 +145,7 @@ void resume_get(struct hist_data *h)
 
 	nthreads = h->nthreads;
 
-	fmt = (char *)calloc(GETREQSIZ - 2, sizeof(char));
+	fmt = (char *)calloc(GETREQSIZ + 2, sizeof(char));
 
 	wthread = (struct thread_data *)malloc(nthreads * sizeof(struct thread_data));
 	memcpy(req, &h->req, sizeof(struct request));

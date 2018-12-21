@@ -1,0 +1,212 @@
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+84.42user 2.99system 0:20.13elapsed 434%CPU (0avgtext+0avgdata 124460maxresident)k
+0inputs+203136outputs (0major+31311minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+84.84user 3.04system 0:20.13elapsed 436%CPU (0avgtext+0avgdata 124848maxresident)k
+0inputs+197456outputs (0major+31413minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+85.78user 3.04system 0:21.86elapsed 406%CPU (0avgtext+0avgdata 123880maxresident)k
+0inputs+207880outputs (0major+31099minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+84.90user 3.17system 0:20.69elapsed 425%CPU (0avgtext+0avgdata 124668maxresident)k
+0inputs+203488outputs (0major+31366minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+84.22user 3.06system 0:20.51elapsed 425%CPU (0avgtext+0avgdata 124564maxresident)k
+0inputs+202928outputs (0major+31328minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+85.03user 3.05system 0:20.14elapsed 437%CPU (0avgtext+0avgdata 124500maxresident)k
+0inputs+204864outputs (0major+31313minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+85.70user 2.84system 0:20.55elapsed 430%CPU (0avgtext+0avgdata 124508maxresident)k
+0inputs+198088outputs (0major+31335minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+85.11user 3.02system 0:20.21elapsed 436%CPU (0avgtext+0avgdata 124484maxresident)k
+0inputs+214808outputs (0major+31239minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+86.01user 2.98system 0:21.14elapsed 420%CPU (0avgtext+0avgdata 125016maxresident)k
+0inputs+214888outputs (0major+31477minor)pagefaults 0swaps
+Running walthread1 for 20 seconds...
+Thread 17 says: 40 checkpoints
+Thread 16 says: 300 iterations
+Thread 15 says: 300 iterations
+Thread 14 says: 300 iterations
+Thread 13 says: 300 iterations
+Thread 12 says: 300 iterations
+Thread 11 says: 300 iterations
+Thread 10 says: 300 iterations
+Thread 9 says: 300 iterations
+Thread 8 says: 300 iterations
+Thread 7 says: 300 iterations
+Thread 6 says: 300 iterations
+Thread 5 says: 300 iterations
+Thread 4 says: 300 iterations
+Thread 3 says: 300 iterations
+Thread 2 says: 300 iterations
+Thread 1 says: 300 iterations
+0 errors out of 1 tests
+85.67user 3.00system 0:20.15elapsed 439%CPU (0avgtext+0avgdata 124884maxresident)k
+0inputs+217416outputs (0major+31446minor)pagefaults 0swaps
+original
+20.4499999997

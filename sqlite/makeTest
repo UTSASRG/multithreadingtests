@@ -1,0 +1,4 @@
+#! /bin/bash
+
+clang -O2 -g threadtest3.c test_multiplex.c sqlite3.c -o threadtest3 -ldl -lpthread -lm
+#clang -O2 -g threadtest3.c test_multiplex.c sqlite3.c -o threadtest3 -ldl -rdynamic /home/hongyuliu/workspace/MyLibraries/mylibrary.so -lpthread -lm

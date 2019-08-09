@@ -103,9 +103,9 @@ public:
 
 	void Deallocate_Base_Pointer()
 	{
-    if(!(base_pointer + 1)) {
+    //if(!(base_pointer + 1)) {
 		  delete[] (base_pointer + 1);
-    }
+    //}
 	}
 
 	ARRAY<T>& operator= (const ARRAY<T>& source)

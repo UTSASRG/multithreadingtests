@@ -145,7 +145,7 @@ void resume_get(struct hist_data *h)
 
 	nthreads = h->nthreads;
 
-	fmt = (char *)calloc(GETREQSIZ + 2, sizeof(char));
+	fmt = (char *)calloc(GETREQSIZ - 2, sizeof(char));
 
 	wthread = (struct thread_data *)malloc(nthreads * sizeof(struct thread_data));
 	memcpy(req, &h->req, sizeof(struct request));

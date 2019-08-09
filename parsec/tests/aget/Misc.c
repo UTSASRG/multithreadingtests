@@ -28,11 +28,18 @@ void parse_url(char *url, struct request *req)
 		exit(1);
 	}
 
+	/*
 	if (req->port == 0) {
 		req->port = 80;
 		req->proto = PROTO_HTTP;
 	}
-
+	*/
+  if (req->port == 0) {
+    req->port = 80;
+    req->proto = PROTO_HTTP;
+  } else if (req->port == 8090) {
+    req->proto = PROTO_HTTP;
+  }
 
 	s = url + 7; 	/* Jump pass http:// part	*/
 	for (i = 0; *s != '/'; i++, s++) {

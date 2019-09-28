@@ -12,7 +12,7 @@ else ifeq ($(DATASET), large)
 endif
 
 #CFLAGS = -DINSERT_PADDING -fexceptions -DENABLE_THREADS -DUSE_THREADS -DPARALLEL -DHAVE_LIBPTHREAD -I./ -I./FlexImageLib/ 
-CFLAGS = -fexceptions -DENABLE_THREADS -DUSE_THREADS  -DHAVE_LIBPTHREAD -I./ -I./FlexImageLib/ 
+CFLAGS = -std=gnu++98 -fexceptions -DENABLE_THREADS -DUSE_THREADS  -DHAVE_LIBPTHREAD -I./ -I./FlexImageLib/ 
 CFLAGS += -DINSERT_PADDING
 LIBS = -lm -lstdc++ -Llib -lflex -lthread
 

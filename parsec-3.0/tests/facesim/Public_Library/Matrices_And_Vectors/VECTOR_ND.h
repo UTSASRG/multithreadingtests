@@ -9,6 +9,7 @@
 
 #include <assert.h>
 #include <iostream>
+#include <stdlib.h>
 #include <math.h>
 #include "../Math_Tools/sqr.h"
 #include "../Math_Tools/maxabs.h"

@@ -7,7 +7,7 @@
 #ifndef __TETRAHEDRON_HIERARCHY__
 #define __TETRAHEDRON_HIERARCHY__
 
-#include "BOX_HIERARCHY.h"
+#include "../Collisions_And_Interactions/BOX_HIERARCHY.h"
 #include "../Grids/TETRAHEDRON_MESH.h"
 #include "../Particles/SOLIDS_PARTICLE.h"
 #include "../Geometry/TETRAHEDRON.h"
@@ -96,7 +96,7 @@ public:
 	{
 		Calculate_Bounding_Boxes (box_hierarchy);
 
-		if (extra_thickness) Thicken_Leaf_Boxes (extra_thickness);
+		if (extra_thickness) this->Thicken_Leaf_Boxes (extra_thickness);
 	}
 
 	void Update_Leaf_Boxes (const ARRAY<VECTOR_3D<T> >& X, const T extra_thickness = 0) // use X instead of the current particle positions

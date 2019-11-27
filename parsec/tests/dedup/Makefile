@@ -3,7 +3,9 @@ include ../defines.mk
 TEST_NAME = dedup
 TEST_FILES = binheap decoder dedup encoder hashtable queue rabin tree util
 
-ifeq ($(NCORES), 32)
+ifeq ($(NCORES), 128)
+  THREADS := 32
+else ifeq ($(NCORES), 32)
   THREADS := 8
 else ifeq ($(NCORES), 16)
   THREADS := 4

@@ -8,6 +8,7 @@
 #define __MATRIX_3X3__
 
 #include <assert.h>
+#include <stdlib.h>
 #include "VECTOR_3D.h"
 #include "../Math_Tools/sqr.h"
 #include "../Math_Tools/constants.h"

@@ -7,6 +7,7 @@
 #ifndef __FACE_LANDMARK_OPTIMIZATION_GOAL__
 #define __FACE_LANDMARK_OPTIMIZATION_GOAL__
 
+#include <stdlib.h>
 #include "FACE_OPTIMIZATION_GOAL.h"
 #include "LANDMARK_3D.h"
 

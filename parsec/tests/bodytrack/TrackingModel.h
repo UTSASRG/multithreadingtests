@@ -72,7 +72,7 @@ protected:
 public:
 
 	TrackingModel();
-	virtual ~TrackingModel() {};
+	virtual ~TrackingModel() throw() {};
 
 	//Get function for standard deviations of pose motion
 	std::vector<std::vector<float> > &StdDevs() {return mStdDevs; };

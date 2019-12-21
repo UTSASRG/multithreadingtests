@@ -1,12 +1,18 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /home/sam/Memoryallocators/DieHard-old/src/libdieharder.so
-MYLIB = dieharder
-CC = gcc 
+MYLIB_WITH_DIR = /home/tliu/numalloc/source/libnumalloc.so
+MYLIB = numalloc
+OTHLIB_WITH_DIR = /home/tliu/numalloc/source/libnumalloc.so
+OTHLIB = numalloc
+#MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
+#MYLIB = light
+#CC = clang
+#CXX = clang++ 
+CC = gcc
 CXX = g++ 
 CFLAGS += -g -O2 -fno-omit-frame-pointer -ldl
 
-CONFIGS = pthread $(MYLIB)
+CONFIGS = pthread $(MYLIB) $(OTHLIB)
 PROGS = $(addprefix $(TEST_NAME)-, $(CONFIGS))
 
 ifeq ($(strip $(SRC_SUFFIX)), .cpp)
@@ -111,3 +117,45 @@ $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
 	/usr/bin/time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 
+############ $(OTHLIB) builders ############
+
+OTHLIB_CFLAGS = $(CFLAGS) -DNDEBUG
+OTHLIB_LIBS += -rdynamic $(OTHLIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+OTHLIB_OBJS = $(addprefix obj/, $(addsuffix -$(OTHLIB).o, $(TEST_FILES)))
+
+obj/%-$(OTHLIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %.c
+	mkdir -p obj
+	$(CC) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OTHLIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(OTHLIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the 
+$(TEST_NAME)-$(OTHLIB): $(OTHLIB_OBJS) $(OTHLIB_WITH_DIR)
+	$(CXX) $(OTHLIB_CFLAGS) -o $@ $(OTHLIB_OBJS) $(OTHLIB_LIBS)
+
+eval-$(OTHLIB): $(TEST_NAME)-$(OTHLIB)
+	/usr/bin/time ./$(TEST_NAME)-$(OTHLIB) $(TEST_ARGS)

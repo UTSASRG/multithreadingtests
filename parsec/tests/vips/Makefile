@@ -324,6 +324,6 @@ CFLAGS = -I. -I./include -I./libvips/include -I./glib/include/glib-2.0 -I./glib/
 LIBS = -L./zlib/lib -L./lib -L./glib/lib -L./libxml2/lib -lvips -lX11 -lxml2 -lgmodule-2.0 -lgobject-2.0 -lgthread-2.0 -lglib-2.0 -ldl -lz -lm -lstdc++
 
 .dir:
-	mkdir -p obj/libvips obj/libvips/acquire obj/libvips/arithmetic obj/libvips/cimg obj/libvips/matrix obj/libvips/mosaicing obj/libvips/resample obj/libvips/boolean obj/libvips/colour obj/libvips/conversion obj/libvips/deprecated obj/libvips/convolution obj/libvips/format obj/libvips/freq_filt obj/libvips/histograms_lut obj/libvips/inplace obj/libvips/iofuncs obj/libvips/mask obj/libvips/morphology obj/libvips/other obj/libvips/relational obj/libvips/video obj/tools/iofuncs
+	mkdir -p obj/common obj/libvips obj/libvips/acquire obj/libvips/arithmetic obj/libvips/cimg obj/libvips/matrix obj/libvips/mosaicing obj/libvips/resample obj/libvips/boolean obj/libvips/colour obj/libvips/conversion obj/libvips/deprecated obj/libvips/convolution obj/libvips/format obj/libvips/freq_filt obj/libvips/histograms_lut obj/libvips/inplace obj/libvips/iofuncs obj/libvips/mask obj/libvips/morphology obj/libvips/other obj/libvips/relational obj/libvips/video obj/tools/iofuncs
 
 include $(HOME)/Default.mk

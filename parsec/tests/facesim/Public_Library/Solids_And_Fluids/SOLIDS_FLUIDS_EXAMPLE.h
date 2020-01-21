@@ -12,6 +12,7 @@
 #include "../Read_Write/FILE_UTILITIES.h"
 #include "../Utilities/DEBUG_UTILITIES.h"
 #include "../Utilities/STRING_UTILITIES.h"
+#include "../Math_Tools/min.h"
 namespace PhysBAM
 {
 

@@ -262,7 +262,7 @@ ifneq ($(findstring "$(TYPE)","debug" "optdebug"),)
 endif
 
 ifeq ($(TYPE),profile)
-    CC_FLAGS += -pg -fno-exceptions -DNDEBUG -O2
+    CC_FLAGS += -pg -fno-exceptions -DNDEBUG -O1
     LINK_FLAGS += -pg
 endif
 

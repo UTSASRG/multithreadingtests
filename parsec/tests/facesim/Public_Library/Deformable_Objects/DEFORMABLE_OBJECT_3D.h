@@ -38,6 +38,7 @@ public:
 	using DEFORMABLE_OBJECT<T, VECTOR_3D<T> >::Add_Velocity_Independent_Forces;
 	using DEFORMABLE_OBJECT<T, VECTOR_3D<T> >::dX_full;
 	using DEFORMABLE_OBJECT<T, VECTOR_3D<T> >::R_full;
+	using DEFORMABLE_OBJECT<T, VECTOR_3D<T> >::One_Newton_Step_Toward_Steady_State;
 
 
 	SEGMENTED_CURVE_3D<T>* segmented_curve;

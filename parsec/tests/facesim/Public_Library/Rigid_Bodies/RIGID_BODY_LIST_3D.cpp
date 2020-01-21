@@ -23,7 +23,7 @@ template void RIGID_BODY_LIST_3D<double>::Write<float> (const std::string& direc
 template<class T> int RIGID_BODY_LIST_3D<T>::
 Add_Rigid_Body (RIGID_BODY_3D<T>* const& rigid_body, const int triangulated_surface_id, const int implicit_surface_id, const int tetrahedralized_volume_id)
 {
-	int id = Add_Element (rigid_body);
+	int id = this->Add_Element (rigid_body);
 	rigid_body->Set_Id_Number (id);
 	assert (!triangulated_surface_id || triangulated_surface_list.Element (triangulated_surface_id));
 	assert (!implicit_surface_id || implicit_surface_list.Element (implicit_surface_id));

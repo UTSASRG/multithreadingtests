@@ -48,6 +48,12 @@ APPS := \
 	reverse_index \
 	string_match \
 	word_count \
+	x264 \
+	vips \
+	facesim \
+	bodytrack \
+	raytrace \
+
 #
 default: all
 

@@ -14,7 +14,7 @@ all_benchmarks.remove('pfscan')
 all_benchmarks.sort()
 
 all_configs = ['pthread', 'lockperf']
-runs = 3
+runs = 1 
 
 cores = 'current'
 

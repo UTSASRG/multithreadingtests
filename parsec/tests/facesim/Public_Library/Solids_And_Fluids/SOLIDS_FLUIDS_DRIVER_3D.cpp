@@ -47,7 +47,7 @@ Preroll_Solids (const int preroll_frame)
 
 	for (current_frame = preroll_frame; current_frame < target_frame; current_frame++)
 	{
-		if (example.write_output_files) Write_Output_Files (current_frame);
+		if (example.write_output_files) this->Write_Output_Files (current_frame);
 
 		LOG::Push_Scope ("FRAME", "Preroll frame %d", current_frame + 1);
 		solids_evolution.Advance_To_Target_Time (Time_At_Frame (current_frame + 1), example.verbose_dt);

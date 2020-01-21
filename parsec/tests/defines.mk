@@ -1,5 +1,5 @@
 HOME=../..
 DATASET_HOME=../../datasets
-NCORES := 40
-#DATASET =40arge
+NCORES := 16
+#DATASET = large
 DATASET = native

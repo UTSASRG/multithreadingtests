@@ -70,10 +70,7 @@ inline bool File_Is_Compressed (const std::string& filename)
 
 inline bool File_Exists_Ignoring_Compression_Suffix (const std::string& filename)
 {
-//	return std::ifstream (filename.c_str()) != 0; 
-        std::ifstream ifs(filename.c_str());
-        if(ifs) return true;
-        return false;
+	return std::ifstream (filename.c_str()) != 0;
 }
 
 inline bool File_Exists (const std::string& filename)
@@ -83,10 +80,7 @@ inline bool File_Exists (const std::string& filename)
 
 inline bool File_Writable_Ignoring_Compression_Suffix (const std::string& filename)
 {
-         //	return std::ofstream (filename.c_str()) != 0;
-	std::ifstream ifs(filename.c_str());
-        if(ifs) return true;
-        return false;
+	return std::ofstream (filename.c_str()) != 0;
 }
 
 inline bool File_Writable (const std::string& filename)

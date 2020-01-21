@@ -98,16 +98,12 @@ int Compare_File_Times_Ignoring_Compression_Suffix (const std::string& filename1
 
 bool Directory_Exists (const std::string& dirname)
 {
-//	return std::ifstream (dirname.c_str()) != 0;
-	std::ofstream ofs(dirname.c_str());
-    if(ofs) return true;
-    return false;
-
+	return std::ifstream (dirname.c_str()) != 0;
 }
 
 bool Create_Directory (const std::string& dirname, bool exit_on_fail)
 {
-/*	if (!Directory_Exists (dirname))
+	if (!Directory_Exists (dirname))
 	{
 		std::string command = STRING_UTILITIES::string_sprintf ("mkdir -p %s", dirname.c_str());
 		std::cerr << "Creating directory using system(\"" << command << "\")...";
@@ -126,7 +122,7 @@ bool Create_Directory (const std::string& dirname, bool exit_on_fail)
 			std::cerr << "Successful!" << std::endl;
 			return true;
 		}
-	}*/
+	}
 
 	return true;
 }

@@ -73,6 +73,6 @@ LOCAL_SRC = \
 	Utilities/LOG_ENTRY.cpp \
 	Utilities/PARSE_ARGS.cpp \
 	Utilities/STRING_UTILITIES.cpp \
-	Utilities/TIMER.cpp
+	Utilities/TIMER.cpp  
+
 include $(PHYSBAM)/Public_Library/Makefile.common
-#include Makefile.common

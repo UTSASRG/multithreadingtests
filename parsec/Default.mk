@@ -1,9 +1,9 @@
 # FIXME: these two lines that need to be changed correspondingly. Another file is 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /home/xinzhao/numalloc/source/libnumalloc.so
+MYLIB_WITH_DIR = /home/tliu/numalloc/source/libnumalloc.so
 MYLIB = numalloc
 OTHLIB_WITH_DIR = /home/tliu/numalloc/source/libnumalloc.so
-OTHLIB = nua
+OTHLIB = numalloc
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB = light
 #CC = clang

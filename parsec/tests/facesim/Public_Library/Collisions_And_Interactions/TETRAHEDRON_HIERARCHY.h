@@ -27,7 +27,6 @@ public:
 	using BOX_HIERARCHY<T>::box_hierarchy;
 	using BOX_HIERARCHY<T>::box_radius;
 	using BOX_HIERARCHY<T>::Update_Nonleaf_Boxes;
-	using BOX_HIERARCHY<T>::Thicken_Leaf_Boxes;
 
 	TETRAHEDRON_MESH& tetrahedron_mesh;
 	SOLIDS_PARTICLE<T, VECTOR_3D<T> >& particles;
@@ -97,7 +96,7 @@ public:
 	{
 		Calculate_Bounding_Boxes (box_hierarchy);
 
-		if (extra_thickness) Thicken_Leaf_Boxes (extra_thickness);
+		if (extra_thickness) this->Thicken_Leaf_Boxes (extra_thickness);
 	}
 
 	void Update_Leaf_Boxes (const ARRAY<VECTOR_3D<T> >& X, const T extra_thickness = 0) // use X instead of the current particle positions

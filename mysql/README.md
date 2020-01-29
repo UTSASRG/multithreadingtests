@@ -15,7 +15,7 @@ Test Setup:
   - http://dev.mysql.com/doc/refman/5.7/en/installing-source-distribution.html
   - "tar zxvf mysql-boost-5.7.15.tar.gz"
   - "cd mysql-5.7.15/"
-  - "cmake -DWITH_BOOST=<directory> ."
+  - "cmake -DWITH_BOOST=boost ."
   - at this point, if you need to link a dynamic library to the server, you will need to modify this file: "/sql/CMakeFiles/mysqld.dir/link.txt" add your -rdynamic statement to the end of the file. For example: "-rdynamic /home/corey/MemCount/libcount.so"
   - "make"
   - specify your own destination directory for install with the command below

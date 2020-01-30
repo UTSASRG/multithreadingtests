@@ -38,7 +38,7 @@ Test Setup:
   - log on to the server with a mysql client. if you don't have one installed, you will need to do that first.
   - "mysql -u root -p -S /tmp/mysql.sock" // you will need the root password from the previous step to log on
   - once logged in to the server, create a test database
-  - "CREATE DATABASE test" //type while logged in to the server through the client application
+  - "CREATE DATABASE sbtest" //type while logged in to the server through the client application
   - close the client application ex: "quit"
 
 4. Install SysBench

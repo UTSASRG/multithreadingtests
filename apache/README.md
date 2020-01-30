@@ -10,7 +10,7 @@ Test Setup:
 1. Install Apache server from source
  http://mirror.cc.columbia.edu/pub/software/apache//httpd/httpd-2.4.23.tar.gz
   - tar xvfz httpd-2.4.23.tar.gz //extract tar ball
-  - "./configure --prefix=install_path" //put custom install path here.   If you do not have apr, you can install it with 'sudo apt-get install libapr1-dev libaprutil1-dev'
+  - "./configure --prefix=install_path" //put custom install path here.   If you do not have apr, you can install it with 'sudo apt-get install libapr1-dev libaprutil1-dev', or you can see INSTALL for more details.
   - At this point, if you need to link a dynamic library, edit the following file: "build/config_vars.mk". Add your "-rdynamic" statement to the line begining with: "AP_LIBS ="
   - make
   - make install

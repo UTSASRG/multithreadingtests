@@ -3,7 +3,11 @@ include ../defines.mk
 TEST_NAME = ferret
 TEST_FILES = ferret arena assign bench bitmap cass cass_dist cass_reg cuckoo_hash dataset dist emd env error hash hash_table heap import map matrix raw stat table timer topk tp tpool util edge extract image srm local LSH LSH_query_batch LSH_query perturb recall queue 
 
-ifeq ($(NCORES), 32)
+ifeq ($(NCORES), 128)
+  THREADS := 32
+else ifeq ($(NCORES), 40)
+  THREADS := 10
+else ifeq ($(NCORES), 32)
   THREADS := 8
 else ifeq ($(NCORES), 16)
   THREADS := 4

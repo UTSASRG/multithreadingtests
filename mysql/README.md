@@ -19,7 +19,7 @@ Test Setup:
   - at this point, if you need to link a dynamic library to the server, you will need to modify this file: "/sql/CMakeFiles/mysqld.dir/link.txt" add your -rdynamic statement to the end of the file. For example: "-rdynamic /home/corey/MemCount/libcount.so"
   - "make"
   - specify your own destination directory for install with the command below
-  - "make install DESTDIR="/opt/mysql""
+  - "make install DESTDIR="/usr/local/mysql/""
 
 2. Perform initial setup of MySQL server
 

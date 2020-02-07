@@ -14,7 +14,7 @@ all_benchmarks.remove('pfscan')
 all_benchmarks.sort()
 
 all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'jemalloc' , 'tbbmalloc']
-runs = 20
+runs = 3
 
 cores = 'current'
 
@@ -97,16 +97,19 @@ try:
 				
 				start_time = os.times()[4]
 				
-				p = subprocess.Popen(['make', 'eval-'+config])
+				p = subprocess.Popen(['make', 'eval-'+config],stdin = subprocess.PIPE,stderr=subprocess.PIPE)
 			#	p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 				p.wait()
 				time = os.times()[4] - start_time
 				data[benchmark][config].append(time)
-                                output = p.stdout.read()
-                                pattern=re.compile(r'mem\(Kb\):[0-9]*')
+                                output = p.stderr.read()
+                                print output
+                                pattern=re.compile(r'mem\(Kb\):[0-9]+')
                                 mem=pattern.findall(output)
-                                print "mem:"+mem[0]
-                                mem_data[benchmark][config].append(mem[0])
+                                mem_num_pattern=re.compile(r'[0-9]+')
+                                mem=mem_num_pattern.findall(mem[0])
+                                #print "mem:"+mem[0]
+                                mem_data[benchmark][config].append(int(mem[0]))
 
 	
 				os.chdir('../..')
@@ -134,7 +137,7 @@ for benchmark in benchmarks:
 
 
 
-print '\n\n\n\nmem_usage:'
+print '\n\nmem_usage:'
 print 'benchmark',
 for config in configs:
         print '\t'+config,

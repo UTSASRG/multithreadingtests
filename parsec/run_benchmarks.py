@@ -13,8 +13,8 @@ all_benchmarks.remove('pbzip2')
 all_benchmarks.remove('pfscan')
 all_benchmarks.sort()
 
-all_configs = ['pthread', 'lockperf']
-runs = 1 
+all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'jemalloc' , 'tbbmalloc']
+runs = 20
 
 cores = 'current'
 
@@ -28,7 +28,7 @@ if len(sys.argv) == 1:
 		print '  '+b
 #	sys.exit(1)
 
-#print 'cores: ' + cores
+# print 'cores: ' + cores
 benchmarks = []
 configs = []
 
@@ -82,11 +82,14 @@ if runs < 4:
         print 'Warning: with fewer than 4 runs per benchmark, all runs are averaged. Request at least 4 runs to discard the min and max runs from the average.'
 
 data = {}
+mem_data={}
 try:
 	for benchmark in benchmarks:
 		data[benchmark] = {}
+		mem_data[benchmark] = {}
 		for config in configs:
 			data[benchmark][config] = []
+			mem_data[benchmark][config] = []
 	
 			for n in range(0, runs):
 				print 'Running '+benchmark+'.'+config
@@ -97,9 +100,14 @@ try:
 				p = subprocess.Popen(['make', 'eval-'+config])
 			#	p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 				p.wait()
-				
 				time = os.times()[4] - start_time
 				data[benchmark][config].append(time)
+                                output = p.stdout.read()
+                                re.compile(r'mem\(Kb\):[0-9]*')
+                                mem=pattern.findall(output)
+                                print "mem:"+mem[0]
+                                mem_data[benchmark][config].append(mem)
+
 	
 				os.chdir('../..')
 
@@ -123,3 +131,25 @@ for benchmark in benchmarks:
 		else:
 			print '\tNOT RUN',
 	print
+
+
+
+print '\n\n\n\nmem_usage:'
+print 'benchmark',
+for config in configs:
+        print '\t'+config,
+print
+
+for benchmark in benchmarks:
+        print benchmark,
+        for config in configs:
+                if benchmark in mem_data and config in mem_data[benchmark] and len(mem_data[benchmark][config]) == runs:
+                        if len(mem_data[benchmark][config]) >= 4:
+                                mean = (sum(mem_data[benchmark][config])-max(mem_data[benchmark][config])-min(mem_data[benchmark][config]))/(runs-2)
+                        else:
+                                mean = sum(mem_data[benchmark][config])/runs
+                        print '\t'+str(mean),
+                else:
+                        print '\tNOT RUN',
+        print
+

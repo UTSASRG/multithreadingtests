@@ -15,7 +15,7 @@ Test Setup:
   - http://dev.mysql.com/doc/refman/5.7/en/installing-source-distribution.html
   - "tar zxvf mysql-boost-5.7.15.tar.gz"
   - "cd mysql-5.7.15/"
-  - "cmake ."
+  - "cmake -DWITH_BOOST=boost ."
   - at this point, if you need to link a dynamic library to the server, you will need to modify this file: "/sql/CMakeFiles/mysqld.dir/link.txt" add your -rdynamic statement to the end of the file. For example: "-rdynamic /home/corey/MemCount/libcount.so"
   - "make"
   - specify your own destination directory for install with the command below
@@ -38,7 +38,7 @@ Test Setup:
   - log on to the server with a mysql client. if you don't have one installed, you will need to do that first.
   - "mysql -u root -p -S /tmp/mysql.sock" // you will need the root password from the previous step to log on
   - once logged in to the server, create a test database
-  - "CREATE DATABASE test" //type while logged in to the server through the client application
+  - "CREATE DATABASE sbtest" //type while logged in to the server through the client application
   - close the client application ex: "quit"
 
 4. Install SysBench
@@ -57,8 +57,8 @@ Test Setup:
   -fill in proper info for oltp.lua path and root user password. This command places 10000 rows in the test table. Adjust accordingly. See sysbench documentation for more options
 
 6. Run Test
-  - Make sure the server is running and the "test" table is populated.
-  - This test is read only on the "test" table, so there is no need to retore the table after running this test.
+  - Make sure the server is running and the "sbtest" table is populated.
+  - This test is read only on the "sbtest" table, so there is no need to retore the table after running this test.
   - "sysbench --num-threads=16 --max-requests=100000 --test=/home/corey/sysbench/sysbench/tests/db/oltp.lua --oltp-table-size=10000 --mysql-socket=/tmp/mysql.sock --oltp-read-only --mysql-user=root --mysql-password=root45$% run"
   - fill in proper info for oltp.lua path and 'root' account password. Note: this is the mysql 'root' account, not the system root account. See sysbench documentation for more testing options.
 
@@ -70,4 +70,4 @@ Test Setup:
 8. Scripted Test
   - run the "mysqltest.py" script if you need a time sensetive test from a single server.
   - this script will start the server, run the test from step 6, and then immediatley shut down the server when the test completes.
-  - make sure the "test" table is already prepared before running this script
+  - make sure the "sbtest" table is already prepared before running this script

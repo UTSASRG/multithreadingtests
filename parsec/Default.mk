@@ -80,7 +80,7 @@ $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-pthread $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-pthread $(TEST_ARGS)
 
 ############ $(MYLIB) builders ############
 
@@ -123,7 +123,7 @@ $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
 	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 
 ############ $(TCMALLOC_LIB) builders ############
 
@@ -166,7 +166,7 @@ $(TEST_NAME)-$(TCMALLOC_LIB): $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_WITH_DIR)
 	$(CXX) $(TCMALLOC_LIB_CFLAGS) -o $@ $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_LIBS)
 
 eval-$(TCMALLOC_LIB): $(TEST_NAME)-$(TCMALLOC_LIB)
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
 
 
 
@@ -211,7 +211,7 @@ $(TEST_NAME)-$(SCALLOC_LIB): $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_WITH_DIR)
 	$(CXX) $(SCALLOC_LIB_CFLAGS) -o $@ $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_LIBS)
 
 eval-$(SCALLOC_LIB): $(TEST_NAME)-$(SCALLOC_LIB)
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
 
 
 
@@ -257,7 +257,7 @@ $(TEST_NAME)-$(JEMALLOC_LIB): $(JEMALLOC_LIB_OBJS) $(JEMALLOC_LIB_WITH_DIR)
 	$(CXX) $(JEMALLOC_LIB_CFLAGS) -o $@ $(JEMALLOC_LIB_OBJS) $(JEMALLOC_LIB_LIBS)
 
 eval-$(JEMALLOC_LIB): $(TEST_NAME)-$(JEMALLOC_LIB)
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(JEMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(JEMALLOC_LIB) $(TEST_ARGS)
 
 
 
@@ -302,4 +302,4 @@ $(TEST_NAME)-$(TBB_MALLOC_LIB): $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_WITH_DIR
 	$(CXX) $(TBB_MALLOC_LIB_CFLAGS) -o $@ $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_LIBS)
 
 eval-$(TBB_MALLOC_LIB): $(TEST_NAME)-$(TBB_MALLOC_LIB)
-	/usr/bin/time -f "real:%E,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)

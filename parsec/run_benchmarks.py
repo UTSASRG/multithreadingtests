@@ -14,7 +14,7 @@ all_benchmarks.remove('pfscan')
 all_benchmarks.sort()
 
 all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'jemalloc' , 'tbbmalloc']
-runs = 3
+runs = 20
 
 cores = 'current'
 
@@ -106,6 +106,10 @@ try:
                                 print output
                                 pattern=re.compile(r'mem\(Kb\):[0-9]+')
                                 mem=pattern.findall(output)
+                                if len(mem)!=1:
+                                    os.chdir('../..')
+                                    mem_data[benchmark][config].append(0)
+                                    continue
                                 mem_num_pattern=re.compile(r'[0-9]+')
                                 mem=mem_num_pattern.findall(mem[0])
                                 #print "mem:"+mem[0]

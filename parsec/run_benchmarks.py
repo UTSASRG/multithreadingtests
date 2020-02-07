@@ -103,10 +103,10 @@ try:
 				time = os.times()[4] - start_time
 				data[benchmark][config].append(time)
                                 output = p.stdout.read()
-                                re.compile(r'mem\(Kb\):[0-9]*')
+                                pattern=re.compile(r'mem\(Kb\):[0-9]*')
                                 mem=pattern.findall(output)
                                 print "mem:"+mem[0]
-                                mem_data[benchmark][config].append(mem)
+                                mem_data[benchmark][config].append(mem[0])
 
 	
 				os.chdir('../..')

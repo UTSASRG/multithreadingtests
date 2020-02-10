@@ -11,10 +11,11 @@ all_benchmarks.remove('defines.mk')
 all_benchmarks.remove('aget')
 all_benchmarks.remove('pbzip2')
 all_benchmarks.remove('pfscan')
+all_benchmarks.remove('raytrace')
 all_benchmarks.sort()
 
-all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'jemalloc' , 'tbbmalloc']
-runs = 20
+all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'numaaware-tcmalloc' , 'jemalloc' , 'tbbmalloc' , 'scalloc']
+runs = 10
 
 cores = 'current'
 
@@ -98,11 +99,14 @@ try:
 				start_time = os.times()[4]
 				
 				p = subprocess.Popen(['make', 'eval-'+config],stdin = subprocess.PIPE,stderr=subprocess.PIPE)
+				#p = subprocess.Popen(['make', 'eval-'+config])
 			#	p = subprocess.Popen(['make', 'eval-'+config, 'NCORES='+str(cores)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-				p.wait()
+				#p.wait()
+                                stdoutdata, stderrdata = p.communicate(input=None)
+                                print "exception"
 				time = os.times()[4] - start_time
 				data[benchmark][config].append(time)
-                                output = p.stderr.read()
+                                output = stderrdata
                                 print output
                                 pattern=re.compile(r'mem\(Kb\):[0-9]+')
                                 mem=pattern.findall(output)
@@ -112,7 +116,7 @@ try:
                                     continue
                                 mem_num_pattern=re.compile(r'[0-9]+')
                                 mem=mem_num_pattern.findall(mem[0])
-                                #print "mem:"+mem[0]
+                                print "mem:"+mem[0]
                                 mem_data[benchmark][config].append(int(mem[0]))
 
 	

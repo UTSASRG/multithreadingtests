@@ -8,14 +8,13 @@ import re
 all_benchmarks = os.listdir('tests')
 all_benchmarks.remove('Makefile')
 all_benchmarks.remove('defines.mk')
-all_benchmarks.remove('aget')
-all_benchmarks.remove('pbzip2')
+#all_benchmarks.remove('aget')
+#all_benchmarks.remove('pbzip2')
 all_benchmarks.remove('pfscan')
-all_benchmarks.remove('raytrace')
 all_benchmarks.sort()
 
-all_configs = ['pthread', 'numalloc' , 'tcmalloc' , 'numaaware-tcmalloc' , 'jemalloc' , 'tbbmalloc' , 'scalloc']
-runs = 10
+all_configs = ['pthread','numalloc'  ,'tcmalloc' , 'numaaware-tcmalloc' , 'jemalloc' , 'tbbmalloc' , 'scalloc']
+runs = 1
 
 cores = 'current'
 

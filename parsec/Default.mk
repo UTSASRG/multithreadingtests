@@ -1,8 +1,11 @@
  FIXME: these two lines that need to be changed correspondingly. Another file is 
+
+#MALLOC_PROF_LIB_WITH_DIR = /media/umass/datasystem/xin/libmallocprof.so
+MALLOC_PROF_LIB_WITH_DIR = 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-#MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
-//MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc-0.1base/source/libnumalloc.so
 MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
+#MYLIB_WITH_DIR = /home/jinzhou/Memoryallocators/Hoard/src/libhoard.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source/libnumalloc.so
 MYLIB = numalloc
 TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
@@ -89,7 +92,10 @@ eval-pthread: $(TEST_NAME)-pthread
 ############ $(MYLIB) builders ############
 
 MYLIB_CFLAGS = $(CFLAGS) -DNDEBUG
-MYLIB_LIBS += -rdynamic $(MYLIB_WITH_DIR) $(LIBS) -lpthread -ldl
+MY_DY_LIB_LIBS =  
+#MY_DY_LIB_LIBS += -rdynamic $(MALLOC_PROF_LIB_WITH_DIR) 
+MY_DY_LIB_LIBS += -rdynamic $(MYLIB_WITH_DIR) 
+MYLIB_LIBS += $(LIBS) -lpthread -ldl
 
 
 MYLIB_OBJS = $(addprefix obj/, $(addsuffix -$(MYLIB).o, $(TEST_FILES)))
@@ -124,7 +130,7 @@ obj/%-$(MYLIB).o: %$(SRC_SUFFIX)
 
 ### FIXME, put the 
 $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
-	$(CXX) $(MYLIB_CFLAGS) -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
+	$(CXX) $(MYLIB_CFLAGS) $(MY_DY_LIB_LIBS)  -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
 	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)

@@ -1269,7 +1269,7 @@ Encode(config * conf)
     pthread_join(threads_compress[i], NULL);
 
   fprintf(stderr, "SendBlock now\n");
-  if (!conf->preloading) {
+  if (conf->preloading) {
 #ifdef ENABLE_PARSEC_HOOKS
     __parsec_roi_end();
 #endif

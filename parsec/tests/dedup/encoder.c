@@ -1215,6 +1215,7 @@ Encode(config * conf)
   }
 
   fprintf(stderr, "%d: Check dataprocessing's memory now\n", getpid());
+    fprintf(stderr, "conf->nthreads is %d\n", conf->nthreads);
   int i;
 
   //Create 3 thread pools for the intermediate pipeline stages
@@ -1223,6 +1224,7 @@ Encode(config * conf)
     chunk_thread_args[i].tid = i;
     pthread_create(&threads_chunk[i], NULL, ChunkProcess, &chunk_thread_args[i]);
   }
+
 
   fprintf(stderr, "%d: Creating chunkprocess\n", getpid());
   struct thread_args anchor_thread_args[conf->nthreads];
@@ -1244,7 +1246,7 @@ Encode(config * conf)
   send_block_args.tid = 0;
   send_block_args.nqueues = nqueues;
   send_block_args.conf = conf;
-  if (!conf->preloading) {
+  if (conf->preloading) {
     pthread_create(&threads_send, NULL, SendBlock, &send_block_args);
   }
   
@@ -1266,6 +1268,7 @@ Encode(config * conf)
   for (i = 0; i < conf->nthreads; i ++)
     pthread_join(threads_compress[i], NULL);
 
+  fprintf(stderr, "SendBlock now\n");
   if (conf->preloading) {
 #ifdef ENABLE_PARSEC_HOOKS
     __parsec_roi_end();
@@ -1313,10 +1316,11 @@ Encode(config * conf)
   }
   
 #endif //PARALLEL
-
+ 
   fprintf(stderr, "dumping scan numbers\n");
   void dump_scannums();
   dump_scannums();
+  fprintf(stderr, "dumping scan numbers done\n");
 
   /* clean up with the src file */
   if (conf->infile != NULL)

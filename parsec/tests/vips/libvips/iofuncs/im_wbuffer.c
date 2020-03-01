@@ -416,6 +416,7 @@ im_wbuffer( im_threadgroup_t *tg,
 
 	result = 0;
 
+  fprintf(stderr, "im_wbuffer with two new threads");
 	b1 = wbuffer_new( tg, write_fn, a, b );
 	b2 = wbuffer_new( tg, write_fn, a, b );
 

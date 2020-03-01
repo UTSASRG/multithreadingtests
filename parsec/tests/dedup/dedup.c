@@ -107,6 +107,7 @@ main(int argc, char** argv)
       conf->b_size = atoi(optarg) * 1024;
       break;
     case 'p':
+      fprintf(stderr, "preloading is true\n");
       conf->preloading = 1;
       break;
     case 't':

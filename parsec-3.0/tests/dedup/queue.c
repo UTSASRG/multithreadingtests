@@ -1,5 +1,5 @@
 #include <assert.h>
-
+#include <stdio.h>
 #include "util.h"
 #include "queue.h"
 #include "config.h"
@@ -68,6 +68,7 @@ int queue_dequeue(queue_t *que, ringbuffer_t *buf, int limit) {
     void *temp;
     int rv;
 
+    fprintf(stderr, "remove que %p queue->buf %p\n", que, que->buf);
     temp = ringbuffer_remove(&que->buf);
     assert(temp!=NULL);
     rv = ringbuffer_insert(buf, temp);

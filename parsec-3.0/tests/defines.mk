@@ -1,5 +1,5 @@
 HOME=../..
-DATASET_HOME=../../datasets
-NCORES := 16
-#DATASET = large
+DATASET_HOME=/media/umass/datasystem/xin/multithreadingtests/parsec/datasets
+NCORES := 40
+#DATASET =40arge
 DATASET = native

@@ -456,7 +456,7 @@ public:
           continue;
       }
 
-    exit(0);
+//    exit(0);
     assert( textureCoordinates() == vertices() );
     assert( normals() == vertices() );
   }

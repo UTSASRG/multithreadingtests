@@ -1,18 +1,15 @@
- FIXME: these two lines that need to be changed correspondingly. Another file is 
-
-#MALLOC_PROF_LIB_WITH_DIR = /media/umass/datasystem/xin/libmallocprof.so
-MALLOC_PROF_LIB_WITH_DIR = 
 # tests/config.mk if you want to change the number of threads or input set (native | large)
-MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
-#MYLIB_WITH_DIR = /home/jinzhou/Memoryallocators/Hoard/src/libhoard.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
-#MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source/libnumalloc.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc-0.1base/source/libnumalloc.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fullinterleaved/libnumalloc.so
+MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source/libnumalloc.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fasterthantcmalloc-raytrace/libnumalloc.so
+#MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-48-class-size/libnumalloc.so
 MYLIB = numalloc
-TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
+#TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
+TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
 TCMALLOC_LIB = tcmalloc
-NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
-NUMA_AWARE_TCMALLOC_LIB = numaaware-tcmalloc
-JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
 JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
 JEMALLOC_LIB = jemalloc
 SCALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
@@ -87,7 +84,7 @@ $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-pthread $(TEST_ARGS)
+	/usr/bin/time ./$(TEST_NAME)-pthread $(TEST_ARGS)
 
 ############ $(MYLIB) builders ############
 
@@ -133,7 +130,7 @@ $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
 	$(CXX) $(MYLIB_CFLAGS) $(MY_DY_LIB_LIBS)  -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
+	/usr/bin/time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 
 ############ $(TCMALLOC_LIB) builders ############
 
@@ -174,10 +171,6 @@ obj/%-$(TCMALLOC_LIB).o: %$(SRC_SUFFIX)
 ### FIXME, put the 
 $(TEST_NAME)-$(TCMALLOC_LIB): $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_WITH_DIR)
 	$(CXX) $(TCMALLOC_LIB_CFLAGS) -o $@ $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_LIBS)
-
-eval-$(TCMALLOC_LIB): $(TEST_NAME)-$(TCMALLOC_LIB)
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
-
 
 
 ############ $(SCALLOC_LIB) builders ############
@@ -220,10 +213,8 @@ obj/%-$(SCALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(SCALLOC_LIB): $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_WITH_DIR)
 	$(CXX) $(SCALLOC_LIB_CFLAGS) -o $@ $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_LIBS)
 
-eval-$(SCALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/
-
 eval-$(SCALLOC_LIB): $(TEST_NAME)-$(SCALLOC_LIB)
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
 
 
 
@@ -314,14 +305,7 @@ $(TEST_NAME)-$(TBB_MALLOC_LIB): $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_WITH_DIR
 	$(CXX) $(TBB_MALLOC_LIB_CFLAGS) -o $@ $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_LIBS)
 
 eval-$(TBB_MALLOC_LIB): $(TEST_NAME)-$(TBB_MALLOC_LIB)
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
-
-
-
-
-
-
-
+	/usr/bin/time ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
 
 
 ############ $(NUMA_AWARE_TCMALLOC_LIB) builders ############
@@ -364,16 +348,5 @@ obj/%-$(NUMA_AWARE_TCMALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_WITH_DIR)
 	$(CXX) $(NUMA_AWARE_TCMALLOC_LIB_CFLAGS) -o $@ $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_LIBS)
 
-eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
-
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
-	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
-
-
-
-
-
-
-
-
-
+	/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)

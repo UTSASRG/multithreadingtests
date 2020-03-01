@@ -1246,7 +1246,7 @@ Encode(config * conf)
   send_block_args.tid = 0;
   send_block_args.nqueues = nqueues;
   send_block_args.conf = conf;
-  if (conf->preloading) {
+  if (!conf->preloading) {
     pthread_create(&threads_send, NULL, SendBlock, &send_block_args);
   }
   
@@ -1269,7 +1269,7 @@ Encode(config * conf)
     pthread_join(threads_compress[i], NULL);
 
   fprintf(stderr, "SendBlock now\n");
-  if (conf->preloading) {
+  if (!conf->preloading) {
 #ifdef ENABLE_PARSEC_HOOKS
     __parsec_roi_end();
 #endif

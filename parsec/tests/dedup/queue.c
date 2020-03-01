@@ -77,6 +77,7 @@ int enqueue(struct queue * que, int * fetch_count, void ** from_buf) {
 #ifdef PARALLEL
   pthread_mutex_lock(&que->mutex);
 
+ // fprintf(stderr, "queue->size %d\n", que->size);
   // If the queue is full, then we will wait on conditional variable queue->full.
   // In theory, each job will have a queue. 
   while (que->head == (que->tail-1+que->size)%que->size)

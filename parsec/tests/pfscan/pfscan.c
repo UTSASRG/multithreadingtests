@@ -419,7 +419,7 @@ foreach_path(const char *path,
 {
     ++n_files;
 
-    n_bytes += sp->st_size;
+    //n_bytes += sp->st_size;
     
     switch (f)
     {
@@ -456,8 +456,8 @@ do_ftw(char *path)
 	// ftw walks through the directory tree under  dirpath, and calls fn() once for
     // each entry in the tree.	
    	fprintf(stderr, "main thread, path %s, max_depth %d\n", path, max_depth);
-    int code = ftw(path, foreach_path, max_depth);
- 
+//    int code = ftw(path, foreach_path, max_depth);
+	int code = foreach_path(path, NULL, FTW_F); 
    	fprintf(stderr, "after checking all path\n");
     if (code < 0)
     {

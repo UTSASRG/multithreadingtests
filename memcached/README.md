@@ -12,6 +12,7 @@ Test Setup:
 1. Install memcached prerequisites
 
   - "tar xvfz libevent-2.0.22-stable.tar.gz" //extract tar ball
+  - recommend to use a newer version. This one is too old to be compatible.
   - "cd libevent-2.0.22-stable/"
   - "./configure --prefix=install_path" //custom install path here
   - "make"

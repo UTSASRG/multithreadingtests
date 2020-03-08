@@ -6,7 +6,7 @@ TEST_FILES = binheap decoder dedup encoder hashtable queue rabin tree util
 ifeq ($(NCORES), 128)
   THREADS := 32
 else ifeq ($(NCORES), 40)
-  THREADS := 10
+  THREADS := 12
 else ifeq ($(NCORES), 32)
   THREADS := 8
 else ifeq ($(NCORES), 16)
@@ -18,9 +18,9 @@ else
 endif
 
 ifeq ($(DATASET), native)
-	TEST_ARGS = -c -p -f -t $(THREADS) -i $(DATASET_HOME)/dedup/FC-6-x86_64-disc1.iso -o output.dat.ddp
+	TEST_ARGS = -c -f -t $(THREADS) -i $(DATASET_HOME)/dedup/FC-6-x86_64-disc1.iso -o output.dat.ddp
 else ifeq ($(DATASET), large)
-	TEST_ARGS = -c -p -f -t $(THREADS) -i $(DATASET_HOME)/dedup/media.dat -o output.dat.ddp
+	TEST_ARGS = -c  -f -t $(THREADS) -i $(DATASET_HOME)/dedup/media.dat -o output.dat.ddp
 endif
 
 

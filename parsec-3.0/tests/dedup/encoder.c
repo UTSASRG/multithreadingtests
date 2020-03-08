@@ -1497,12 +1497,13 @@ void Encode(config_t * _conf) {
     pthread_create(&threads_compress[i], NULL, Compress, &compress_thread_args[i]);
   }
 
+#if 1
   //thread for last pipeline stage (output)
   struct thread_args send_block_args;
   send_block_args.tid = 0;
   send_block_args.nqueues = nqueues;
   pthread_create(&threads_send, NULL, Reorder, &send_block_args);
-
+#endif
   /*** parallel phase ***/
 
   //Return values of threads

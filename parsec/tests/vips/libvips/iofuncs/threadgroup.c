@@ -131,12 +131,16 @@ im_concurrency_get( void )
 	 */
 	if( im__concurrency > 0 )
 		nthr = im__concurrency;
-	else if( (str = g_getenv( IM_CONCURRENCY )) ) 
+	else if( (str = g_getenv( IM_CONCURRENCY )) ) {
+
 		nthr = atoi( str );
-	else
+   }
+   else {
 		/* Stick to minimum.
 		 */
-		nthr = 1;
+		nthr = 32;
+    fprintf(stderr, "nthr is 1. str %s\n", str);
+  }
 
 	if( nthr < 1 || nthr > IM_MAX_THREADS ) {
 		nthr = IM_CLIP( 1, nthr, IM_MAX_THREADS );
@@ -613,6 +617,7 @@ im_threadgroup_create( IMAGE *im )
 	for( i = 0; i < tg->nthr + 1; i++ )
 		tg->thr[i] = NULL;
 
+  fprintf(stderr, "tg->nthr is %d\n", tg->nthr);
 	/* Attach threads.
 	 */
 	for( i = 0; i < tg->nthr; i++ )

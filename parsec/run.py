@@ -5,10 +5,12 @@ import sys
 import subprocess
 import re
 
-all_benchmarks = ['bodytrack', 'blackscholes', 'fluidanimate']
-
-all_configs = ['pthread']
-runs = 10
+#all_benchmarks = ['bodytrack', 'blackscholes', 'fluidanimate']
+#all_benchmarks = ['raytrace']
+#all_benchmarks = ['blackscholes', 'bodytrack', 'canneal', 'dedup', 'facesim', 'ferret', 'fluidanimate', 'raytrace', 'streamcluster', 'swaptions', 'vips', 'x264']
+all_benchmarks = ['blackscholes', 'bodytrack', 'canneal', 'dedup', 'ferret', 'fluidanimate', 'raytrace', 'streamcluster', 'swaptions', 'vips', 'x264']
+all_configs = ['numalloc']
+runs = 1
 
 if len(sys.argv) == 1:
 	print 'Usage: '+sys.argv[0]+' <benchmark names> <config names> <runs>'
@@ -52,7 +54,6 @@ try:
 			for n in range(0, runs):
 				print 'Running '+benchmark+'.'+config
 				os.chdir('tests/'+benchmark)
-				
 				start_time = os.times()[4]
 				
 				p = subprocess.Popen(['make', 'eval-'+config])

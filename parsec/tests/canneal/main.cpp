@@ -116,7 +116,8 @@ int main (int argc, char **argv) {
 	void* thread_in = static_cast<void*>(&a_thread);
     // LTP: whether we can use thread_in to pass the parameter?
 	cout << "starting newthreads, thread_in " << thread_in << endl;
-	for(int i=0; i<num_threads; i++){
+  //exit(0);
+  for(int i=0; i<num_threads; i++){
 		pthread_create(&threads[i], NULL, entry_pt,thread_in);
 	}
 	for (int i=0; i<num_threads; i++){

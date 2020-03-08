@@ -500,7 +500,7 @@ int main(int argc, char **argv)
    CHECK_ERROR( (pid = (pthread_t *)malloc(sizeof(pthread_t) * num_procs)) == NULL);
    pthread_mutex_init(&file_lock, NULL);
 
-   printf("Running on %d procs\n", num_procs);
+   printf("Running on %d procs running size %ld\n", num_procs, sizeof(pthread_t) * num_procs);
 
    currfile = filelist;
    
@@ -508,8 +508,10 @@ int main(int argc, char **argv)
    use_len = (int *)CALLOC(num_procs, sizeof(int));
    length = (int *)MALLOC(num_procs * sizeof(int));
 
+   printf("creating threads. links %p use_len %p length %p\n", links, use_len, length);
    for (i = 0; i < num_procs; i++) {
       links[i] = (link_head_t *)CALLOC(START_ARRAY_SIZE, sizeof(link_head_t));
+      printf("creating threads. links[%d] %p \n",i, links[i]);
       length[i] = START_ARRAY_SIZE;
       CHECK_ERROR((pthread_create(&(pid[i]), &attr, getlinks, (void *)i)) != 0);
    }

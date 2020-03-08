@@ -246,8 +246,9 @@ public:
     pthread_cond_init(&m_cond, NULL);
   }
   ~MultiThreadedSyncPrimitive() {
-    pthread_mutex_destroy(&m_mutex);
-    pthread_cond_destroy(&m_cond);
+    //resumeAll();
+    //pthread_mutex_destroy(&m_mutex);
+   // pthread_cond_destroy(&m_cond);
   }
 
   // http://node1.yo-linux.com/cgi-bin/man2html?cgi_command=pthread_mutex_lock

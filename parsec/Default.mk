@@ -11,6 +11,7 @@ MYLIB = numalloc
 TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
 TCMALLOC_LIB = tcmalloc
 NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+#NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
 NUMA_AWARE_TCMALLOC_LIB = numaaware-tcmalloc
 JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
 JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
@@ -81,7 +82,6 @@ obj/%-pthread.o: %.cc
 obj/%-pthread.o: %$(SRC_SUFFIX)
 	mkdir -p obj
 	$(CXX) $(PTHREAD_CFLAGS) -c $< -o $@ -I$(HOME)/include
- 
 
 $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
@@ -364,7 +364,8 @@ obj/%-$(NUMA_AWARE_TCMALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_WITH_DIR)
 	$(CXX) $(NUMA_AWARE_TCMALLOC_LIB_CFLAGS) -o $@ $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_LIBS)
 
-eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+#eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
 
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
 	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)

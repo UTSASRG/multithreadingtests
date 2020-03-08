@@ -311,6 +311,8 @@ TEST_FILES = $(SRCS)
 #THREADS = $(NCORES)
 THREADS = $(shell echo $(NCORES)-1 | bc)
 
+export IM_CONCURRENCY=40
+
 HAVE_DIR = 1
 
 ifeq ($(DATASET), native)

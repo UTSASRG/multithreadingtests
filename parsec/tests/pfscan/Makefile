@@ -3,7 +3,7 @@ HOME = ../..
 TEST_NAME = pfscan
 TEST_FILES = pfscan bm pqueue version
 
-TEST_ARGS = -n8 "mtest" ../../datasets/pfscan/
+TEST_ARGS = -n40 "mtest" ../../datasets/pfscan/key_file_500MB.txt
 
 LIBS = -lm -lstdc++ -lnsl
 

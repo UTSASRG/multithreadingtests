@@ -3,7 +3,6 @@ include ../defines.mk
 TEST_NAME = facesim
 TEST_FILES = FACE_DRIVER FACE_LANDMARK_OPTIMIZATION_GOAL FACE_OPTIMIZATION LANDMARK_PROXIMITY_OPTIMIZATION main taskQ
 
-
 ifeq ($(NCORES), 128)
   THREADS := 128
 else ifeq ($(NCORES), 40)
@@ -19,15 +18,9 @@ else
 endif
 
 ifeq ($(DATASET), native)
-	TEST_ARGS = -c -f -t $(THREADS) -i $(DATASET_HOME)/dedup/FC-6-x86_64-disc1.iso -o output.dat.ddp
+        TEST_ARGS = -timing -threads $(THREADS) -lastframe 200
 else ifeq ($(DATASET), large)
-	TEST_ARGS = -c  -f -t $(THREADS) -i $(DATASET_HOME)/dedup/media.dat -o output.dat.ddp
-endif
-
-ifeq ($(DATASET), native)
-        TEST_ARGS = -timing -threads $(NTHREADS) -lastframe 200
-else ifeq ($(DATASET), large)
-        TEST_ARGS = -timing -threads $(NTHREADS) 
+        TEST_ARGS = -timing -threads $(THREADS) 
 endif
 
 

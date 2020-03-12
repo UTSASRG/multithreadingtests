@@ -144,4 +144,5 @@ void* entry_pt(void* data)
 	annealer_thread* ptr = static_cast<annealer_thread*>(data);
 	//fprintf(stderr, "%d: data is %p and ptr is %p\n", getpid(), data, ptr);
 	ptr->Run();
+  return ptr;
 }

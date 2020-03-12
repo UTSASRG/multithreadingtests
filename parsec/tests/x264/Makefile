@@ -18,8 +18,9 @@ SRCS = common/mc common/predict common/pixel common/macroblock \
 SRCCLI = x264 matroska muxers
 TEST_FILES = $(SRCS) $(SRCCLI)
 
-#THREADS = $(NCORES)
-THREADS = $(shell echo $(NCORES)-1 | bc)
+THREADS = $(NCORES)
+#THREADS = 40
+#THREADS = $(shell echo $(NCORES)-1 | bc)
 
 ifeq ($(DATASET), native)
 	TEST_ARGS = --quiet --qp 20 --partitions b8x8,i4x4 --ref 5 --direct auto --b-pyramid --weightb --mixed-refs --no-fast-pskip --me umh --subme 7 --analyse b8x8,i4x4 --threads ${THREADS} -o eledream.264 $(DATASET_HOME)/x264/eledream_1920x1080_512.y4m 
@@ -28,7 +29,7 @@ else ifeq ($(DATASET), large)
 endif
 
 #CFLAGS = -g -ffast-math -O3 -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -Wall -I. -O3 -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -DHAVE_MALLOC_H -DHAVE_MMX -DARCH_X86_64 -DSYS_LINUX -DHAVE_PTHREAD -s -fomit-frame-pointer
-CFLAGS = -g -fPIC -ffast-math -O3 -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -Wall -I. -O3 -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -DHAVE_MALLOC_H -DARCH_X86_64 -DSYS_LINUX -DHAVE_PTHREAD -s -fomit-frame-pointer
+CFLAGS = -g -fno-omit-frame-pointer -fPIC -ffast-math -O0 -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -Wall -I. -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=2.1 -DHAVE_MALLOC_H -DARCH_X86_64 -DSYS_LINUX -DHAVE_PTHREAD -s -fomit-frame-pointer
 LIBS = -lm -lstdc++ -Llib -lx264 -lm
 
 HAVE_DIR = 1

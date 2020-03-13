@@ -3,6 +3,7 @@ include ../defines.mk
 TEST_NAME = canneal
 TEST_FILES = annealer_thread rng netlist main netlist_elem
 THREADS = $(shell echo $(NCORES)-1 | bc)
+#THREADS = 39
 
 
 ifeq ($(DATASET), native)

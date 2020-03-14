@@ -3,21 +3,25 @@
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc-0.1base/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fullinterleaved/libnumalloc.so
-MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source/libnumalloc.so
+MYLIB_WITH_DIR = /home/tpliu/xinzhao/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fasterthantcmalloc-raytrace/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-48-class-size/libnumalloc.so
 MYLIB = numalloc
 #TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
-TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+#TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/libtcmalloc.so
 TCMALLOC_LIB = tcmalloc
-NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
-#NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+#NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
 NUMA_AWARE_TCMALLOC_LIB = numaaware-tcmalloc
-JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
+#JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
+JEMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
 JEMALLOC_LIB = jemalloc
-SCALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
+#SCALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
+SCALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
 SCALLOC_LIB = scalloc
-TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
+#TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
+TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
 TBB_MALLOC_LIB = tbbmalloc
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB = light
@@ -25,6 +29,7 @@ TBB_MALLOC_LIB = tbbmalloc
 #CXX = clang++ 
 CC = gcc
 CXX = g++ 
+#CFLAGS += -g -O0 -fno-omit-frame-pointer -ldl
 CFLAGS += -g -O3 -fno-omit-frame-pointer -ldl
 
 CONFIGS = pthread $(MYLIB) $(TCMALLOC_LIB)
@@ -173,6 +178,11 @@ obj/%-$(TCMALLOC_LIB).o: %$(SRC_SUFFIX)
 ### FIXME, put the 
 $(TEST_NAME)-$(TCMALLOC_LIB): $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_WITH_DIR)
 	$(CXX) $(TCMALLOC_LIB_CFLAGS) -o $@ $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_LIBS)
+
+eval-$(TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/
+
+eval-$(TCMALLOC_LIB): $(TEST_NAME)-$(TCMALLOC_LIB)
+	/usr/bin/time ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
 
 
 ############ $(SCALLOC_LIB) builders ############
@@ -351,7 +361,8 @@ $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_
 	$(CXX) $(NUMA_AWARE_TCMALLOC_LIB_CFLAGS) -o $@ $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_LIBS)
 
 #eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/
-eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+#eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/
 
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
 	/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)

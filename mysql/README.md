@@ -29,6 +29,7 @@ Test Setup:
   - "chown -R mysql ."  //only if you created mysql account and plan to use it
   - "chgrp -R mysql ."  //only if you created mysql group
   - "bin/mysqld --initialize --user=mysql"  //use the user account you plan to launch the server with here
+    or use this to specify a specific install and data directory 'bin/mysqld --initialize --user=tpliu --basedir=/home/tpliu/xinzhao/multithreadingtests/mysql/mysql-5.7.15/install/usr/local/mysql --datadir=/home/tpliu/xinzhao/multithreadingtests/mysql/mysql-5.7.15/install/usr/local/mysql/data'
   - when you run the command above, look carefully for the randomly generated password for the server's 'root' account. You will need that!
 
 3. Create test database

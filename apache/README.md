@@ -13,6 +13,7 @@ Test Setup:
   - recommend to use a newer vision. This one is too old to be compatible.
   - ./buildconf 
   - "./configure --with-included-apr --prefix=install_path" //put custom install path here.   If you do not have apr, you can install it with 'sudo apt-get install libapr1-dev libaprutil1-dev', or you can see INSTALL for more details.
+  If you install apr with 'sudo apt-get install libapr1-dev libaprutil1-dev', you could directly go to './configure --prefix=install_path'. Unless, you need use '--with-included-apr'.
   - At this point, if you need to link a dynamic library, edit the following file: "build/config_vars.mk". Add your "-rdynamic" statement to the line begining with: "AP_LIBS ="
   - make
   - make install

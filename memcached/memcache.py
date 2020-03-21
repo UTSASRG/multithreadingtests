@@ -1482,7 +1482,7 @@ def testAll():
     #_doctest()
     print("Running tests:")
     print()
-    serverList = [["192.168.1.2:11211"]]
+    serverList = [["10.242.129.222:11211"]]
     if '--do-unix' in sys.argv:
         serverList.append([os.path.join(os.getcwd(), 'memcached.socket')])
 
@@ -1707,7 +1707,7 @@ def testAll():
 if __name__ == "__main__":
 
     """
-    servers = ["192.168.1.2:11211"]
+    servers = [":10.242.129.22211211"]
     mc = Client(servers, debug=1)
 
     print("Testing sending a unicode-string key...", end=" ")
@@ -1726,7 +1726,7 @@ if __name__ == "__main__":
     #_doctest()
     print("Running tests:")
     print()
-    serverList = [["192.168.1.2:11211"]]
+    serverList = [["10.242.129.222:11211"]]
 #    serverList = [["10.242.128.59:11211"]]
     if '--do-unix' in sys.argv:
         serverList.append([os.path.join(os.getcwd(), 'memcached.socket')])

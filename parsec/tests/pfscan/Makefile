@@ -1,9 +1,9 @@
 HOME = ../..
-
+include ../defines.mk
 TEST_NAME = pfscan
 TEST_FILES = pfscan bm pqueue version
 
-TEST_ARGS = -n40 "mtest" ../../datasets/pfscan/key_file_500MB.txt
+TEST_ARGS = -n$(NCORES) "mtest" ../../datasets/pfscan/key_file_500MB.txt
 
 LIBS = -lm -lstdc++ -lnsl
 

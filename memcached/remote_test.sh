@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-for allocator in {"pthread","numalloc","tcmalloc","jemalloc","tbbmalloc","scalloc"}
+for allocator in {"pthread","numalloc","tcmalloc","numaaware-tcmalloc","jemalloc","tbbmalloc","scalloc"}
 #for allocator in {"scalloc",}
 do
   echo "begin build $allocator"
@@ -12,5 +12,6 @@ do
     sleep 5
     /usr/bin/time -a -o 'test.out' ./run.py
     ssh tpliu@dynaoptimal950.cs.utsa.edu "cd /home/tpliu/xinzhao/multithreadingtests/memcached;./memcached.sh stop $allocator" >> 'test.out'
+    sleep 5
   done
 done

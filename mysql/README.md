@@ -40,6 +40,8 @@ Test Setup:
   - "mysql -u root -p -S /tmp/mysql.sock" // you will need the root password from the previous step to log on
   - once logged in to the server, create a test database
   - set password for root@localhost = password("umass");   # reset a new password
+    if you meet any password problems, one effective way is to create a file : ~/.my.cnf with '[mysqld] \n skip-grant-tables'
+    and restart mysqlserver. This will skip password check for mysql.
   - "CREATE DATABASE sbtest" //type while logged in to the server through the client application
   - close the client application ex: "quit"
 

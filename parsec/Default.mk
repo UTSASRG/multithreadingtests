@@ -21,7 +21,7 @@ JEMALLOC_LIB = jemalloc
 SCALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
 SCALLOC_LIB = scalloc
 #TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
-TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/libtbb.so
+TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/libtbb.so.2
 TBB_MALLOC_LIB = tbbmalloc
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB = light
@@ -272,6 +272,8 @@ obj/%-$(JEMALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(JEMALLOC_LIB): $(JEMALLOC_LIB_OBJS) $(JEMALLOC_LIB_WITH_DIR)
 	$(CXX) $(JEMALLOC_LIB_CFLAGS) -o $@ $(JEMALLOC_LIB_OBJS) $(JEMALLOC_LIB_LIBS)
 
+eval-$(JEMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/jemalloc-5.2.1/lib/
+
 eval-$(JEMALLOC_LIB): $(TEST_NAME)-$(JEMALLOC_LIB)
 	/usr/bin/time -f "real:%e,	user:%U,	sys:%S,	mem(Kb):%M" ./$(TEST_NAME)-$(JEMALLOC_LIB) $(TEST_ARGS)
 
@@ -317,6 +319,7 @@ obj/%-$(TBB_MALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(TBB_MALLOC_LIB): $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_WITH_DIR)
 	$(CXX) $(TBB_MALLOC_LIB_CFLAGS) -o $@ $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_LIBS)
 
+eval-$(TBB_MALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/
 eval-$(TBB_MALLOC_LIB): $(TEST_NAME)-$(TBB_MALLOC_LIB)
 	/usr/bin/time ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
 

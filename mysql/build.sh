@@ -2,17 +2,10 @@
 set -x
   source ../home_var.sh
 
-  #if [ $# != 0 ] && [ $1 != "pthread" ] && [ ! -n "${lib_with_path_map[$1]}" ]; then
-  #  echo "unknown allocators: $1"
-  #  exit 1
-  #fi
-
-  #if [ $# != 0 ]; then
-  #  echo "right allocators:$1"
-  #fi
-
-  #exit 0
-
+  if [ $# != 0 ] && [ $1 != "pthread" ] && [ ! -n "${lib_with_path_map[$1]}" ]; then
+    echo "unknown allocators: $1"
+    exit 1
+  fi
 
   rm -rf 'mysql-5.7.15/'
   rm -rf 'sysbench'
@@ -41,6 +34,12 @@ set -x
   tar zxvf mysql-boost-5.7.15.tar.gz
   cd mysql-5.7.15/
   cmake -DWITH_BOOST=boost .
+
+  if [ $# != 0 ] && [ $1 != "pthread" ]; then
+    mv "$home/mysql/mysql-5.7.15/sql/CMakeFiles/mysqld.dir/link.txt" "$home/mysql/mysql-5.7.15/sql/CMakeFiles/mysqld.dir/link.txt.bk"
+    cat "$home/mysql/mysql-5.7.15/sql/CMakeFiles/mysqld.dir/link.txt.bk" | sed "s;\-lpthread;-rdynamic ${lib_with_path_map[$1]} -lpthread;g" > "$home/mysql/mysql-5.7.15/sql/CMakeFiles/mysqld.dir/link.txt"
+  fi
+
   make
   make install DESTDIR="$home/mysql/mysql-5.7.15/install"
 

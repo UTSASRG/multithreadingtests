@@ -10,7 +10,8 @@ do
     echo "begin test $allocator---$i:" >> 'test.out'
     ssh tpliu@dynaoptimal950.cs.utsa.edu "cd /home/tpliu/xinzhao/multithreadingtests/apache;./httpd.sh start $allocator"
     sleep 5
-    /usr/bin/time -a -o 'test.out' ./httpd-2.4.23/install/bin/ab -n 1000000 -c 1000 http://10.242.129.222:1978/
+    #/usr/bin/time -a -o 'test.out' ./httpd-2.4.23/install/bin/ab -n 1000000 -c 1000 http://10.242.129.222:1978/
+    ./httpd-2.4.23/install/bin/ab -n 1000000 -c 1000 http://10.242.129.222:1978/ >> 'test.out'
     ssh tpliu@dynaoptimal950.cs.utsa.edu "cd /home/tpliu/xinzhao/multithreadingtests/apache;./httpd.sh stop $allocator" >> 'test.out'
     sleep 5
   done

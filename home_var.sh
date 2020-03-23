@@ -3,6 +3,10 @@ home=/home/tpliu/xinzhao/multithreadingtests
 #local_ip=192.168.1.24
 local_ip=10.242.129.222
 
+#user=xin
+user=tpliu
+
+
 declare -A preload_map
 #preload_map["tcmalloc"]="/media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs"
 #preload_map["numaaware-tcmalloc"]="/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs"

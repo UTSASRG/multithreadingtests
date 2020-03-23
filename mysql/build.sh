@@ -1,17 +1,17 @@
 #!/bin/bash
 set -x
   source ../home_var.sh
- 
-  if [ $# != 0 ] && [ $1 != "pthread" ] && [ ! -n "${lib_with_path_map[$1]}" ]; then
-    echo "unknown allocators: $1"
-    exit 1
-  fi
 
-  if [ $# != 0 ]; then
-    echo "right allocators:$1"
-  fi
+  #if [ $# != 0 ] && [ $1 != "pthread" ] && [ ! -n "${lib_with_path_map[$1]}" ]; then
+  #  echo "unknown allocators: $1"
+  #  exit 1
+  #fi
 
-  exit 0
+  #if [ $# != 0 ]; then
+  #  echo "right allocators:$1"
+  #fi
+
+  #exit 0
 
 
   rm -rf 'mysql-5.7.15/'
@@ -52,6 +52,8 @@ set -x
 
   #create test databases & inite test data
   bin/mysqld_safe --user=$user &
+  sleep 5
   mysql -u root -p11 -S /tmp/mysql.sock < "$home/mysql/create_database.sql"
-  $home/mysql/sysbench/sysbench "--test=$home/mysql/sysbench/sysbench/tests/db/oltp.lua --oltp-table-size=10000 --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=11 prepare“
+  $home/mysql/sysbench/sysbench/sysbench "--test=$home/mysql/sysbench/sysbench/tests/db/oltp.lua --oltp-table-size=10000 --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=11 prepare"
   bin/mysqladmin shutdown -u root -p11 -S/tmp/mysql.sock
+  sleep 5

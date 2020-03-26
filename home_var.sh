@@ -27,5 +27,5 @@ lib_with_path_map["numaaware-tcmalloc"]="${preload_map["numaaware-tcmalloc"]}/li
 lib_with_path_map["jemalloc"]="${preload_map["jemalloc"]}/libjemalloc.so"
 lib_with_path_map["scalloc"]="${preload_map["scalloc"]}/libscalloc.so"
 lib_with_path_map["tbbmalloc"]="${preload_map["tbbmalloc"]}/libtbb.so.2"
-lib_with_path_map["pthread"]=""
+lib_with_path_map["pthread"]="NULL"
 lib_with_path_map["numalloc"]="/media/umass/datasystem/xin/numalloc/source/libnumalloc.so"

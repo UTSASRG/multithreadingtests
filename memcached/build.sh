@@ -1,4 +1,5 @@
 #!/bin/bash
+  source ../home_var.sh
 
   set -x
   config_vars=Makefile
@@ -15,7 +16,7 @@
   rm -rf memcached-1.4.25
   tar xvf memcached-1.4.25.tar
   cd memcached-1.4.25/
-  ./configure --prefix=/home/tpliu/xinzhao/multithreadingtests/memcached/memcached-1.4.25/install --enable-61bit --with-libevent=/home/tpliu/xinzhao/multithreadingtests/memcached/libevent-2.1.8-stable/install/
+  ./configure --prefix=$home/memcached/memcached-1.4.25/install --enable-61bit --with-libevent=$home/memcached/libevent-2.1.8-stable/install/
   
   cp ../$config_vars ./Makefile
   make

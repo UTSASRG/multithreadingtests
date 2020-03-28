@@ -19,4 +19,4 @@
   fi
   make
   make install
-  #cp ../httpd.conf install/conf/
+  cp ../httpd.conf install/conf/

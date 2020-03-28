@@ -1,17 +1,7 @@
 #!/bin/bash
+source ../home_var.sh
 
-
-declare -A preload_map
-preload_map["tcmalloc"]="/home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/"
-preload_map["numaaware-tcmalloc"]="/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/"
-preload_map["jemalloc"]="/home/tpliu/xinzhao/allocaters/jemalloc-5.2.1/lib/"
-preload_map["scalloc"]="/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/"
-preload_map["tbbmalloc"]="/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/"
-if [ $# == 2 ] && [ $2 != "pthread" ] && [ $2 != "numalloc" ]; then
-  if [ "" == "${preload_map[$2]}" ]; then
-    echo "this lib does not exist:${preload_map[$2]}"
-    exit 1
-  fi
+if [ $# == 2 ] ; then
   export LD_LIBRARY_PATH=${preload_map[$2]}
 fi
 

@@ -6,7 +6,7 @@ if [ $# == 2 ]; then
 fi
 
 if [ $1 == "start" ]; then
-  $home/memcached/memcached-1.4.25/install/bin/memcached -l 10.242.129.222 -p 11211 &
+  $home/memcached/memcached-1.4.25/install/bin/memcached -l $local_ip -p 11211 &
 fi
 
 

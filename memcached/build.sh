@@ -2,16 +2,6 @@
   source ../home_var.sh
 
   set -x
-  config_vars=Makefile
-
-  if [ $# == 1 ]; then
-    config_vars=$config_vars.$1
-  fi
-
-  if [ ! -f $config_vars ]; then
-    echo "$config_vars does not exists" 
-    exit 1
-  fi
 
   rm -rf memcached-1.4.25
   tar xvf memcached-1.4.25.tar

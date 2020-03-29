@@ -53,6 +53,10 @@ APPS := \
 	facesim \
 	bodytrack \
 	raytrace \
+	aget\
+	pbzip2\
+	pfscan\
+	sqlite3\
 
 #
 default: all

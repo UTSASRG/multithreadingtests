@@ -15,7 +15,7 @@
  # cp ../$config_vars ./build/config_vars.mk
   if [ $# != 0 ] && [ "${lib_with_path_map[$1]}" != "NULL" ]; then
     mv ./build/config_vars.mk ./build/config_vars.mk.bk
-    cat ./build/config_vars.mk.bk | sed "s;\-pthread;-rdynamic ${lib_with_path_map[$1]} -pthread;" > ./build/config_vars.mk
+    cat ./build/config_vars.mk.bk | sed "s;\-pthread;-rdynamic ${lib_with_path_map[$1]} -pthread;" | sed "s;\-lpthread;-rdynamic ${lib_with_path_map[$1]} -lpthread;" > ./build/config_vars.mk
   fi
   make
   make install

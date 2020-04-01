@@ -10,8 +10,7 @@
   cat Makefile | sed 's/\-Werror\ //' > Makefile.bk
   cp Makefile.bk Makefile
   if [ $# != 0 ] && [ "${lib_with_path_map[$1]}" != "NULL" ]; then
-    cat Makefile.bk | sed "s;\-pthread;-rdynamic ${lib_with_path_map[$1]} -pthread;" > Makefile
+    cat Makefile.bk | sed "s;\-pthread;-Wl,--no-as-needed -rdynamic ${lib_with_path_map[$1]} -pthread;" > Makefile
   fi
-  #cp ../$config_vars ./Makefile
   make
   make install

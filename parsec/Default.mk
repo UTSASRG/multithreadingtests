@@ -91,7 +91,7 @@ $(TEST_NAME)-pthread: $(PTHREAD_OBJS)
 	$(CXX) $(PTHREAD_CFLAGS) -o $@ $(PTHREAD_OBJS) $(PTHREAD_LIBS)
 
 eval-pthread: $(TEST_NAME)-pthread
-	/usr/bin/time ./$(TEST_NAME)-pthread $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-pthread $(TEST_ARGS)
 
 ############ $(MYLIB) builders ############
 
@@ -137,7 +137,7 @@ $(TEST_NAME)-$(MYLIB): $(MYLIB_OBJS) $(MYLIB_WITH_DIR)
 	$(CXX) $(MYLIB_CFLAGS) $(MY_DY_LIB_LIBS)  -o $@ $(MYLIB_OBJS) $(MYLIB_LIBS)
 
 eval-$(MYLIB): $(TEST_NAME)-$(MYLIB)
-	/usr/bin/time ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(MYLIB) $(TEST_ARGS)
 
 ############ $(TCMALLOC_LIB) builders ############
 
@@ -182,7 +182,7 @@ $(TEST_NAME)-$(TCMALLOC_LIB): $(TCMALLOC_LIB_OBJS) $(TCMALLOC_LIB_WITH_DIR)
 eval-$(TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/
 
 eval-$(TCMALLOC_LIB): $(TEST_NAME)-$(TCMALLOC_LIB)
-	/usr/bin/time ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(TCMALLOC_LIB) $(TEST_ARGS)
 
 
 ############ $(SCALLOC_LIB) builders ############
@@ -227,7 +227,7 @@ $(TEST_NAME)-$(SCALLOC_LIB): $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_WITH_DIR)
 
 eval-$(SCALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/
 eval-$(SCALLOC_LIB): $(TEST_NAME)-$(SCALLOC_LIB)
-	/usr/bin/time ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
 
 
 
@@ -321,7 +321,7 @@ $(TEST_NAME)-$(TBB_MALLOC_LIB): $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_WITH_DIR
 
 eval-$(TBB_MALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/
 eval-$(TBB_MALLOC_LIB): $(TEST_NAME)-$(TBB_MALLOC_LIB)
-	/usr/bin/time ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
 
 
 ############ $(NUMA_AWARE_TCMALLOC_LIB) builders ############
@@ -369,4 +369,4 @@ $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_
 eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/
 
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
-	/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)

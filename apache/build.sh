@@ -18,8 +18,8 @@
   tar -xvf apr-util-1.6.1.tar.gz
   mv apr-util-1.6.1 httpd-2.4.35/srclib/apr-util
   mv apr-1.7.0 httpd-2.4.35/srclib/apr
- # mv httpd-2.4.35 httpd-2.4.35.$i
- cd httpd-2.4.35
+ # mv httpd-2.4.35 httpd-2.4.23.$i
+  cd httpd-2.4.35
   ./configure --with-included-apr --prefix=$home/apache/httpd-2.4.35/install
  # cp ../$config_vars ./build/config_vars.mk
   if [ $# != 0 ] && [ "${lib_with_path_map[$1]}" != "NULL" ]; then

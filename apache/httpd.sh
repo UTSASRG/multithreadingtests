@@ -6,7 +6,7 @@ if [ $# == 2 ] ; then
 fi
 
 if [ $1 == "start" ]; then
-  ./httpd-2.4.23/install/bin/httpd -k $1
+  ./httpd-2.4.35/install/bin/httpd -k $1
 fi
 
 
@@ -21,5 +21,5 @@ _result=`cat /proc/$pid/status | grep -e [VH][mu][Hg][We][Mt]` 2> /dev/null
 echo $result
 
 if [ $1 == "stop" ]; then
-  ./httpd-2.4.23/install/bin/httpd -k $1
+  ./httpd-2.4.35/install/bin/httpd -k $1
 fi

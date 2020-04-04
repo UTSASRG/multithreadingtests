@@ -1,9 +1,9 @@
 # tests/config.mk if you want to change the number of threads or input set (native | large)
 #MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc-0.1base/source/libnumalloc.so
-#MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
+MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fullinterleaved/libnumalloc.so
-MYLIB_WITH_DIR = /home/tpliu/xinzhao/numalloc/source/libnumalloc.so
+#MYLIB_WITH_DIR = /home/tpliu/xinzhao/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fasterthantcmalloc-raytrace/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-48-class-size/libnumalloc.so
 MYLIB = numalloc
@@ -23,6 +23,9 @@ SCALLOC_LIB = scalloc
 #TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
 TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/libtbb.so.2
 TBB_MALLOC_LIB = tbbmalloc
+LIBC_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/libc-2.28/libmalloc.so
+LIBC_MALLOC_LIB = libcmalloc
+#MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB = light
 #CC = clang
@@ -369,4 +372,51 @@ $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_
 eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/
 
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
-	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+	#/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+
+
+############ ${LIBC_MALLOC_LIB) builders ############
+
+LIBC_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+LIBC_MALLOC_LIB_LIBS += -rdynamic $(LIBC_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+LIBC_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(LIBC_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(LIBC_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(LIBC_MALLOC_LIB): $(LIBC_MALLOC_LIB_OBJS) $(LIBC_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(LIBC_MALLOC_LIB_CFLAGS) -o $@ $(LIBC_MALLOC_LIB_OBJS) $(LIBC_MALLOC_LIB_LIBS)
+
+eval-$(LIBC_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(LIBC_MALLOC_LIB): $(TEST_NAME)-$(LIBC_MALLOC_LIB)
+	/usr/bin/time ./$(TEST_NAME)-$(LIBC_MALLOC_LIB) $(TEST_ARGS)

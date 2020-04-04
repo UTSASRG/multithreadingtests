@@ -2,16 +2,6 @@
   source ../home_var.sh
 
   set -x
-  config_vars=Makefile
-
-  if [ $# == 1 ]; then
-    config_vars=$config_vars.$1
-  fi
-
-  if [ ! -f $config_vars ]; then
-    echo "$config_vars does not exists" 
-    exit 1
-  fi
 
   rm -rf memcached-1.4.25
   tar xvf memcached-1.4.25.tar
@@ -20,8 +10,7 @@
   cat Makefile | sed 's/\-Werror\ //' > Makefile.bk
   cp Makefile.bk Makefile
   if [ $# != 0 ] && [ "${lib_with_path_map[$1]}" != "NULL" ]; then
-    cat Makefile.bk | sed "s;\-pthread;-rdynamic ${lib_with_path_map[$1]} -pthread;" > Makefile
+    cat Makefile.bk | sed "s;\-pthread;-Wl,--no-as-needed -rdynamic ${lib_with_path_map[$1]} -pthread;" > Makefile
   fi
-  #cp ../$config_vars ./Makefile
   make
   make install

@@ -1,4 +1,3 @@
-#home=/media/umass/datasystem/xin/multithreadingtests
 home=/home/tpliu/xinzhao/multithreadingtests
 #local_ip=192.168.1.24
 local_ip=10.242.129.222
@@ -20,6 +19,7 @@ preload_map["scalloc"]="/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release
 preload_map["tbbmalloc"]="/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/"
 preload_map["pthread"]=""
 preload_map["numalloc"]="/home/tpliu/xinzhao/numalloc/source/"
+
 
 declare -A lib_with_path_map
 lib_with_path_map["tcmalloc"]="${preload_map["tcmalloc"]}/libtcmalloc.so.4.5.3"

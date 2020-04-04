@@ -6,9 +6,9 @@ TEST_FILES = AnnealingFactor BodyGeometry CameraModel ImageMeasurements main Tra
 THREADS = $(NCORES)
 
 ifeq ($(DATASET), native)
-	TEST_ARGS = $(DATASET_HOME)/bodytrack/sequenceB_261 4 261 4000 5 0 $(THREADS)
+	TEST_ARGS = $(DATASET_HOME)/bodytrack/sequenceB_261 4 261 4000 5 0 $(THREADS) 0
 else ifeq ($(DATASET), large)
-	TEST_ARGS = $(DATASET_HOME)/bodytrack/sequenceB_4 4 4 4000 5 0 $(THREADS)
+	TEST_ARGS = $(DATASET_HOME)/bodytrack/sequenceB_4 4 4 4000 5 0 $(THREADS) 0
 endif
 
 #CFLAGS = -DINSERT_PADDING -fexceptions -DENABLE_THREADS -DUSE_THREADS -DPARALLEL -DHAVE_LIBPTHREAD -I./ -I./FlexImageLib/ 

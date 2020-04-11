@@ -73,7 +73,8 @@ int x264_cqm_init( x264_t *h )
     int def_dequant8[6][64];
     int quant4_mf[4][6][4][4];
     int quant8_mf[2][6][8][8];
-    int q, i, j, i_list;
+    volatile int i;
+    int q, j, i_list;
     int deadzone[4] = { 32 - h->param.analyse.i_luma_deadzone[1],
                         32 - h->param.analyse.i_luma_deadzone[0],
                         32 - 11, 32 - 21 };

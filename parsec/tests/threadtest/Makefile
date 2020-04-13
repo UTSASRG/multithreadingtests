@@ -8,6 +8,6 @@ CFLAGS = -std=c++14 -g -O3 -DNDEBUG -I./common/
 
 LIBS = -lpthread
 
-TEST_ARGS = 128 100 1280000 0 64
+TEST_ARGS = $(THREADS) 100 1280000 0 64
 
 include $(HOME)/Default.mk

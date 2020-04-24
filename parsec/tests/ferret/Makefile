@@ -5,6 +5,8 @@ TEST_FILES = ferret arena assign bench bitmap cass cass_dist cass_reg cuckoo_has
 
 ifeq ($(NCORES), 128)
   THREADS := 32
+else ifeq ($(NCORES), 64)
+  THREADS := 16
 else ifeq ($(NCORES), 40)
   THREADS := 10
 else ifeq ($(NCORES), 32)

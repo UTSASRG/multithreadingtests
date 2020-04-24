@@ -5,6 +5,8 @@ TEST_FILES = binheap decoder dedup encoder hashtable queue rabin tree util
 
 ifeq ($(NCORES), 128)
   THREADS := 32
+else ifeq ($(NCORES), 64)
+  THREADS := 16
 else ifeq ($(NCORES), 40)
   THREADS := 12
 else ifeq ($(NCORES), 32)

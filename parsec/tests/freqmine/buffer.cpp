@@ -37,6 +37,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 #include "buffer.h"
 #include "common.h"
 #include <malloc.h>
+#include <string.h>
 
 memory::memory()
 {
@@ -115,6 +116,7 @@ char * memory::newbuf(unsigned int num,unsigned int size)
 	start[pos] += i; // adjust start and rest
 	rest[pos] -= i;
 
+  memset(hlp, 0, i);
 	return hlp;
 }
 

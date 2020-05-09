@@ -750,6 +750,7 @@ void FP_tree::scan1_DB(Data* fdat)
 	int thread = omp_get_thread_num();
 
 	mapfile = (MapFile*)database_buf->newbuf(1, sizeof(MapFile));
+  mapfile->init();
 	mapfile->first = NULL;
 	
 	counts = fdat->parseDataFile(mapfile);

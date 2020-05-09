@@ -129,6 +129,7 @@ void MapFileNode::init(int SIZE, int mul)
 	TransactionContent = (int *) new int [size];
 	size *= mul;
 	top = 0;
+	next=NULL;
 }
 
 void MapFileNode::finalize()

@@ -7,24 +7,43 @@ MYLIB_WITH_DIR = /media/umass/datasystem/xin/numalloc/source/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-fasterthantcmalloc-raytrace/libnumalloc.so
 #MYLIB_WITH_DIR = /media/umass/datasystem/tongping/numalloc/source-48-class-size/libnumalloc.so
 MYLIB = numalloc
-#TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
+TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/gperftools-2.7/.libs/libtcmalloc.so
 #TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
-TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/libtcmalloc.so
+#TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/gperftools-2.7/.libs/libtcmalloc.so
 TCMALLOC_LIB = tcmalloc
-#NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
-NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
+#NUMA_AWARE_TCMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/libtcmalloc.so
 NUMA_AWARE_TCMALLOC_LIB = numaaware-tcmalloc
-#JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
-JEMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
+JEMALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
+#JEMALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/jemalloc-5.2.1/lib/libjemalloc.so
 JEMALLOC_LIB = jemalloc
-#SCALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
-SCALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
+SCALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
+#SCALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/libscalloc.so
 SCALLOC_LIB = scalloc
-#TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
-TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/libtbb.so.2
+TBB_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/libtbb.so.2
+#TBB_MALLOC_LIB_WITH_DIR = /home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/libtbb.so.2
 TBB_MALLOC_LIB = tbbmalloc
 LIBC_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/libc-2.28/libmalloc.so
 LIBC_MALLOC_LIB = libcmalloc
+
+HOARD_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/Hoard/src/libhoard.so
+HOARD_MALLOC_LIB = hoard
+
+OPENBSD_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/OpenBSD-6.0/libomalloc.so
+OPENBSD_MALLOC_LIB = openbsd
+
+DIEHARD_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/DieHard/src/libdieharder.so
+DIEHARD_MALLOC_LIB = dieharder
+
+
+LIBC221_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/libc-2.21/libmalloc.so
+LIBC221_MALLOC_LIB = libc221
+
+#LIBC228_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/libc-2.28/libmalloc.so
+LIBC228_MALLOC_LIB_WITH_DIR = /media/umass/datasystem/xin/Memoryallocators/libc-2.28-final/libmalloc.so
+LIBC228_MALLOC_LIB = libc228
+
+
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB_WITH_DIR = /home/tliu/light/source/liblight.so
 #MYLIB = light
@@ -228,7 +247,8 @@ obj/%-$(SCALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(SCALLOC_LIB): $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_WITH_DIR)
 	$(CXX) $(SCALLOC_LIB_CFLAGS) -o $@ $(SCALLOC_LIB_OBJS) $(SCALLOC_LIB_LIBS)
 
-eval-$(SCALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/
+#eval-$(SCALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release/lib.target/
+eval-$(SCALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/allocaters/scalloc-1.0.0/out/Release/lib.target/
 eval-$(SCALLOC_LIB): $(TEST_NAME)-$(SCALLOC_LIB)
 	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(SCALLOC_LIB) $(TEST_ARGS)
 
@@ -322,7 +342,9 @@ obj/%-$(TBB_MALLOC_LIB).o: %$(SRC_SUFFIX)
 $(TEST_NAME)-$(TBB_MALLOC_LIB): $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_WITH_DIR)
 	$(CXX) $(TBB_MALLOC_LIB_CFLAGS) -o $@ $(TBB_MALLOC_LIB_OBJS) $(TBB_MALLOC_LIB_LIBS)
 
-eval-$(TBB_MALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/
+#eval-$(TBB_MALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/
+eval-$(TBB_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc7.4.0_libc2.27_kernel5.0.0_release/
+
 eval-$(TBB_MALLOC_LIB): $(TEST_NAME)-$(TBB_MALLOC_LIB)
 	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(TBB_MALLOC_LIB) $(TEST_ARGS)
 
@@ -368,12 +390,12 @@ $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB): $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_
 	$(CXX) $(NUMA_AWARE_TCMALLOC_LIB_CFLAGS) -o $@ $(NUMA_AWARE_TCMALLOC_LIB_OBJS) $(NUMA_AWARE_TCMALLOC_LIB_LIBS)
 
 #eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/tongping/Memoryallocators/NUMA-aware_TCMalloc/.libs/
-#eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
-eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/NUMA-aware_TCMalloc/.libs/
+#eval-$(NUMA_AWARE_TCMALLOC_LIB): export LD_LIBRARY_PATH=/home/tpliu/xinzhao/Memoryallocators/NUMA-aware_TCMalloc/.libs/
 
 eval-$(NUMA_AWARE_TCMALLOC_LIB): $(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB)
-	#/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
-	/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
+	#/usr/bin/time ./$(TEST_NAME)-$(NUMA_AWARE_TCMALLOC_LIB) $(TEST_ARGS)
 
 
 ############ ${LIBC_MALLOC_LIB) builders ############
@@ -419,4 +441,242 @@ $(TEST_NAME)-$(LIBC_MALLOC_LIB): $(LIBC_MALLOC_LIB_OBJS) $(LIBC_MALLOC_LIB_WITH_
 eval-$(LIBC_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
 
 eval-$(LIBC_MALLOC_LIB): $(TEST_NAME)-$(LIBC_MALLOC_LIB)
-	/usr/bin/time ./$(TEST_NAME)-$(LIBC_MALLOC_LIB) $(TEST_ARGS)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(LIBC_MALLOC_LIB) $(TEST_ARGS)
+
+
+
+############ ${HOARD_MALLOC_LIB) builders ############
+
+HOARD_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+HOARD_MALLOC_LIB_LIBS += -rdynamic $(HOARD_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+HOARD_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(HOARD_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(HOARD_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(HOARD_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(HOARD_MALLOC_LIB): $(HOARD_MALLOC_LIB_OBJS) $(HOARD_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(HOARD_MALLOC_LIB_CFLAGS) -o $@ $(HOARD_MALLOC_LIB_OBJS) $(HOARD_MALLOC_LIB_LIBS)
+
+eval-$(HOARD_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(HOARD_MALLOC_LIB): $(TEST_NAME)-$(HOARD_MALLOC_LIB)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(HOARD_MALLOC_LIB) $(TEST_ARGS)
+
+
+
+
+
+############ ${OPENBSD_MALLOC_LIB) builders ############
+
+OPENBSD_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+OPENBSD_MALLOC_LIB_LIBS += -rdynamic $(OPENBSD_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+OPENBSD_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(OPENBSD_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(OPENBSD_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(OPENBSD_MALLOC_LIB): $(OPENBSD_MALLOC_LIB_OBJS) $(OPENBSD_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(OPENBSD_MALLOC_LIB_CFLAGS) -o $@ $(OPENBSD_MALLOC_LIB_OBJS) $(OPENBSD_MALLOC_LIB_LIBS)
+
+eval-$(OPENBSD_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(OPENBSD_MALLOC_LIB): $(TEST_NAME)-$(OPENBSD_MALLOC_LIB)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(OPENBSD_MALLOC_LIB) $(TEST_ARGS)
+
+
+
+############ ${DIEHARD_MALLOC_LIB) builders ############
+
+DIEHARD_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+DIEHARD_MALLOC_LIB_LIBS += -rdynamic $(DIEHARD_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+DIEHARD_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(DIEHARD_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(DIEHARD_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(DIEHARD_MALLOC_LIB): $(DIEHARD_MALLOC_LIB_OBJS) $(DIEHARD_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(DIEHARD_MALLOC_LIB_CFLAGS) -o $@ $(DIEHARD_MALLOC_LIB_OBJS) $(DIEHARD_MALLOC_LIB_LIBS)
+
+eval-$(DIEHARD_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(DIEHARD_MALLOC_LIB): $(TEST_NAME)-$(DIEHARD_MALLOC_LIB)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(DIEHARD_MALLOC_LIB) $(TEST_ARGS)
+
+
+
+############ ${LIBC221_MALLOC_LIB) builders ############
+
+LIBC221_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+LIBC221_MALLOC_LIB_LIBS += -rdynamic $(LIBC221_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+LIBC221_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(LIBC221_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC221_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(LIBC221_MALLOC_LIB): $(LIBC221_MALLOC_LIB_OBJS) $(LIBC221_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(LIBC221_MALLOC_LIB_CFLAGS) -o $@ $(LIBC221_MALLOC_LIB_OBJS) $(LIBC221_MALLOC_LIB_LIBS)
+
+eval-$(LIBC221_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(LIBC221_MALLOC_LIB): $(TEST_NAME)-$(LIBC221_MALLOC_LIB)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(LIBC221_MALLOC_LIB) $(TEST_ARGS)
+
+
+
+
+############ ${LIBC228_MALLOC_LIB) builders ############
+
+LIBC228_MALLOC_LIB_CFLAGS = $(CFLAGS) -DNDEBUG
+LIBC228_MALLOC_LIB_LIBS += -rdynamic $(LIBC228_MALLOC_LIB_WITH_DIR) $(LIBS) -lpthread -ldl
+
+
+LIBC228_MALLOC_LIB_OBJS = $(addprefix obj/, $(addsuffix -$(LIBC228_MALLOC_LIB).o, $(TEST_FILES)))
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %-pthread.c
+	mkdir -p obj
+	$(CC) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %.c
+	mkdir -p obj
+	$(CC) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %-pthread.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %.cpp
+	mkdir -p obj
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %.cxx
+	mkdir -p obj
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %.cc
+	mkdir -p obj
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+obj/%-$(LIBC228_MALLOC_LIB).o: %$(SRC_SUFFIX)
+	mkdir -p obj
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -c $< -o $@ -I$(HOME)/include
+
+### FIXME, put the
+$(TEST_NAME)-$(LIBC228_MALLOC_LIB): $(LIBC228_MALLOC_LIB_OBJS) $(LIBC228_MALLOC_LIB_WITH_DIR)
+	$(CXX) $(LIBC228_MALLOC_LIB_CFLAGS) -o $@ $(LIBC228_MALLOC_LIB_OBJS) $(LIBC228_MALLOC_LIB_LIBS)
+
+eval-$(LIBC228_MALLOC_LIB): export LD_LIBRARY_PATH=/media/umass/datasystem/xin/Memoryallocators/libc-2.28/
+
+eval-$(LIBC228_MALLOC_LIB): $(TEST_NAME)-$(LIBC228_MALLOC_LIB)
+	/usr/bin/time -f "real:%e,  user:%U,  sys:%S, mem(Kb):%M" ./$(TEST_NAME)-$(LIBC228_MALLOC_LIB) $(TEST_ARGS)

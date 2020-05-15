@@ -20,10 +20,18 @@ all_benchmarks.remove('streamcluster-parsec')
 all_benchmarks.remove('streamcluster_2.1')
 all_benchmarks.remove('string_match')
 all_benchmarks.remove('word_count')
+all_benchmarks.remove('pfscan')
+all_benchmarks.remove('larson')
+all_benchmarks.remove('aget')
+all_benchmarks.remove('pbzip2')
+all_benchmarks.remove('sqlite3')
+all_benchmarks.remove('cache-scratch')
+all_benchmarks.remove('cache-thrash')
+all_benchmarks.remove('threadtest')
 all_benchmarks.sort()
 
-all_configs = ['pthread','numalloc'  ,'tcmalloc' , 'numaaware-tcmalloc' , 'jemalloc' , 'tbbmalloc' , 'scalloc']
-runs = 1
+all_configs = ['pthread','numalloc'  ,'tcmalloc' , 'numaaware-tcmalloc' , 'jemalloc' , 'tbbmalloc' , 'scalloc','hoard','openbsd','dieharder','libc221','libc228']
+runs = 10
 
 cores = 'current'
 

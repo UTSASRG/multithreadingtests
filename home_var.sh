@@ -19,6 +19,7 @@ preload_map["scalloc"]="/home/tpliu/xinzhao/allocaters/scalloc-1.0.0/out/Release
 preload_map["tbbmalloc"]="/home/tpliu/xinzhao/allocaters/tbb-2020.1/build/linux_intel64_gcc_cc8.3.0_libc2.28_kernel4.19.0_release/"
 preload_map["pthread"]=""
 preload_map["numalloc"]="/home/tpliu/xinzhao/numalloc/source/"
+preload_map["libmi"]="/home/tpliu/xinzhao/mimalloc/build/"
 
 
 declare -A lib_with_path_map
@@ -29,3 +30,4 @@ lib_with_path_map["scalloc"]="${preload_map["scalloc"]}/libscalloc.so"
 lib_with_path_map["tbbmalloc"]="${preload_map["tbbmalloc"]}/libtbb.so.2"
 lib_with_path_map["pthread"]="NULL"
 lib_with_path_map["numalloc"]="${preload_map["numalloc"]}/libnumalloc.so"
+lib_with_path_map["libmi"]="${preload_map["libmi"]}/libmimalloc.so"

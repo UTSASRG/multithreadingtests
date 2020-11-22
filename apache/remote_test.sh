@@ -1,8 +1,8 @@
 #!/bin/bash
 source ../home_var.sh
 
-for allocator in {"pthread","numalloc","tcmalloc","numaaware-tcmalloc","jemalloc","tbbmalloc","scalloc"}
-#for allocator in {"scalloc",}
+for allocator in {"pthread","numalloc","tcmalloc","numaaware-tcmalloc","jemalloc","tbbmalloc","scalloc","libmi"}
+#for allocator in {"numalloc",}
 do
   echo "begin build $allocator"
   ssh tpliu@dynaoptimal950.cs.utsa.edu "cd $home/apache;./build.sh $allocator" > /dev/null

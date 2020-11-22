@@ -2,12 +2,12 @@
 source ../home_var.sh
 
 set -x
-#for allocator in {"pthread","numalloc","tcmalloc","numaaware-tcmalloc","jemalloc","tbbmalloc","scalloc"}
-for allocator in {"numalloc",}
+for allocator in {"pthread","numalloc","tcmalloc","numaaware-tcmalloc","jemalloc","tbbmalloc","scalloc","libmi"}
+#for allocator in {"numalloc",}
 do
   echo "begin build $allocator"
   ssh tpliu@dynaoptimal950.cs.utsa.edu "cd $home/memcached;./build.sh $allocator" > /dev/null
-  for i in `seq 1`
+  for i in `seq 5`
   do
     echo "begin test $allocator---$i:" >> 'test.out'
     ssh tpliu@dynaoptimal950.cs.utsa.edu "cd $home/memcached;./memcached.sh start $allocator" &

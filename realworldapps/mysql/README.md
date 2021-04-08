@@ -26,7 +26,7 @@ Version: 5.7.15
 - tools [No change needed]
     Other tools required for this test
     - sysbench
-    Sysbench is a tool that can send requests to mysql server.
+    Sysbench is a tool that can send requests to mysql server. It only works as input. So compilation customization is not provided for this tool.
 - artifects [No change needed]
     This folder stores other things required during the build. Other scripts can use it anytime.
     - create_database.sql: Initialize mysql scripts for sysbench

@@ -13,3 +13,6 @@
 [submodule "realwordapps/lulesh/src"]
 	path = realwordapps/lulesh/src
 	url = https://github.com/LLNL/LULESH.git
+[submodule "realwordapps/php/src"]
+	path = realwordapps/php/src
+	url = https://github.com/php/php-src.git

@@ -7,3 +7,9 @@
 [submodule "realwordapps/memcached/src"]
 	path = realwordapps/memcached/src
 	url = https://github.com/memcached/memcached.git
+[submodule "realwordapps/lulesh/LULESH"]
+	path = realwordapps/lulesh/LULESH
+	url = https://github.com/LLNL/LULESH.git
+[submodule "realwordapps/lulesh/src"]
+	path = realwordapps/lulesh/src
+	url = https://github.com/LLNL/LULESH.git

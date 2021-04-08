@@ -18,8 +18,8 @@ You should **NOT** commit anything that is related to your own program unless yo
 
 The typical testing workflow is like this:
 - Clone and initialize this repo
-- Take a look at the ReadMe.md and learn the funcitonality of different scripts/folders and learn which scripts you need to modify. Only check and change scripts as instrcted (Unless you are developing the benchmark suite by itself). You don't need to change/understand other scripts. This design is to seperate things you should know and things you don't need to care about.
-- Customize python scripts. The most common tasks should already been provided in example scripts. So you probably only need to change a few lines of code. Understanding those scripts is necessary. Otherwise you won't be certain about the compilation process.
+- Take a look at the ReadMe.md and learn the funcitonality of different scripts/folders. Most importantly, you need to figure out which scripts you need to modify. Only check and change scripts as instrcted. You don't need to change/understand other scripts. This design is to seperate things you should know and things you don't need to care about.
+- Customize python scripts. The most common tasks should already been provided in example scripts. So you probably only need to change a few lines of code. Understanding those scripts is necessary. Otherwise you won't have control over the the compilation process.
 - Run built-in scripts. Those scripts should automatically call your customized scripts.
 
 ## How to use

@@ -1,0 +1,6 @@
+[submodule "realwordapps/apache/src"]
+	path = realwordapps/apache/src
+	url = https://github.com/apache/httpd.git
+[submodule "realwordapps/mysql/src"]
+	path = realwordapps/mysql/src
+	url = https://github.com/mysql/mysql-server.git

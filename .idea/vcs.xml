@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/apache/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/lulesh/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/memcached/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/mysql/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/php/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/realworldapps/sqlite/src" vcs="Git" />
+  </component>
+</project>

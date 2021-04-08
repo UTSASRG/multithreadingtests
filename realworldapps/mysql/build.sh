@@ -3,6 +3,9 @@
 #Print commands and their arguments while this script is executed
 set -xe
 
+#Change directory to root directory
+cd $MYSQL_BENCHMARK_ROOT_DIR
+
 echo "====> Load configuration" > /dev/null
 source config.sh
 
@@ -19,21 +22,19 @@ echo "====> Remove previous build" > /dev/null
 rm -rf src/build
 
 # Let cmake generate makefile
-cd src
-mkdir -p build
-cd build
+mkdir -p src/build
+cd src/build
 cmake .. -DDOWNLOAD_BOOST=1 -DWITH_BOOST=..
-cd ../../
-
+cd ../..
 
 echo "====> Adding custom build option to mysqld makefile" > /dev/null
 #Backup old build command
-mv ./src/build/sql/CMakeFiles/mysqld.dir/link.txt ./src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp
+mv src/build/sql/CMakeFiles/mysqld.dir/link.txt src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp
 
 #build.sh will pass all it's arguments to environment variable
 export SCRIPT_EXEC_ARG=$@
 echo "====> Processing build command with script \"$BUILD_ARG_PROCESS_SCRIPT\"" > /dev/null
-cat "./src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp" | ${BUILD_ARG_PROCESS_SCRIPT} > "./src/build/sql/CMakeFiles/mysqld.dir/link.txt"
+cat "src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp" | ${BUILD_ARG_PROCESS_SCRIPT} > "src/build/sql/CMakeFiles/mysqld.dir/link.txt"
 #Unset env variable
 unset SCRIPT_EXEC_ARG
 

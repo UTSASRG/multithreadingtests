@@ -22,3 +22,6 @@
 [submodule "realworldapps/mysql/libs/boost"]
 	path = realworldapps/mysql/libs/boost
 	url = https://github.com/boostorg/boost.git
+[submodule "realworldapps/mysql/tools/sysbench"]
+	path = realworldapps/mysql/tools/sysbench
+	url = https://github.com/akopytov/sysbench.git

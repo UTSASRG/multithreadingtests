@@ -19,3 +19,6 @@
 [submodule "realwordapps/sqlite/src"]
 	path = realworldapps/sqlite/src
 	url = https://github.com/sqlite/sqlite.git
+[submodule "realworldapps/mysql/libs/boost"]
+	path = realworldapps/mysql/libs/boost
+	url = https://github.com/boostorg/boost.git

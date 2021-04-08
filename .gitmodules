@@ -16,3 +16,6 @@
 [submodule "realwordapps/php/src"]
 	path = realwordapps/php/src
 	url = https://github.com/php/php-src.git
+[submodule "realwordapps/sqlite/src"]
+	path = realwordapps/sqlite/src
+	url = https://github.com/sqlite/sqlite.git

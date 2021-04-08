@@ -4,3 +4,6 @@
 [submodule "realwordapps/mysql/src"]
 	path = realwordapps/mysql/src
 	url = https://github.com/mysql/mysql-server.git
+[submodule "realwordapps/memcached/src"]
+	path = realwordapps/memcached/src
+	url = https://github.com/memcached/memcached.git

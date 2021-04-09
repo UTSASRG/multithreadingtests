@@ -1,3 +1,0 @@
-configure.ac:40: installing 'config/compile'
-configure.ac:32: installing 'config/missing'
-src/Makefile.am: installing 'config/depcomp'

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Print commands and their arguments while this script is executed
-set -xe
+set -x
 
 pkill mysqld
 pkill mysqld_safe

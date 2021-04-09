@@ -19,11 +19,17 @@ export AFTER_BUILD_SCRIPT="NULL"
 
 export MYSQL_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
 
+
+export PRE_TEST_SCRIPT="NULL"
+
+export AFTER_TEST_SCRIPT="NULL"
+
 #==============================================================================
 # User config zone (Please override settings here)
 #==============================================================================
 
 export BUILD_ARG_PROCESS_SCRIPT="`pwd`/myscripts/addExtraArgProcessorBasedOnArg.py"
 
-
 export AFTER_BUILD_SCRIPT="`pwd`/myscripts/install.sh"
+
+export AFTER_TEST_SCRIPT="`pwd`/myscripts/AfterBuild_install.sh"

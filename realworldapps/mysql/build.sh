@@ -52,6 +52,7 @@ cd ../..
 
 echo "====> Building sysbench (A tool that send requests)"> /dev/null
 
+cd $MYSQL_BENCHMARK_ROOT_DIR
 export PATH=$PATH:`realpath ./src/install/$1/usr/local/mysql/bin`
 cd tools/sysbench
 ./autogen.sh

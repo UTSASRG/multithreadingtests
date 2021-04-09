@@ -1,0 +1,16 @@
+./autogen.sh: running `libtoolize --copy --force' 
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+./autogen.sh: running `aclocal -I m4' 
+./autogen.sh: running `autoheader' 
+./autogen.sh: running `automake -c --foreign --add-missing' 
+./autogen.sh: running `autoconf' 
+Libtoolized with: libtoolize (GNU libtool) 2.4.6
+Automade with: automake (GNU automake) 1.16.1
+Configured with: autoconf (GNU Autoconf) 2.69

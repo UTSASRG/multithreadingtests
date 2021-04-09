@@ -1,0 +1,234 @@
+-- Running cmake version 3.16.3
+-- Found Git: /usr/bin/git (found version "2.25.1") 
+-- Configuring with MAX_INDEXES = 64U
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 9.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for SHM_HUGETLB
+-- Looking for SHM_HUGETLB - found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of void *
+-- Check size of void * - done
+-- SIZEOF_VOIDP 8
+-- Performing Test HAVE_C_FLOATING_POINT_OPTIMIZATION_PROBLEMS
+-- Performing Test HAVE_C_FLOATING_POINT_OPTIMIZATION_PROBLEMS - Failed
+-- Performing Test HAVE_CXX_FLOATING_POINT_OPTIMIZATION_PROBLEMS
+-- Performing Test HAVE_CXX_FLOATING_POINT_OPTIMIZATION_PROBLEMS - Failed
+-- MySQL 5.7.15
+-- Packaging as: mysql-5.7.15-Linux-x86_64
+-- Local boost dir /home/st/Projects/multithreadingtests/realworldapps/mysql/src/boost_1_59_0
+-- Found /home/st/Projects/multithreadingtests/realworldapps/mysql/src/boost_1_59_0/boost/version.hpp 
+-- BOOST_VERSION_NUMBER is #define BOOST_VERSION 105900
+-- BOOST_INCLUDE_DIR /home/st/Projects/multithreadingtests/realworldapps/mysql/src/boost_1_59_0
+-- Performing Test HAVE_LLVM_LIBCPP
+-- Performing Test HAVE_LLVM_LIBCPP - Failed
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Looking for floor
+-- Looking for floor - not found
+-- Looking for floor in m
+-- Looking for floor in m - found
+-- Looking for gethostbyname_r
+-- Looking for gethostbyname_r - found
+-- Looking for bind
+-- Looking for bind - found
+-- Looking for crypt
+-- Looking for crypt - not found
+-- Looking for crypt in crypt
+-- Looking for crypt in crypt - found
+-- Looking for setsockopt
+-- Looking for setsockopt - found
+-- Looking for dlopen
+-- Looking for dlopen - not found
+-- Looking for dlopen in dl
+-- Looking for dlopen in dl - found
+-- Looking for sched_yield
+-- Looking for sched_yield - found
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for timer_create
+-- Looking for timer_create - not found
+-- Looking for timer_create in rt
+-- Looking for timer_create in rt - found
+-- Looking for atomic_thread_fence
+-- Looking for atomic_thread_fence - not found
+-- Looking for atomic_thread_fence in atomic
+-- Looking for atomic_thread_fence in atomic - found
+-- Looking for include file alloca.h
+-- Looking for include file alloca.h - found
+-- Looking for include file arpa/inet.h
+-- Looking for include file arpa/inet.h - found
+-- Looking for include file dirent.h
+-- Looking for include file dirent.h - found
+-- Looking for include file dlfcn.h
+-- Looking for include file dlfcn.h - found
+-- Looking for include file execinfo.h
+-- Looking for include file execinfo.h - found
+-- Looking for include file fpu_control.h
+-- Looking for include file fpu_control.h - found
+-- Looking for include file grp.h
+-- Looking for include file grp.h - found
+-- Looking for include file ieeefp.h
+-- Looking for include file ieeefp.h - not found
+-- Looking for include file langinfo.h
+-- Looking for include file langinfo.h - found
+-- Looking for include file malloc.h
+-- Looking for include file malloc.h - found
+-- Looking for include file netinet/in.h
+-- Looking for include file netinet/in.h - found
+-- Looking for include file poll.h
+-- Looking for include file poll.h - found
+-- Looking for include file pwd.h
+-- Looking for include file pwd.h - found
+-- Looking for include file strings.h
+-- Looking for include file strings.h - found
+-- Looking for include file sys/cdefs.h
+-- Looking for include file sys/cdefs.h - found
+-- Looking for include file sys/ioctl.h
+-- Looking for include file sys/ioctl.h - found
+-- Looking for include file sys/mman.h
+-- Looking for include file sys/mman.h - found
+-- Looking for include file sys/resource.h
+-- Looking for include file sys/resource.h - found
+-- Looking for include file sys/select.h
+-- Looking for include file sys/select.h - found
+-- Looking for include file sys/socket.h
+-- Looking for include file sys/socket.h - found
+-- Looking for include files curses.h, term.h
+-- Looking for include files curses.h, term.h - found
+-- Looking for include file termios.h
+-- Looking for include file termios.h - found
+-- Looking for include file termio.h
+-- Looking for include file termio.h - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file sys/wait.h
+-- Looking for include file sys/wait.h - found
+-- Looking for include file sys/param.h
+-- Looking for include file sys/param.h - found
+-- Looking for include file fnmatch.h
+-- Looking for include file fnmatch.h - found
+-- Looking for include file sys/un.h
+-- Looking for include file sys/un.h - found
+-- Looking for include file vis.h
+-- Looking for include file vis.h - not found
+-- Looking for include file sasl/sasl.h
+-- Looking for include file sasl/sasl.h - not found
+-- Looking for include file sys/devpoll.h
+-- Looking for include file sys/devpoll.h - not found
+-- Looking for include file sys/epoll.h
+-- Looking for include file sys/epoll.h - found
+-- Looking for TAILQ_FOREACH
+-- Looking for TAILQ_FOREACH - found
+-- Looking for _aligned_malloc
+-- Looking for _aligned_malloc - not found
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- Looking for printstack
+-- Looking for printstack - not found
+-- Looking for index
+-- Looking for index - found
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for cuserid
+-- Looking for cuserid - found
+-- Looking for directio
+-- Looking for directio - not found
+-- Looking for ftruncate
+-- Looking for ftruncate - found
+-- Looking for compress
+-- Looking for compress - not found
+-- Looking for crypt
+-- Looking for crypt - found
+-- Looking for dlopen
+-- Looking for dlopen - found
+-- Looking for fchmod
+-- Looking for fchmod - found
+-- Looking for fcntl
+-- Looking for fcntl - found
+-- Looking for fdatasync
+-- Looking for fdatasync - found
+-- Looking for fdatasync
+-- Looking for fdatasync - found
+-- Looking for fedisableexcept
+-- Looking for fedisableexcept - found
+-- Looking for fseeko
+-- Looking for fseeko - found
+-- Looking for fsync
+-- Looking for fsync - found
+-- Looking for gethostbyaddr_r
+-- Looking for gethostbyaddr_r - found
+-- Looking for gethrtime
+-- Looking for gethrtime - not found
+-- Looking for getnameinfo
+-- Looking for getnameinfo - found
+-- Looking for getpass
+-- Looking for getpass - found
+-- Looking for getpassphrase
+-- Looking for getpassphrase - not found
+-- Looking for getpwnam
+-- Looking for getpwnam - found
+-- Looking for getpwuid
+-- Looking for getpwuid - found
+-- Looking for getrlimit
+-- Looking for getrlimit - found
+-- Looking for getrusage
+-- Looking for getrusage - found
+-- Looking for initgroups
+-- Looking for initgroups - found
+-- Looking for issetugid
+-- Looking for issetugid - not found
+-- Looking for getuid
+-- Looking for getuid - found
+-- Looking for geteuid
+-- Looking for geteuid - found
+-- Looking for getgid
+-- Looking for getgid - found
+-- Looking for getegid
+-- Looking for getegid - found
+-- Looking for lstat
+-- Looking for lstat - found
+-- Looking for madvise
+-- Looking for madvise - found
+-- Looking for malloc_info
+-- Looking for malloc_info - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Looking for mlock
+-- Looking for mlock - found
+-- Looking for mlockall
+-- Looking for mlockall - found
+-- Looking for mmap64
+-- Looking for mmap64 - found
+-- Looking for poll
+-- Looking for poll - found
+-- Looking for posix_fallocate
+-- Looking for posix_fallocate - found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for pread
+-- Looking for pread - found
+-- Looking for pthread_condattr_setclock

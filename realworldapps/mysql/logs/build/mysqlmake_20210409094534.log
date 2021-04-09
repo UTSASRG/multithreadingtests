@@ -1,0 +1,636 @@
+[  0%] Generating help.c
+Scanning dependencies of target INFO_SRC
+Scanning dependencies of target INFO_BIN
+Scanning dependencies of target abi_check
+[  0%] Generating common.h
+Scanning dependencies of target comp_sql
+[  0%] Building C object scripts/CMakeFiles/comp_sql.dir/comp_sql.c.o
+[  0%] Generating help.h
+[  0%] Generating vi.h
+Scanning dependencies of target gen_lex_hash
+Scanning dependencies of target lz4_lib
+Scanning dependencies of target mysqlservices
+Scanning dependencies of target regex
+[  0%] Generating emacs.h
+Scanning dependencies of target zlib
+[  0%] Building C object extra/CMakeFiles/lz4_lib.dir/lz4/lz4frame.c.o
+[  1%] Building CXX object sql/CMakeFiles/gen_lex_hash.dir/gen_lex_hash.cc.o
+Scanning dependencies of target vio
+[  1%] Building C object extra/CMakeFiles/lz4_lib.dir/lz4/lz4.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/service_command.c.o
+[  1%] Building C object regex/CMakeFiles/regex.dir/regcomp.c.o
+[  1%] Built target INFO_SRC
+[  1%] Building C object zlib/CMakeFiles/zlib.dir/adler32.c.o
+[  1%] Generating fcns.c
+[  1%] Building C object vio/CMakeFiles/vio.dir/vio.c.o
+[  1%] Built target INFO_BIN
+Scanning dependencies of target taocrypt
+Scanning dependencies of target yassl
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/locking_service.c.o
+[  1%] Generating fcns.h
+[  1%] Building C object regex/CMakeFiles/regex.dir/regerror.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/srv_session_service.c.o
+[  1%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/buffer.cpp.o
+[  1%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/aes.cpp.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/my_snprintf_service.c.o
+[  1%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/aestables.cpp.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/thd_alloc_service.c.o
+Scanning dependencies of target edit
+Scanning dependencies of target strings
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/thd_wait_service.c.o
+[  1%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/chared.c.o
+[  1%] Building C object strings/CMakeFiles/strings.dir/bchange.c.o
+[  1%] Built target abi_check
+[  1%] Linking C executable comp_sql
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/my_plugin_log_service.c.o
+[  1%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/cert_wrapper.cpp.o
+[  1%] Building C object zlib/CMakeFiles/zlib.dir/compress.c.o
+[  1%] Building C object zlib/CMakeFiles/zlib.dir/crc32.c.o
+[  1%] Building C object zlib/CMakeFiles/zlib.dir/deflate.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/my_thread_scheduler_service.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/mysql_string_service.c.o
+[  1%] Built target comp_sql
+[  1%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/chartype.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/mysql_malloc_service.c.o
+[  1%] Building C object vio/CMakeFiles/vio.dir/viosocket.c.o
+[  1%] Building C object strings/CMakeFiles/strings.dir/ctype-big5.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/mysql_password_policy_service.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/parser_service.c.o
+Scanning dependencies of target protobuf-lite
+Scanning dependencies of target protoclib
+[  1%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/srv_session_info_service.c.o
+[  1%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/code_generator.cc.o
+[  1%] Building C object vio/CMakeFiles/vio.dir/viossl.c.o
+[  1%] Building C object libservices/CMakeFiles/mysqlservices.dir/rpl_transaction_ctx_service.c.o
+[  2%] Building C object libservices/CMakeFiles/mysqlservices.dir/rpl_transaction_write_set_service.c.o
+[  2%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc.o
+[  2%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/algebra.cpp.o
+[  2%] Building C object libservices/CMakeFiles/mysqlservices.dir/security_context_service.c.o
+[  2%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/el.c.o
+[  2%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/arc4.cpp.o
+[  2%] Building C object libservices/CMakeFiles/mysqlservices.dir/mysql_keyring_service.c.o
+[  2%] Linking C static library libmysqlservices.a
+[  2%] Building C object strings/CMakeFiles/strings.dir/ctype-bin.c.o
+[  2%] Built target mysqlservices
+[  2%] Building C object strings/CMakeFiles/strings.dir/ctype-cp932.c.o
+[  2%] Building C object strings/CMakeFiles/strings.dir/ctype-czech.c.o
+[  2%] Building C object vio/CMakeFiles/vio.dir/viosslfactories.c.o
+[  2%] Linking CXX executable gen_lex_hash
+[  2%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/stubs/common.cc.o
+[  3%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/stubs/once.cc.o
+[  3%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/stubs/stringprintf.cc.o
+[  3%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/crypto_wrapper.cpp.o
+[  3%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/eln.c.o
+[  3%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/asn.cpp.o
+[  3%] Built target gen_lex_hash
+[  3%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/coding.cpp.o
+[  3%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/history.c.o
+[  3%] Linking C static library libvio.a
+[  3%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/historyn.c.o
+[  3%] Built target vio
+[  3%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/map.c.o
+[  3%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/extension_set.cc.o
+[  3%] Building C object zlib/CMakeFiles/zlib.dir/gzio.c.o
+[  3%] Building C object zlib/CMakeFiles/zlib.dir/infback.c.o
+[  3%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/command_line_interface.cc.o
+[  3%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/des.cpp.o
+[  3%] Building C object strings/CMakeFiles/strings.dir/ctype-euc_kr.c.o
+[  3%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/handshake.cpp.o
+[  3%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/lock.cpp.o
+[  3%] Building C object strings/CMakeFiles/strings.dir/ctype-eucjpms.c.o
+[  3%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/prompt.c.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/readline.c.o
+[  4%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/dh.cpp.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/search.c.o
+[  4%] Building C object extra/CMakeFiles/lz4_lib.dir/lz4/lz4hc.c.o
+[  4%] Building C object regex/CMakeFiles/regex.dir/regexec.c.o
+[  4%] Building C object regex/CMakeFiles/regex.dir/regfree.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/inffast.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/inflate.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/inftrees.c.o
+[  4%] Building C object extra/CMakeFiles/lz4_lib.dir/lz4/xxhash.c.o
+Scanning dependencies of target event
+[  4%] Building C object libevent/CMakeFiles/event.dir/event.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/trees.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/uncompr.c.o
+[  4%] Building C object zlib/CMakeFiles/zlib.dir/zutil.c.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/tokenizer.c.o
+[  4%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/dsa.cpp.o
+Scanning dependencies of target GenLiteProtos
+[  4%] Generating generated/protobuf_lite/mysqlx.proto
+[  4%] Generating generated/protobuf_lite/mysqlx_datatypes.proto
+[  4%] Building C object libevent/CMakeFiles/event.dir/buffer.c.o
+[  4%] Generating generated/protobuf_lite/mysqlx_connection.proto
+[  4%] Building C object strings/CMakeFiles/strings.dir/ctype-extra.c.o
+[  4%] Building C object strings/CMakeFiles/strings.dir/ctype-gb2312.c.o
+[  4%] Generating generated/protobuf_lite/mysqlx_expect.proto
+[  4%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/file.cpp.o
+[  4%] Generating generated/protobuf_lite/mysqlx_expr.proto
+[  4%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/log.cpp.o
+[  4%] Generating generated/protobuf_lite/mysqlx_crud.proto
+[  4%] Building C object libevent/CMakeFiles/event.dir/evbuffer.c.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/tokenizern.c.o
+[  4%] Generating generated/protobuf_lite/mysqlx_sql.proto
+[  4%] Generating generated/protobuf_lite/mysqlx_session.proto
+[  4%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/socket_wrapper.cpp.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/vi.c.o
+[  4%] Generating generated/protobuf_lite/mysqlx_notice.proto
+[  4%] Generating generated/protobuf_lite/mysqlx_resultset.proto
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/common.c.o
+[  4%] Built target GenLiteProtos
+[  4%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/ssl.cpp.o
+[  4%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/emacs.c.o
+[  4%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/hash.cpp.o
+[  4%] Building C object strings/CMakeFiles/strings.dir/ctype-gbk.c.o
+[  4%] Building C object libevent/CMakeFiles/event.dir/log.c.o
+[  4%] Building C object libevent/CMakeFiles/event.dir/signal.c.o
+[  4%] Building C object libevent/CMakeFiles/event.dir/evutil.c.o
+[  4%] Building C object regex/CMakeFiles/regex.dir/reginit.c.o
+[  5%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/timer.cpp.o
+[  5%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/yassl_error.cpp.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-gb18030.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/hist.c.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/event_tagging.c.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/evrpc.c.o
+[  5%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/integer.cpp.o
+[  5%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/yassl_imp.cpp.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/keymacro.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/parse.c.o
+[  5%] Linking C static library libregex.a
+[  5%] Building CXX object extra/yassl/CMakeFiles/yassl.dir/src/yassl_int.cpp.o
+[  5%] Built target regex
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/read.c.o
+[  5%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/plugin.cc.o
+[  5%] Building C object extra/yassl/CMakeFiles/yassl.dir/__/__/client/get_password.c.o
+[  5%] Linking C static library libzlib.a
+[  5%] Building C object libevent/CMakeFiles/event.dir/strlcpy.c.o
+[  5%] Built target zlib
+[  5%] Building C object libevent/CMakeFiles/event.dir/select.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-latin1.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/refresh.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/sig.c.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/http.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-mb.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-simple.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/terminal.c.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/tty.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-sjis.c.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/poll.c.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/epoll.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-tis620.c.o
+[  5%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/md2.cpp.o
+[  5%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/filecomplete.c.o
+[  5%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/md4.cpp.o
+[  5%] Building C object libevent/CMakeFiles/event.dir/epoll_sub.c.o
+[  5%] Building C object strings/CMakeFiles/strings.dir/ctype-uca.c.o
+[  6%] Linking C static library libevent.a
+[  6%] Building C object strings/CMakeFiles/strings.dir/ctype-ucs2.c.o
+[  6%] Built target event
+[  6%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/plugin.pb.cc.o
+Scanning dependencies of target GenFixPrivs
+[  7%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/help.c.o
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/md5.cpp.o
+[  7%] Generating mysql_fix_privilege_tables_sql.c
+[  7%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/fcns.c.o
+[  7%] Generating sql_commands_sys_schema.h
+[  7%] Building C object strings/CMakeFiles/strings.dir/ctype-ujis.c.o
+[  7%] Built target GenFixPrivs
+[  7%] Building C object strings/CMakeFiles/strings.dir/ctype-utf8.c.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/subprocess.cc.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/ctype-win1250ch.c.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/ctype.c.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/decimal.c.o
+[  7%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/np/vis.c.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/zip_writer.cc.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/dtoa.c.o
+[  7%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/np/unvis.c.o
+[  7%] Linking CXX static library libyassl.a
+[  7%] Built target yassl
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/misc.cpp.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/generated_message_util.cc.o
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/random.cpp.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/int2str.c.o
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/ripemd.cpp.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/is_prefix.c.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/llstr.c.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/message_lite.cc.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/repeated_field.cc.o
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/rsa.cpp.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/longlong2str.c.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/my_strtoll10.c.o
+[  7%] Building C object strings/CMakeFiles/strings.dir/my_vsnprintf.c.o
+Scanning dependencies of target boost_lib
+[  7%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/atomic/src/lockpool.cpp.o
+Scanning dependencies of target GenYaccEmbeddedSource
+[  7%] Generating sql_yacc.cc, sql_yacc.h
+[  7%] Linking C static library liblz4_lib.a
+[  7%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/chrono/src/chrono.cpp.o
+[  7%] Built target lz4_lib
+[  7%] Generating sql_hints.yy.cc, sql_hints.yy.h
+[  7%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/sha.cpp.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/wire_format_lite.cc.o
+[  7%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/io/coded_stream.cc.o
+[  8%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/np/strlcpy.c.o
+[  8%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/io/zero_copy_stream.cc.o
+[  8%] Building C object strings/CMakeFiles/strings.dir/str2int.c.o
+[  8%] Building C object strings/CMakeFiles/strings.dir/str_alloc.c.o
+[  8%] Building C object strings/CMakeFiles/strings.dir/strcend.c.o
+[  8%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/rabbit.cpp.o
+[  8%] Building CXX object extra/yassl/taocrypt/CMakeFiles/taocrypt.dir/src/hc128.cpp.o
+[  8%] Building CXX object extra/protobuf/CMakeFiles/protobuf-lite.dir/protobuf-2.6.1/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+[  8%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_enum.cc.o
+[  8%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/np/strlcat.c.o
+[  8%] Building C object strings/CMakeFiles/strings.dir/strend.c.o
+[  8%] Building C object cmd-line-utils/libedit/CMakeFiles/edit.dir/np/fgetln.c.o
+Scanning dependencies of target my_safe_process
+[  8%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_enum_field.cc.o
+[  8%] Building CXX object mysql-test/lib/My/SafeProcess/CMakeFiles/my_safe_process.dir/safe_process.cc.o
+[  9%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_extension.cc.o
+[  9%] Linking C static library libedit.a
+[  9%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_field.cc.o
+[  9%] Built target edit
+[  9%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_file.cc.o
+[  9%] Linking CXX executable my_safe_process
+[  9%] Built target my_safe_process
+Scanning dependencies of target GenSysSchema
+[  9%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/chrono/src/process_cpu_clocks.cpp.o
+[ 10%] Built target GenSysSchema
+[ 10%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/chrono/src/thread_clock.cpp.o
+[ 10%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/system/src/error_code.cpp.o
+Scanning dependencies of target GenServerSource
+[ 10%] Generating sql_yacc.cc, sql_yacc.h
+[ 10%] Linking CXX static library libprotobuf-lite.a
+[ 10%] Generating sql_hints.yy.cc, sql_hints.yy.h
+[ 10%] Built target protobuf-lite
+[ 10%] Generating lex_hash.h
+Scanning dependencies of target GenBootstrapPriv
+[ 10%] Generating sql_commands_system_data.h
+[ 10%] Building C object strings/CMakeFiles/strings.dir/strfill.c.o
+[ 10%] Generating sql_commands_system_tables.h
+[ 10%] Generating sql_commands_help_data.h
+[ 10%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/thread/src/future.cpp.o
+[ 10%] Built target GenBootstrapPriv
+[ 10%] Building C object strings/CMakeFiles/strings.dir/strmake.c.o
+[ 10%] Linking CXX static library libtaocrypt.a
+Scanning dependencies of target protobuf
+[ 10%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/strutil.cc.o
+[ 10%] Building C object strings/CMakeFiles/strings.dir/my_stpmov.c.o
+[ 10%] Built target taocrypt
+[ 10%] Building C object strings/CMakeFiles/strings.dir/my_stpnmov.c.o
+[ 10%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_generator.cc.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/strxmov.c.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/strxnmov.c.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/xml.c.o
+[ 11%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/thread/src/pthread/once.cpp.o
+[ 11%] Building CXX object client/dump/CMakeFiles/boost_lib.dir/__/__/include/boost_1_59_0/libs/thread/src/pthread/thread.cpp.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/my_strchr.c.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/strcont.c.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/substitute.cc.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/structurally_valid.cc.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/descriptor.cc.o
+[ 11%] Building C object strings/CMakeFiles/strings.dir/strappend.c.o
+[ 11%] Linking C static library libstrings.a
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/descriptor.pb.cc.o
+[ 11%] Built target strings
+Scanning dependencies of target binlogstandalone_shared
+Scanning dependencies of target binlogstandalone_static
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/load_data_events.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/load_data_events.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/rows_event.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/rows_event.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/binlog_event.cpp.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/descriptor_database.cc.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/statement_events.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/control_events.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_static.dir/__/__/libbinlogevents/src/uuid.cpp.o
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/binlog_event.cpp.o
+Scanning dependencies of target lz4_decompress
+[ 11%] Building CXX object extra/CMakeFiles/lz4_decompress.dir/lz4_decompress.cc.o
+[ 11%] Built target GenYaccEmbeddedSource
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/control_events.cpp.o
+[ 11%] Linking CXX executable lz4_decompress
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/dynamic_message.cc.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/extension_set_heavy.cc.o
+[ 11%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/generated_message_reflection.cc.o
+[ 11%] Built target lz4_decompress
+Scanning dependencies of target zlib_decompress
+[ 11%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/statement_events.cpp.o
+[ 11%] Building CXX object extra/CMakeFiles/zlib_decompress.dir/zlib_decompress.cc.o
+[ 12%] Linking CXX executable zlib_decompress
+[ 12%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_helpers.cc.o
+Scanning dependencies of target mysys
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/array.c.o
+[ 12%] Built target zlib_decompress
+[ 12%] Built target GenServerSource
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/charset-def.c.o
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/charset.c.o
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/checksum.c.o
+Scanning dependencies of target gen_lex_token
+[ 12%] Building CXX object libbinlogstandalone/src/CMakeFiles/binlogstandalone_shared.dir/__/__/libbinlogevents/src/uuid.cpp.o
+[ 12%] Building CXX object sql/CMakeFiles/gen_lex_token.dir/gen_lex_token.cc.o
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/errors.c.o
+[ 12%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/message.cc.o
+[ 12%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_message.cc.o
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/hash.c.o
+[ 12%] Building C object mysys/CMakeFiles/mysys.dir/list.c.o
+[ 12%] Linking CXX shared library ../lib/libbinlogstandalone.so
+[ 12%] Linking CXX executable gen_lex_token
+[ 13%] Linking CXX static library ../lib/libbinlogstandalone.a
+[ 13%] Built target binlogstandalone_static
+[ 13%] Built target gen_lex_token
+[ 13%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/reflection_ops.cc.o
+[ 13%] Building C object mysys/CMakeFiles/mysys.dir/mf_cache.c.o
+[ 13%] Building C object mysys/CMakeFiles/mysys.dir/mf_dirname.c.o
+[ 13%] Built target binlogstandalone_shared
+[ 13%] Building C object mysys/CMakeFiles/mysys.dir/mf_fn_ext.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_format.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_getdate.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_iocache.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/service.cc.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/text_format.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_iocache2.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/unknown_field_set.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_keycache.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_message_field.cc.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/wire_format.cc.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/gzip_stream.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_keycaches.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_loadpath.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_pack.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_primitive_field.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_path.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_qsort.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_qsort2.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_radix.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/printer.cc.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/strtod.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_same.c.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_soundex.c.o
+[ 14%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/tokenizer.cc.o
+[ 14%] Building C object mysys/CMakeFiles/mysys.dir/mf_arr_appstr.c.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/zero_copy_stream_impl.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/compiler/importer.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/compiler/parser.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_service.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/cpp/cpp_string_field.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_context.cc.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/mf_tempfile.c.o
+Scanning dependencies of target GenDigestServerSource
+[ 15%] Generating lex_token.h
+[ 15%] Built target GenDigestServerSource
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_enum.cc.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_enum_field.cc.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/mf_unixpath.c.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/mf_wcomp.c.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/mulalloc.c.o
+[ 15%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/common.cc.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/my_access.c.o
+[ 15%] Building C object mysys/CMakeFiles/mysys.dir/my_alloc.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_bit.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_extension.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_field.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_bitmap.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_chsize.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_compress.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/once.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/stubs/stringprintf.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_copy.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_create.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_delete.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_div.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_error.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/extension_set.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/generated_message_util.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_file.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_file.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_generator.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_fstream.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_fopen.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_generator_factory.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_gethwaddr.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_getsystime.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/message_lite.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_getwd.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_helpers.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_compare.c.o
+[ 16%] Linking CXX static library libboost_lib.a
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_init.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/repeated_field.cc.o
+[ 16%] Built target boost_lib
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/coded_stream.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/wire_format_lite.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/zero_copy_stream.cc.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protobuf.dir/protobuf-2.6.1/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_lib.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_lock.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_malloc.c.o
+[ 16%] Building C object mysys/CMakeFiles/mysys.dir/my_mess.c.o
+[ 16%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_lazy_message_field.cc.o
+[ 17%] Building C object mysys/CMakeFiles/mysys.dir/my_mkdir.c.o
+[ 17%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_message.cc.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_message_field.cc.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_name_resolver.cc.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_mmap.c.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_primitive_field.cc.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_shared_code_generator.cc.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_once.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_open.c.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_service.cc.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_pread.c.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_string_field.cc.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/java/java_doc_comment.cc.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_read.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_redel.c.o
+[ 18%] Building CXX object extra/protobuf/CMakeFiles/protoclib.dir/protobuf-2.6.1/src/google/protobuf/compiler/python/python_generator.cc.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_rename.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_seek.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_static.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_symlink.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_symlink2.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_sync.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_thr_init.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/my_write.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/ptr_cmp.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/queues.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/sql_chars.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/stacktrace.c.o
+[ 18%] Building C object mysys/CMakeFiles/mysys.dir/string.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/thr_cond.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/thr_lock.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/thr_mutex.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/thr_rwlock.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/tree.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/typelib.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/base64.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_memmem.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/lf_alloc-pin.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/lf_dynarray.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/lf_hash.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_rdtsc.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/psi_noop.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_syslog.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_chmod.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_thread.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/posix_timers.c.o
+[ 19%] Building C object mysys/CMakeFiles/mysys.dir/my_largepage.c.o
+[ 19%] Linking C static library libmysys.a
+[ 19%] Built target mysys
+Scanning dependencies of target dbug
+[ 19%] Building C object dbug/CMakeFiles/dbug.dir/dbug.c.o
+[ 19%] Linking C static library libdbug.a
+[ 19%] Built target dbug
+Scanning dependencies of target base64_test
+Scanning dependencies of target mytap
+Scanning dependencies of target queues
+Scanning dependencies of target thr_lock
+Scanning dependencies of target re
+Scanning dependencies of target replace
+[ 19%] Building C object mysys/CMakeFiles/queues.dir/queues.c.o
+[ 19%] Building C object mysys/CMakeFiles/base64_test.dir/base64.c.o
+[ 19%] Building C object extra/CMakeFiles/replace.dir/replace.c.o
+[ 19%] Building C object mysys/CMakeFiles/thr_lock.dir/thr_lock.c.o
+[ 19%] Building C object unittest/mytap/CMakeFiles/mytap.dir/tap.c.o
+[ 19%] Building C object regex/CMakeFiles/re.dir/split.c.o
+[ 19%] Building C object regex/CMakeFiles/re.dir/main.c.o
+[ 19%] Building C object regex/CMakeFiles/re.dir/debug.c.o
+Scanning dependencies of target mysys_ssl
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_default.cc.o
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/mf_tempdir.cc.o
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/crypt_genhash_impl.cc.o
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_getopt.cc.o
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_aes.cc.o
+[ 20%] Linking C executable base64_test
+[ 20%] Linking C static library libmytap.a
+[ 20%] Built target base64_test
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_sha1.cc.o
+[ 20%] Built target mytap
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_sha2.cc.o
+[ 20%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_md5.cc.o
+Scanning dependencies of target simple-t
+[ 20%] Building C object unittest/examples/CMakeFiles/simple-t.dir/simple-t.c.o
+[ 21%] Linking C executable re
+[ 21%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_rnd.cc.o
+[ 21%] Linking C executable queues
+[ 21%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_murmur3.cc.o
+[ 21%] Building CXX object mysys_ssl/CMakeFiles/mysys_ssl.dir/my_aes_yassl.cc.o
+[ 21%] Built target re
+[ 21%] Linking C executable simple-t
+Scanning dependencies of target skip_all-t
+Scanning dependencies of target no_plan-t
+Scanning dependencies of target todo-t
+[ 21%] Building C object unittest/examples/CMakeFiles/skip_all-t.dir/skip_all-t.c.o
+[ 21%] Building C object unittest/examples/CMakeFiles/no_plan-t.dir/no_plan-t.c.o
+[ 21%] Building C object unittest/examples/CMakeFiles/todo-t.dir/todo-t.c.o
+[ 21%] Built target simple-t
+[ 21%] Built target queues
+Scanning dependencies of target skip-t
+Scanning dependencies of target basic-t
+[ 21%] Building C object unittest/examples/CMakeFiles/skip-t.dir/skip-t.c.o
+[ 21%] Building C object unittest/mytap/t/CMakeFiles/basic-t.dir/basic-t.c.o
+[ 21%] Linking C executable todo-t
+[ 21%] Linking C executable skip_all-t
+[ 21%] Linking C executable no_plan-t
+[ 21%] Linking C executable thr_lock
+[ 21%] Built target no_plan-t
+[ 21%] Built target skip_all-t
+[ 21%] Built target todo-t
+[ 21%] Linking C executable basic-t
+[ 21%] Linking C executable skip-t
+[ 21%] Built target basic-t
+[ 21%] Built target skip-t
+[ 21%] Built target thr_lock
+[ 21%] Linking C executable replace
+[ 21%] Built target replace
+[ 21%] Linking CXX static library libmysys_ssl.a
+[ 21%] Built target mysys_ssl
+Scanning dependencies of target my_print_defaults
+Scanning dependencies of target comp_err
+Scanning dependencies of target resolve_stack_dump
+Scanning dependencies of target resolveip
+Scanning dependencies of target mysql_ssl_rsa_setup
+[ 21%] Building C object extra/CMakeFiles/comp_err.dir/comp_err.c.o
+[ 21%] Building C object extra/CMakeFiles/my_print_defaults.dir/my_print_defaults.c.o
+[ 21%] Building CXX object client/CMakeFiles/mysql_ssl_rsa_setup.dir/mysql_ssl_rsa_setup.cc.o
+[ 21%] Building C object extra/CMakeFiles/resolveip.dir/resolveip.c.o
+[ 21%] Building CXX object extra/CMakeFiles/resolve_stack_dump.dir/resolve_stack_dump.cc.o
+[ 21%] Building CXX object client/CMakeFiles/mysql_ssl_rsa_setup.dir/logger.cc.o
+[ 21%] Building CXX object client/CMakeFiles/mysql_ssl_rsa_setup.dir/path.cc.o
+Scanning dependencies of target mysql_tzinfo_to_sql
+[ 21%] Building CXX object sql/CMakeFiles/mysql_tzinfo_to_sql.dir/tztime.cc.o
+[ 21%] Linking CXX executable resolveip
+[ 21%] Linking CXX executable my_print_defaults
+[ 21%] Built target resolveip
+[ 21%] Built target my_print_defaults
+[ 21%] Linking CXX executable comp_err
+[ 21%] Linking CXX executable resolve_stack_dump
+[ 21%] Linking CXX executable mysql_tzinfo_to_sql
+[ 21%] Built target comp_err
+Scanning dependencies of target GenError
+[ 21%] Generating ../include/mysqld_error.h, ../sql/share/english/errmsg.sys
+[ 21%] Linking CXX static library libprotobuf.a
+[ 21%] Built target GenError
+[ 21%] Built target mysql_tzinfo_to_sql
+Scanning dependencies of target blackhole
+Scanning dependencies of target csv
+Scanning dependencies of target blackhole_embedded
+Scanning dependencies of target csv_embedded
+Scanning dependencies of target archive
+Scanning dependencies of target archive_embedded
+Scanning dependencies of target federated
+[ 21%] Building CXX object storage/blackhole/CMakeFiles/blackhole.dir/ha_blackhole.cc.o
+[ 21%] Building CXX object storage/csv/CMakeFiles/csv.dir/ha_tina.cc.o
+[ 21%] Building CXX object storage/blackhole/CMakeFiles/blackhole_embedded.dir/ha_blackhole.cc.o
+Scanning dependencies of target example
+[ 21%] Building C object storage/archive/CMakeFiles/archive_embedded.dir/azio.c.o
+[ 21%] Building C object storage/archive/CMakeFiles/archive.dir/azio.c.o
+Scanning dependencies of target federated_embedded
+[ 21%] Building CXX object storage/federated/CMakeFiles/federated.dir/ha_federated.cc.o
+[ 21%] Building CXX object storage/example/CMakeFiles/example.dir/ha_example.cc.o
+[ 21%] Building CXX object storage/csv/CMakeFiles/csv_embedded.dir/ha_tina.cc.o
+[ 21%] Building CXX object storage/federated/CMakeFiles/federated_embedded.dir/ha_federated.cc.o
+[ 21%] Built target resolve_stack_dump
+[ 21%] Building CXX object storage/archive/CMakeFiles/archive.dir/ha_archive.cc.o
+[ 21%] Building CXX object storage/csv/CMakeFiles/csv.dir/transparent_file.cc.o
+Scanning dependencies of target heap_embedded
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/_check.c.o
+[ 21%] Built target protobuf
+[ 21%] Building CXX object storage/csv/CMakeFiles/csv_embedded.dir/transparent_file.cc.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/_rectest.c.o
+[ 21%] Building CXX object storage/archive/CMakeFiles/archive_embedded.dir/ha_archive.cc.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/hp_block.c.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/hp_clear.c.o
+[ 21%] Linking CXX executable mysql_ssl_rsa_setup
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/hp_close.c.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/hp_create.c.o
+Scanning dependencies of target heap
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/_check.c.o
+[ 21%] Built target mysql_ssl_rsa_setup
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/_rectest.c.o
+[ 21%] Building CXX object storage/heap/CMakeFiles/heap_embedded.dir/ha_heap.cc.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/hp_block.c.o
+Scanning dependencies of target myisam
+[ 21%] Building C object storage/myisam/CMakeFiles/myisam.dir/ft_boolean_search.c.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/hp_clear.c.o
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/hp_close.c.o
+Scanning dependencies of target innobase
+[ 21%] Building C object storage/heap/CMakeFiles/heap.dir/hp_create.c.o
+Scanning dependencies of target innobase_embedded
+[ 21%] Linking CXX shared module ha_example.so
+[ 21%] Linking CXX static library libblackhole_embedded.a
+[ 21%] Linking CXX static library libprotoclib.a
+[ 21%] Building CXX object storage/innobase/CMakeFiles/innobase.dir/api/api0api.cc.o
+[ 21%] Built target blackhole_embedded
+[ 21%] Building CXX object storage/innobase/CMakeFiles/innobase_embedded.dir/api/api0api.cc.o
+[ 21%] Building CXX object storage/heap/CMakeFiles/heap.dir/ha_heap.cc.o
+[ 22%] Building C object storage/myisam/CMakeFiles/myisam.dir/ft_nlq_search.c.o
+[ 22%] Built target example
+[ 22%] Building C object storage/myisam/CMakeFiles/myisam.dir/ft_parser.c.o
+[ 22%] Linking CXX static library libblackhole.a
+[ 22%] Building C object storage/heap/CMakeFiles/heap_embedded.dir/hp_delete.c.o
+[ 22%] Built target blackhole
+[ 22%] Built target protoclib
+[ 22%] Building C object storage/myisam/CMakeFiles/myisam.dir/ft_static.c.o
+Scanning dependencies of target myisam_embedded

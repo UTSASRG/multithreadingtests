@@ -7,7 +7,7 @@ echo "Checking parameters"
 
 if [ "$#" -ne 1 ]
 then
-  echo "This installation script is for mmprof. So a memory allocator name should be passed as the first parameter!"
+  echo "Usage: AfterBuild_install BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under $BUILD_NAME folder"
   exit 1
 fi
 
@@ -15,6 +15,12 @@ fi
 cd $MYSQL_BENCHMARK_ROOT_DIR
 # Initialize database 
 export MYSQL_INSTALLATION_FOLDER=$MYSQL_BENCHMARK_ROOT_DIR/src/install/$1/usr/local/mysql
+
+if [ ! -d "$MYSQL_INSTALLATION_FOLDER" ]; then
+    echo "Install with name $1 not found"
+    echo "Folder $MYSQL_INSTALLATION_FOLDER not exist"
+    exit -1;
+fi
 
 echo "Initialize mysql datadir"
 

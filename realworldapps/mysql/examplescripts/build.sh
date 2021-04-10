@@ -7,6 +7,14 @@
 echo "Loading benchmark configuration"
 source config.sh
 
+#Check parameters
+if [ "$#" -ne 2 ]
+then
+  echo "Usage: ./build.sh BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under $BUILD_NAME folder)"
+  exit 1
+fi
+
+
 #Making build log folder
 mkdir -p $BUILD_LOG_FOLDER
 echo "Logs will be placed at $BUILD_LOG_FOLDER with timestamp:$BUILD_TIMESTAMP"

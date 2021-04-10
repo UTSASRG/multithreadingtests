@@ -31,3 +31,9 @@
 [submodule "realworldappsclient/mysql-sysbench/src"]
 	path = realworldappsclient/mysql-sysbench/src
 	url = https://github.com/akopytov/sysbench.git
+[submodule "realworldapps/apache/libs/apr"]
+	path = realworldapps/apache/libs/apr
+	url = https://github.com/apache/apr.git
+[submodule "realworldapps/apache/libs/apr-util"]
+	path = realworldapps/apache/libs/apr-util
+	url = https://github.com/apache/apr-util.git

@@ -1,0 +1,687 @@
+./autogen.sh: running `libtoolize --copy --force' 
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+./autogen.sh: running `aclocal -I m4' 
+./autogen.sh: running `autoheader' 
+./autogen.sh: running `automake -c --foreign --add-missing' 
+./autogen.sh: running `autoconf' 
+Libtoolized with: libtoolize (GNU libtool) 2.4.6
+Automade with: automake (GNU automake) 1.16.1
+Configured with: autoconf (GNU Autoconf) 2.69
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for gcc option to accept ISO C99... none needed
+checking how to run the C preprocessor... gcc -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for C compiler vendor... gnu
+checking for gcc architecture flag... 
+checking for x86 cpuid 0 output... 10:68747541:444d4163:69746e65
+checking for x86 cpuid 1 output... a50f00:2100800:7ed8320b:178bfbff
+checking whether C compiler accepts -march=amdfam10... yes
+checking for gcc architecture flag... -march=amdfam10
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... yes
+checking for C compiler vendor... (cached) gnu
+checking whether to compile with MySQL support... yes
+checking whether to compile with Drizzle support... no
+checking whether to compile with libattachsql support... no
+checking whether to compile with Oracle support... no
+checking whether to compile with PostgreSQL support... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build with system or bundled LuaJIT... bundled
+checking whether to build with system or bundled Concurrency Kit... bundled
+checking whether SHM_HUGETLB is declared... yes
+checking whether O_SYNC is declared... yes
+checking for xsltproc... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for sqrt in -lm... yes
+checking for mysql_config... /usr/bin/mysql_config
+checking MySQL C flags... -I/usr/include/mysql 
+checking MySQL linker flags... -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
+checking if mysql.h defines MYSQL_OPT_SSL_MODE... yes
+checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking libaio.h usability... no
+checking libaio.h presence... no
+checking for libaio.h... no
+checking for malloc in -lumem... no
+checking for malloc in -lmtmalloc... no
+checking for ANSI C header files... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking sched.h usability... yes
+checking sched.h presence... yes
+checking for sched.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/aio.h usability... no
+checking sys/aio.h presence... no
+checking for sys/aio.h... no
+checking sys/ipc.h usability... yes
+checking sys/ipc.h presence... yes
+checking for sys/ipc.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/shm.h usability... yes
+checking sys/shm.h presence... yes
+checking for sys/shm.h... yes
+checking thread.h usability... no
+checking thread.h presence... no
+checking for thread.h... no
+checking for unistd.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking libgen.h usability... yes
+checking libgen.h presence... yes
+checking for libgen.h... yes
+checking for off_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for thread local storage (TLS) class... _Thread_local
+checking for __attribute__((format))... yes
+checking for __attribute__((unused))... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking size of size_t... 8
+checking size of bool... 1
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for library containing clock_gettime... none required
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for directio... no
+checking for fdatasync... yes
+checking for gettimeofday... yes
+checking for isatty... yes
+checking for memalign... yes
+checking for memset... yes
+checking for posix_memalign... yes
+checking for pthread_yield... yes
+checking for setvbuf... yes
+checking for sqrt... yes
+checking for strdup... yes
+checking for thr_setconcurrency... no
+checking for valloc... yes
+checking for pthread_once... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/xsl/Makefile
+config.status: creating doc/xsl/catalog.xml
+config.status: creating doc/Makefile
+config.status: creating third_party/luajit/Makefile
+config.status: creating third_party/concurrency_kit/Makefile
+config.status: creating src/Makefile
+config.status: creating src/drivers/Makefile
+config.status: creating src/drivers/mysql/Makefile
+config.status: creating src/drivers/drizzle/Makefile
+config.status: creating src/drivers/oracle/Makefile
+config.status: creating src/drivers/pgsql/Makefile
+config.status: creating src/drivers/attachsql/Makefile
+config.status: creating src/tests/Makefile
+config.status: creating src/tests/cpu/Makefile
+config.status: creating src/tests/fileio/Makefile
+config.status: creating src/tests/memory/Makefile
+config.status: creating src/tests/threads/Makefile
+config.status: creating src/tests/mutex/Makefile
+config.status: creating src/lua/Makefile
+config.status: creating src/lua/internal/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/include/config.sh
+config.status: creating snap/snapcraft.yaml
+config.status: creating config/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===============================================================================
+sysbench version   : 1.0.20-ebf1c90
+CC                 : gcc
+CFLAGS             : -O2 -funroll-loops -ggdb3  -march=amdfam10 -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread
+CPPFLAGS           : -D_GNU_SOURCE   -I$(top_srcdir)/src -I$(abs_top_builddir)/third_party/luajit/inc -I$(abs_top_builddir)/third_party/concurrency_kit/include
+LDFLAGS            :  
+LIBS               : -lm 
+EXTRA_LDFLAGS      : 
+
+prefix             : /usr/local
+bindir             : ${prefix}/bin
+libexecdir         : ${prefix}/libexec
+mandir             : ${prefix}/share/man
+datadir            : ${prefix}/share
+
+MySQL support      : yes
+Drizzle support    : no
+AttachSQL support  : no
+Oracle support     : no
+PostgreSQL support : no
+
+LuaJIT             : bundled
+LUAJIT_CFLAGS      : -I$(abs_top_builddir)/third_party/luajit/inc
+LUAJIT_LIBS        : $(abs_top_builddir)/third_party/luajit/lib/libluajit-5.1.a -ldl
+LUAJIT_LDFLAGS     : -rdynamic
+
+Concurrency Kit    : bundled
+CK_CFLAGS          : -I$(abs_top_builddir)/third_party/concurrency_kit/include
+CK_LIBS            : $(abs_top_builddir)/third_party/concurrency_kit/lib/libck.a
+configure flags    : 
+===============================================================================
+Making all in doc
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+Making all in xsl
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc/xsl'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc/xsl'
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+touch manual.html
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+Making all in third_party/luajit
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit'
+make -C ./luajit clean
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/luajit'
+make -C src clean
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/luajit/src'
+rm -f luajit libluajit.a libluajit.so host/minilua host/buildvm lj_vm.S lj_bcdef.h lj_ffdef.h lj_libdef.h lj_recdef.h lj_folddef.h host/buildvm_arch.h jit/vmdef.lua *.o host/*.o *.obj *.lib *.exp *.dll *.exe *.manifest *.pdb *.ilk
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/luajit/src'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/luajit'
+rm -rf tmp
+mkdir tmp
+tar -C . -cf - luajit | tar -xf - -C tmp/
+chmod -R u+w tmp
+make -C tmp/luajit \
+                PREFIX=/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit \
+                INSTALL_INC=/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc \
+                install
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/tmp/luajit'
+==== Building LuaJIT 2.1.0-beta2 ====
+make -C src
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/tmp/luajit/src'
+HOSTCC    host/minilua.o
+HOSTCC    host/buildvm_asm.o
+HOSTCC    host/buildvm_peobj.o
+HOSTCC    host/buildvm_lib.o
+HOSTCC    host/buildvm_fold.o
+CC        lj_gc.o
+CC        lj_char.o
+CC        lj_obj.o
+CC        lj_buf.o
+CC        lj_str.o
+CC        lj_tab.o
+CC        lj_func.o
+CC        lj_udata.o
+CC        lj_meta.o
+CC        lj_debug.o
+CC        lj_state.o
+CC        lj_vmevent.o
+CC        lj_vmmath.o
+CC        lj_strscan.o
+CC        lj_strfmt.o
+CC        lj_strfmt_num.o
+CC        lj_api.o
+CC        lj_profile.o
+CC        lj_lex.o
+CC        lj_parse.o
+CC        lj_bcread.o
+CC        lj_bcwrite.o
+CC        lj_load.o
+CC        lj_ir.o
+CC        lj_opt_mem.o
+CC        lj_opt_narrow.o
+CC        lj_opt_dce.o
+CC        lj_opt_loop.o
+CC        lj_opt_split.o
+CC        lj_opt_sink.o
+CC        lj_mcode.o
+CC        lj_snap.o
+CC        lj_asm.o
+CC        lj_trace.o
+CC        lj_gdbjit.o
+CC        lj_ctype.o
+CC        lj_cdata.o
+CC        lj_cconv.o
+CC        lj_ccall.o
+CC        lj_ccallback.o
+CC        lj_carith.o
+CC        lj_clib.o
+CC        lj_cparse.o
+CC        lj_lib.o
+CC        lj_alloc.o
+CC        lib_aux.o
+CC        lib_package.o
+CC        lib_init.o
+CC        luajit.o
+HOSTLINK  host/minilua
+DYNASM    host/buildvm_arch.h
+HOSTCC    host/buildvm.o
+HOSTLINK  host/buildvm
+BUILDVM   lj_vm.S
+BUILDVM   lj_ffdef.h
+BUILDVM   lj_bcdef.h
+BUILDVM   lj_folddef.h
+BUILDVM   lj_recdef.h
+BUILDVM   lj_libdef.h
+BUILDVM   jit/vmdef.lua
+CC        lj_err.o
+CC        lj_bc.o
+CC        lj_dispatch.o
+CC        lj_record.o
+CC        lj_crecord.o
+CC        lib_base.o
+CC        lj_ffrecord.o
+CC        lib_math.o
+CC        lib_bit.o
+CC        lib_string.o
+CC        lib_table.o
+CC        lib_io.o
+CC        lib_os.o
+CC        lib_debug.o
+CC        lib_jit.o
+CC        lib_ffi.o
+ASM       lj_vm.o
+CC        lj_opt_fold.o
+AR        libluajit.a
+DYNLINK   libluajit.so
+LINK      luajit
+OK        Successfully built LuaJIT
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/tmp/luajit/src'
+==== Successfully built LuaJIT 2.1.0-beta2 ====
+==== Installing LuaJIT 2.1.0-beta2 to /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit ====
+mkdir -p /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/bin /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/share/man/man1 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/pkgconfig /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/share/luajit-2.1.0-beta2/jit /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/share/lua/5.1 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/lua/5.1
+cd src && install -m 0755 luajit /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/bin/luajit-2.1.0-beta2
+cd src && test -f libluajit.a && install -m 0644 libluajit.a /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.a || :
+rm -f /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so.2.1.0 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so.2
+cd src && test -f libluajit.so && \
+  install -m 0755 libluajit.so /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so.2.1.0 && \
+  ldconfig -n /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib && \
+  ln -sf libluajit-5.1.so.2.1.0 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so && \
+  ln -sf libluajit-5.1.so.2.1.0 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.so.2 || :
+cd etc && install -m 0644 luajit.1 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/share/man/man1
+cd etc && sed -e "s|^prefix=.*|prefix=/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit|" -e "s|^multilib=.*|multilib=lib|" luajit.pc > luajit.pc.tmp && \
+  install -m 0644 luajit.pc.tmp /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/pkgconfig/luajit.pc && \
+  rm -f luajit.pc.tmp
+cd src && install -m 0644 lua.h lualib.h lauxlib.h luaconf.h lua.hpp luajit.h /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc
+cd src/jit && install -m 0644 bc.lua bcsave.lua dump.lua p.lua v.lua zone.lua dis_x86.lua dis_x64.lua dis_arm.lua dis_arm64.lua dis_ppc.lua dis_mips.lua dis_mipsel.lua dis_mips64.lua dis_mips64el.lua vmdef.lua /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/share/luajit-2.1.0-beta2/jit
+==== Successfully installed LuaJIT 2.1.0-beta2 to /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit ====
+
+Note: the development releases deliberately do NOT install a symlink for luajit
+You can do this now by running this command (with sudo):
+
+  ln -sf luajit-2.1.0-beta2 /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/bin/luajit
+
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/tmp/luajit'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit'
+Making all in third_party/concurrency_kit
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit'
+rm -rf tmp
+mkdir tmp
+tar -C . -cf - ck | tar -xf - -C tmp/
+chmod -R u+w tmp
+cd tmp/ck &&                        \
+CC="gcc"                          \
+CFLAGS="-O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE "      \
+LDFLAGS=""                \
+  ./configure  \
+  --prefix=/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit && \
+make && \
+make install
+Detecting operating system.......success [linux]
+Detecting machine architecture...success [x86_64]
+Finding dirname command..........success [/usr/bin/dirname]
+Determining build directory......success [/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck]
+Finding gzip tool................success [/usr/bin/gzip]
+Finding suitable compiler........success [/usr/bin/gcc]
+Detecting VMA bits...............success [48]
+Checking header file usability...success [stdbool.h]
+Checking header file usability...success [stddef.h]
+Checking header file usability...success [stdint.h]
+Checking header file usability...success [string.h]
+Detecting git SHA................success [ebf1c90]
+Generating header files..........success
+Generating build files...........success
+
+           VERSION = 1.0.0
+           GIT_SHA = ebf1c90
+         BUILD_DIR = /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck
+           SRC_DIR = /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck
+            SYSTEM = linux
+           PROFILE = x86_64
+                CC = /usr/bin/gcc
+          COMPILER = gcc
+            CFLAGS = -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC
+    PTHREAD_CFLAGS = -pthread
+                LD = /usr/bin/gcc
+            LDNAME = libck.so
+    LDNAME_VERSION = libck.so.1.0.0
+      LDNAME_MAJOR = libck.so.0
+           LDFLAGS = -Wl,-soname,libck.so.0 -m64  -shared -fPIC
+              GZIP = /usr/bin/gzip -c
+             CORES = 16
+      POINTER_PACK = CK_MD_POINTER_PACK_DISABLE
+          VMA_BITS = 48
+      MEMORY_MODEL = CK_MD_TSO
+               RTM = CK_MD_RTM_DISABLE
+               LSE = CK_MD_LSE_DISABLE
+
+Headers will be installed in /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include
+Libraries will be installed in /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib
+Documentation will be installed in /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/share/man
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck'
+make -C doc all || exit
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+for target in CK_ARRAY_FOREACH ck_array_buffer ck_array_commit ck_array_deinit ck_array_init ck_array_initialized ck_array_length ck_array_put ck_array_put_unique ck_array_remove ck_array_deinit ck_brlock ck_ht_count ck_ht_destroy ck_ht_gc ck_ht_get_spmc ck_ht_grow_spmc ck_ht_hash ck_ht_hash_direct ck_ht_init ck_ht_put_spmc ck_ht_remove_spmc ck_ht_reset_spmc ck_ht_reset_size_spmc ck_ht_set_spmc ck_ht_entry_empty ck_ht_entry_key ck_ht_entry_key_direct ck_ht_entry_key_length ck_ht_entry_key_set ck_ht_entry_key_set_direct ck_ht_entry_set ck_ht_entry_set_direct ck_ht_entry_value_direct ck_ht_entry_value ck_ht_iterator_init ck_ht_next ck_ht_stat ck_bitmap_init ck_bitmap_reset ck_bitmap_set ck_bitmap_bts ck_bitmap_test ck_bitmap_base ck_bitmap_union ck_bitmap_size ck_bitmap_clear ck_bitmap_bits ck_bitmap_buffer ck_bitmap_next ck_bitmap_iterator_init ck_elide ck_epoch_barrier ck_epoch_begin ck_epoch_call ck_epoch_end ck_epoch_init ck_epoch_poll ck_epoch_recycle ck_epoch_register ck_epoch_reclaim ck_epoch_synchronize ck_epoch_unregister ck_hs_gc ck_hs_init ck_hs_destroy CK_HS_HASH ck_hs_apply ck_hs_iterator_init ck_hs_next ck_hs_get ck_hs_put ck_hs_put_unique ck_hs_set ck_hs_fas ck_hs_remove ck_hs_move ck_hs_grow ck_hs_rebuild ck_hs_count ck_hs_reset ck_hs_reset_size ck_hs_stat ck_rhs_gc ck_rhs_init ck_rhs_destroy CK_RHS_HASH ck_rhs_apply ck_rhs_iterator_init ck_rhs_next ck_rhs_get ck_rhs_put ck_rhs_put_unique ck_rhs_set ck_rhs_fas ck_rhs_remove ck_rhs_move ck_rhs_grow ck_rhs_rebuild ck_rhs_count ck_rhs_reset ck_rhs_reset_size ck_rhs_stat ck_rwcohort CK_RWCOHORT_INIT CK_RWCOHORT_INSTANCE CK_RWCOHORT_PROTOTYPE CK_RWCOHORT_READ_LOCK CK_RWCOHORT_READ_UNLOCK CK_RWCOHORT_WRITE_LOCK CK_RWCOHORT_WRITE_UNLOCK ck_cohort CK_COHORT_PROTOTYPE CK_COHORT_TRYLOCK_PROTOTYPE CK_COHORT_INSTANCE CK_COHORT_INIT CK_COHORT_LOCK CK_COHORT_UNLOCK CK_COHORT_TRYLOCK ck_pr ck_pr_fence_acquire ck_pr_fence_release ck_pr_barrier ck_pr_fas ck_pr_fence_atomic ck_pr_fence_atomic_load ck_pr_fence_atomic_store ck_pr_fence_load ck_pr_fence_load_atomic ck_pr_fence_load_store ck_pr_fence_load_depends ck_pr_fence_memory ck_pr_fence_store ck_pr_fence_store_atomic ck_pr_fence_store_load ck_pr_stall ck_pr_faa ck_pr_inc ck_pr_dec ck_pr_not ck_pr_neg ck_pr_add ck_pr_sub ck_pr_and ck_pr_xor ck_pr_or ck_pr_cas ck_pr_bts ck_pr_btc ck_pr_btr ck_pr_store ck_pr_load ck_pr_rtm ck_queue ck_ring_init ck_ring_dequeue_spmc ck_ring_enqueue_spmc ck_ring_enqueue_spmc_size ck_ring_trydequeue_spmc ck_ring_dequeue_spsc ck_ring_enqueue_spsc ck_ring_enqueue_spsc_size ck_ring_size ck_ring_capacity ck_tflock ck_rwlock ck_pflock ck_swlock ck_sequence ck_spinlock; do 			   \
+	/usr/bin/gzip -c /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc/$target > /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc/$target.3.gz; \
+done
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+---[ Manual pages are ready for installation.
+make -C src all || exit
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src'
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_centralized.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_centralized.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_combining.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_combining.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_dissemination.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_dissemination.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_tournament.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_tournament.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_mcs.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_barrier_mcs.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_epoch.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_epoch.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_hp.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_hp.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_hs.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_hs.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_rhs.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_rhs.c
+/usr/bin/gcc -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -std=gnu99 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe -Wno-parentheses -O2 -funroll-loops -ggdb3  -march=amdfam10 -D_GNU_SOURCE  -fPIC -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include -m64 -D__x86_64__ -c -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_array.o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_array.c
+/usr/bin/gcc -Wl,-soname,libck.so.0 -m64  -shared -fPIC -m64 -o /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/libck.so ck_barrier_centralized.o ck_barrier_combining.o ck_barrier_dissemination.o ck_barrier_tournament.o ck_barrier_mcs.o ck_epoch.o ck_ht.o ck_hp.o ck_hs.o ck_rhs.o ck_array.o
+ar rcs /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/libck.a ck_barrier_centralized.o ck_barrier_combining.o ck_barrier_dissemination.o ck_barrier_tournament.o ck_barrier_mcs.o ck_epoch.o ck_ht.o ck_hp.o ck_hs.o ck_rhs.o ck_array.o
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src'
+
+
+---[ Concurrency Kit has built successfully. You may now "make install".
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck'
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck'
+make -C doc all || exit
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include || exit
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib
+cp src/libck.so //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so.1.0.0
+cp src/libck.a //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.a
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+cp /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include/*.h //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include || exit
+for target in CK_ARRAY_FOREACH ck_array_buffer ck_array_commit ck_array_deinit ck_array_init ck_array_initialized ck_array_length ck_array_put ck_array_put_unique ck_array_remove ck_array_deinit ck_brlock ck_ht_count ck_ht_destroy ck_ht_gc ck_ht_get_spmc ck_ht_grow_spmc ck_ht_hash ck_ht_hash_direct ck_ht_init ck_ht_put_spmc ck_ht_remove_spmc ck_ht_reset_spmc ck_ht_reset_size_spmc ck_ht_set_spmc ck_ht_entry_empty ck_ht_entry_key ck_ht_entry_key_direct ck_ht_entry_key_length ck_ht_entry_key_set ck_ht_entry_key_set_direct ck_ht_entry_set ck_ht_entry_set_direct ck_ht_entry_value_direct ck_ht_entry_value ck_ht_iterator_init ck_ht_next ck_ht_stat ck_bitmap_init ck_bitmap_reset ck_bitmap_set ck_bitmap_bts ck_bitmap_test ck_bitmap_base ck_bitmap_union ck_bitmap_size ck_bitmap_clear ck_bitmap_bits ck_bitmap_buffer ck_bitmap_next ck_bitmap_iterator_init ck_elide ck_epoch_barrier ck_epoch_begin ck_epoch_call ck_epoch_end ck_epoch_init ck_epoch_poll ck_epoch_recycle ck_epoch_register ck_epoch_reclaim ck_epoch_synchronize ck_epoch_unregister ck_hs_gc ck_hs_init ck_hs_destroy CK_HS_HASH ck_hs_apply ck_hs_iterator_init ck_hs_next ck_hs_get ck_hs_put ck_hs_put_unique ck_hs_set ck_hs_fas ck_hs_remove ck_hs_move ck_hs_grow ck_hs_rebuild ck_hs_count ck_hs_reset ck_hs_reset_size ck_hs_stat ck_rhs_gc ck_rhs_init ck_rhs_destroy CK_RHS_HASH ck_rhs_apply ck_rhs_iterator_init ck_rhs_next ck_rhs_get ck_rhs_put ck_rhs_put_unique ck_rhs_set ck_rhs_fas ck_rhs_remove ck_rhs_move ck_rhs_grow ck_rhs_rebuild ck_rhs_count ck_rhs_reset ck_rhs_reset_size ck_rhs_stat ck_rwcohort CK_RWCOHORT_INIT CK_RWCOHORT_INSTANCE CK_RWCOHORT_PROTOTYPE CK_RWCOHORT_READ_LOCK CK_RWCOHORT_READ_UNLOCK CK_RWCOHORT_WRITE_LOCK CK_RWCOHORT_WRITE_UNLOCK ck_cohort CK_COHORT_PROTOTYPE CK_COHORT_TRYLOCK_PROTOTYPE CK_COHORT_INSTANCE CK_COHORT_INIT CK_COHORT_LOCK CK_COHORT_UNLOCK CK_COHORT_TRYLOCK ck_pr ck_pr_fence_acquire ck_pr_fence_release ck_pr_barrier ck_pr_fas ck_pr_fence_atomic ck_pr_fence_atomic_load ck_pr_fence_atomic_store ck_pr_fence_load ck_pr_fence_load_atomic ck_pr_fence_load_store ck_pr_fence_load_depends ck_pr_fence_memory ck_pr_fence_store ck_pr_fence_store_atomic ck_pr_fence_store_load ck_pr_stall ck_pr_faa ck_pr_inc ck_pr_dec ck_pr_not ck_pr_neg ck_pr_add ck_pr_sub ck_pr_and ck_pr_xor ck_pr_or ck_pr_cas ck_pr_bts ck_pr_btc ck_pr_btr ck_pr_store ck_pr_load ck_pr_rtm ck_queue ck_ring_init ck_ring_dequeue_spmc ck_ring_enqueue_spmc ck_ring_enqueue_spmc_size ck_ring_trydequeue_spmc ck_ring_dequeue_spsc ck_ring_enqueue_spsc ck_ring_enqueue_spsc_size ck_ring_size ck_ring_capacity ck_tflock ck_rwlock ck_pflock ck_swlock ck_sequence ck_spinlock; do 			   \
+	/usr/bin/gzip -c /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc/$target > /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc/$target.3.gz; \
+done
+ln -sf libck.so.1.0.0 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so
+ln -sf libck.so.1.0.0 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so.0
+chmod 744 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so.1.0.0	\
+	  //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so		\
+	  //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.so.0
+chmod 644 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.a
+chmod 644 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/ck_*.h || exit
+mkdir -p /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/gcc || exit
+cp -r /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include/gcc/* //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/gcc || exit
+cp include/ck_md.h //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/ck_md.h || exit
+chmod 755 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/gcc
+chmod 644 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/gcc/ck_*.h //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/gcc/*/ck_*.h || exit
+mkdir -p /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/spinlock || exit
+cp -r /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/include/spinlock/* //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/spinlock || exit
+chmod 755 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/spinlock
+chmod 644 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include/spinlock/*.h || exit
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+---[ Manual pages are ready for installation.
+make -C src all || exit
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src'
+
+
+---[ Concurrency Kit has built successfully. You may now "make install".
+make -C doc install
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/share/man/man3 || exit
+cp *.3.gz //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/share/man/man3 || exit
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/doc'
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib || exit
+mkdir -p //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/pkgconfig || exit
+chmod 755 //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/pkgconfig
+cp build/ck.pc //home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/pkgconfig/ck.pc || exit
+
+
+---[ Concurrency Kit has installed successfully.
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit'
+Making all in src
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+Making all in drivers
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+Making all in mysql
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers/mysql'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I/usr/include/mysql  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbmysql_a-drv_mysql.o -MD -MP -MF .deps/libsbmysql_a-drv_mysql.Tpo -c -o libsbmysql_a-drv_mysql.o `test -f 'drv_mysql.c' || echo './'`drv_mysql.c
+mv -f .deps/libsbmysql_a-drv_mysql.Tpo .deps/libsbmysql_a-drv_mysql.Po
+rm -f libsbmysql.a
+ar cru libsbmysql.a libsbmysql_a-drv_mysql.o 
+ranlib libsbmysql.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers/mysql'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+Making all in tests
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+Making all in cpu
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/cpu'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbcpu_a-sb_cpu.o -MD -MP -MF .deps/libsbcpu_a-sb_cpu.Tpo -c -o libsbcpu_a-sb_cpu.o `test -f 'sb_cpu.c' || echo './'`sb_cpu.c
+mv -f .deps/libsbcpu_a-sb_cpu.Tpo .deps/libsbcpu_a-sb_cpu.Po
+rm -f libsbcpu.a
+ar cru libsbcpu.a libsbcpu_a-sb_cpu.o 
+ranlib libsbcpu.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/cpu'
+Making all in fileio
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/fileio'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbfileio_a-sb_fileio.o -MD -MP -MF .deps/libsbfileio_a-sb_fileio.Tpo -c -o libsbfileio_a-sb_fileio.o `test -f 'sb_fileio.c' || echo './'`sb_fileio.c
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbfileio_a-crc32.o -MD -MP -MF .deps/libsbfileio_a-crc32.Tpo -c -o libsbfileio_a-crc32.o `test -f 'crc32.c' || echo './'`crc32.c
+mv -f .deps/libsbfileio_a-crc32.Tpo .deps/libsbfileio_a-crc32.Po
+mv -f .deps/libsbfileio_a-sb_fileio.Tpo .deps/libsbfileio_a-sb_fileio.Po
+rm -f libsbfileio.a
+ar cru libsbfileio.a libsbfileio_a-sb_fileio.o libsbfileio_a-crc32.o 
+ranlib libsbfileio.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/fileio'
+Making all in memory
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/memory'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbmemory_a-sb_memory.o -MD -MP -MF .deps/libsbmemory_a-sb_memory.Tpo -c -o libsbmemory_a-sb_memory.o `test -f 'sb_memory.c' || echo './'`sb_memory.c
+mv -f .deps/libsbmemory_a-sb_memory.Tpo .deps/libsbmemory_a-sb_memory.Po
+rm -f libsbmemory.a
+ar cru libsbmemory.a libsbmemory_a-sb_memory.o 
+ranlib libsbmemory.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/memory'
+Making all in threads
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/threads'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbthreads_a-sb_threads.o -MD -MP -MF .deps/libsbthreads_a-sb_threads.Tpo -c -o libsbthreads_a-sb_threads.o `test -f 'sb_threads.c' || echo './'`sb_threads.c
+mv -f .deps/libsbthreads_a-sb_threads.Tpo .deps/libsbthreads_a-sb_threads.Po
+rm -f libsbthreads.a
+ar cru libsbthreads.a libsbthreads_a-sb_threads.o 
+ranlib libsbthreads.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/threads'
+Making all in mutex
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/mutex'
+gcc -DHAVE_CONFIG_H -I. -I../../../config  -I../../../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT libsbmutex_a-sb_mutex.o -MD -MP -MF .deps/libsbmutex_a-sb_mutex.Tpo -c -o libsbmutex_a-sb_mutex.o `test -f 'sb_mutex.c' || echo './'`sb_mutex.c
+mv -f .deps/libsbmutex_a-sb_mutex.Tpo .deps/libsbmutex_a-sb_mutex.Po
+rm -f libsbmutex.a
+ar cru libsbmutex.a libsbmutex_a-sb_mutex.o 
+ranlib libsbmutex.a
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/mutex'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+Making all in lua
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+Making all in internal
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+Creating sysbench.lua.h from sysbench.lua
+Creating sysbench.rand.lua.h from sysbench.rand.lua
+Creating sysbench.sql.lua.h from sysbench.sql.lua
+Creating sysbench.compat.lua.h from sysbench.compat.lua
+Creating sysbench.cmdline.lua.h from sysbench.cmdline.lua
+Creating sysbench.histogram.lua.h from sysbench.histogram.lua
+make  all-am
+make[4]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+Making all in .
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sysbench.o -MD -MP -MF .deps/sysbench.Tpo -c -o sysbench.o sysbench.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_timer.o -MD -MP -MF .deps/sb_timer.Tpo -c -o sb_timer.o sb_timer.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_options.o -MD -MP -MF .deps/sb_options.Tpo -c -o sb_options.o sb_options.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_logger.o -MD -MP -MF .deps/sb_logger.Tpo -c -o sb_logger.o sb_logger.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT db_driver.o -MD -MP -MF .deps/db_driver.Tpo -c -o db_driver.o db_driver.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_histogram.o -MD -MP -MF .deps/sb_histogram.Tpo -c -o sb_histogram.o sb_histogram.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_rand.o -MD -MP -MF .deps/sb_rand.Tpo -c -o sb_rand.o sb_rand.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_thread.o -MD -MP -MF .deps/sb_thread.Tpo -c -o sb_thread.o sb_thread.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_barrier.o -MD -MP -MF .deps/sb_barrier.Tpo -c -o sb_barrier.o sb_barrier.c
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_lua.o -MD -MP -MF .deps/sb_lua.Tpo -c -o sb_lua.o sb_lua.c
+mv -f .deps/sb_barrier.Tpo .deps/sb_barrier.Po
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_util.o -MD -MP -MF .deps/sb_util.Tpo -c -o sb_util.o sb_util.c
+mv -f .deps/sb_timer.Tpo .deps/sb_timer.Po
+gcc -DHAVE_CONFIG_H -I. -I../config  -I../src -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/inc -I/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/include -DDATADIR=\"/usr/local/share/sysbench\" -DLIBDIR=\"/usr/local/lib/sysbench\" -D_GNU_SOURCE  -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10 -MT sb_counter.o -MD -MP -MF .deps/sb_counter.Tpo -c -o sb_counter.o sb_counter.c
+mv -f .deps/sb_util.Tpo .deps/sb_util.Po
+mv -f .deps/sb_thread.Tpo .deps/sb_thread.Po
+mv -f .deps/sb_rand.Tpo .deps/sb_rand.Po
+mv -f .deps/sb_counter.Tpo .deps/sb_counter.Po
+mv -f .deps/sb_logger.Tpo .deps/sb_logger.Po
+mv -f .deps/sb_histogram.Tpo .deps/sb_histogram.Po
+mv -f .deps/sb_options.Tpo .deps/sb_options.Po
+mv -f .deps/db_driver.Tpo .deps/db_driver.Po
+mv -f .deps/sb_lua.Tpo .deps/sb_lua.Po
+mv -f .deps/sysbench.Tpo .deps/sysbench.Po
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread -O2 -funroll-loops -ggdb3  -march=amdfam10      -rdynamic  -o sysbench sysbench.o sb_timer.o sb_options.o sb_logger.o db_driver.o sb_histogram.o sb_rand.o sb_thread.o sb_barrier.o sb_lua.o sb_util.o sb_counter.o tests/fileio/libsbfileio.a tests/threads/libsbthreads.a tests/memory/libsbmemory.a tests/cpu/libsbcpu.a tests/mutex/libsbmutex.a drivers/mysql/libsbmysql.a -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv     /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.a -ldl /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.a -lm 
+libtool: link: gcc -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla -pthread -O2 -funroll-loops -ggdb3 -march=amdfam10 -rdynamic -o sysbench sysbench.o sb_timer.o sb_options.o sb_logger.o db_driver.o sb_histogram.o sb_rand.o sb_thread.o sb_barrier.o sb_lua.o sb_util.o sb_counter.o  tests/fileio/libsbfileio.a tests/threads/libsbthreads.a tests/memory/libsbmemory.a tests/cpu/libsbcpu.a tests/mutex/libsbmutex.a drivers/mysql/libsbmysql.a -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lrt -lssl -lcrypto -lresolv /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit/lib/libluajit-5.1.a -ldl /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/lib/libck.a -lm -pthread
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+Making all in tests
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/tests'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/tests'
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src'

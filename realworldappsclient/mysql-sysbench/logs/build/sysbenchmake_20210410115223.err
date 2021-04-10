@@ -1,0 +1,39 @@
+configure.ac:40: installing 'config/compile'
+configure.ac:32: installing 'config/missing'
+configure.ac:477: error: required file 'src/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/mysql/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/drizzle/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/oracle/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/pgsql/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/attachsql/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/cpu/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/fileio/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/memory/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/threads/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/mutex/Makefile.in' not found
+configure.ac:477: error: required file 'src/lua/Makefile.in' not found
+configure.ac:477: error: required file 'src/lua/internal/Makefile.in' not found
+Makefile.am:29: error: required directory ./src does not exist
+configure: error: cannot find sources (src/sysbench.c) in . or ..
+configure: error: cannot find sources (src/sysbench.c) in . or ..
+make: *** [Makefile:455: config.status] Error 1
+make: *** Waiting for unfinished jobs....
+configure.ac:477: error: required file 'src/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/mysql/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/drizzle/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/oracle/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/pgsql/Makefile.in' not found
+configure.ac:477: error: required file 'src/drivers/attachsql/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/cpu/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/fileio/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/memory/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/threads/Makefile.in' not found
+configure.ac:477: error: required file 'src/tests/mutex/Makefile.in' not found
+configure.ac:477: error: required file 'src/lua/Makefile.in' not found
+configure.ac:477: error: required file 'src/lua/internal/Makefile.in' not found
+Makefile.am:29: error: required directory ./src does not exist
+make: *** [Makefile:432: Makefile.in] Error 1

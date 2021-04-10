@@ -1,0 +1,370 @@
+./autogen.sh: running `libtoolize --copy --force' 
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+./autogen.sh: running `aclocal -I m4' 
+./autogen.sh: running `autoheader' 
+./autogen.sh: running `automake -c --foreign --add-missing' 
+./autogen.sh: running `autoconf' 
+Libtoolized with: libtoolize (GNU libtool) 2.4.6
+Automade with: automake (GNU automake) 1.16.1
+Configured with: autoconf (GNU Autoconf) 2.69
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for gcc option to accept ISO C99... none needed
+checking how to run the C preprocessor... gcc -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for C compiler vendor... gnu
+checking for gcc architecture flag... 
+checking for x86 cpuid 0 output... 10:68747541:444d4163:69746e65
+checking for x86 cpuid 1 output... a50f00:f100800:7ed8320b:178bfbff
+checking whether C compiler accepts -march=amdfam10... yes
+checking for gcc architecture flag... -march=amdfam10
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... yes
+checking for C compiler vendor... (cached) gnu
+checking whether to compile with MySQL support... yes
+checking whether to compile with Drizzle support... no
+checking whether to compile with libattachsql support... no
+checking whether to compile with Oracle support... no
+checking whether to compile with PostgreSQL support... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build with system or bundled LuaJIT... bundled
+checking whether to build with system or bundled Concurrency Kit... bundled
+checking whether SHM_HUGETLB is declared... yes
+checking whether O_SYNC is declared... yes
+checking for xsltproc... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for sqrt in -lm... yes
+checking for mysql_config... /usr/bin/mysql_config
+checking MySQL C flags... -I/usr/include/mysql 
+checking MySQL linker flags... -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
+checking if mysql.h defines MYSQL_OPT_SSL_MODE... yes
+checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking libaio.h usability... no
+checking libaio.h presence... no
+checking for libaio.h... no
+checking for malloc in -lumem... no
+checking for malloc in -lmtmalloc... no
+checking for ANSI C header files... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking sched.h usability... yes
+checking sched.h presence... yes
+checking for sched.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/aio.h usability... no
+checking sys/aio.h presence... no
+checking for sys/aio.h... no
+checking sys/ipc.h usability... yes
+checking sys/ipc.h presence... yes
+checking for sys/ipc.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/shm.h usability... yes
+checking sys/shm.h presence... yes
+checking for sys/shm.h... yes
+checking thread.h usability... no
+checking thread.h presence... no
+checking for thread.h... no
+checking for unistd.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking libgen.h usability... yes
+checking libgen.h presence... yes
+checking for libgen.h... yes
+checking for off_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for thread local storage (TLS) class... _Thread_local
+checking for __attribute__((format))... yes
+checking for __attribute__((unused))... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking size of size_t... 8
+checking size of bool... 1
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for library containing clock_gettime... none required
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for directio... no
+checking for fdatasync... yes
+checking for gettimeofday... yes
+checking for isatty... yes
+checking for memalign... yes
+checking for memset... yes
+checking for posix_memalign... yes
+checking for pthread_yield... yes
+checking for setvbuf... yes
+checking for sqrt... yes
+checking for strdup... yes
+checking for thr_setconcurrency... no
+checking for valloc... yes
+checking for pthread_once... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/xsl/Makefile
+config.status: creating doc/xsl/catalog.xml
+config.status: creating doc/Makefile
+config.status: creating third_party/luajit/Makefile
+config.status: creating third_party/concurrency_kit/Makefile
+config.status: creating src/Makefile
+config.status: creating src/drivers/Makefile
+config.status: creating src/drivers/mysql/Makefile
+config.status: creating src/drivers/drizzle/Makefile
+config.status: creating src/drivers/oracle/Makefile
+config.status: creating src/drivers/pgsql/Makefile
+config.status: creating src/drivers/attachsql/Makefile
+config.status: creating src/tests/Makefile
+config.status: creating src/tests/cpu/Makefile
+config.status: creating src/tests/fileio/Makefile
+config.status: creating src/tests/memory/Makefile
+config.status: creating src/tests/threads/Makefile
+config.status: creating src/tests/mutex/Makefile
+config.status: creating src/lua/Makefile
+config.status: creating src/lua/internal/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/include/config.sh
+config.status: creating snap/snapcraft.yaml
+config.status: creating config/config.h
+config.status: config/config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===============================================================================
+sysbench version   : 1.0.20-ebf1c90
+CC                 : gcc
+CFLAGS             : -O2 -funroll-loops -ggdb3  -march=amdfam10 -Wall -Wextra -Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wnested-externs -Wno-format-zero-length -Wundef -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wcast-align -Wvla   -pthread
+CPPFLAGS           : -D_GNU_SOURCE   -I$(top_srcdir)/src -I$(abs_top_builddir)/third_party/luajit/inc -I$(abs_top_builddir)/third_party/concurrency_kit/include
+LDFLAGS            :  
+LIBS               : -lm 
+EXTRA_LDFLAGS      : 
+
+prefix             : /usr/local
+bindir             : ${prefix}/bin
+libexecdir         : ${prefix}/libexec
+mandir             : ${prefix}/share/man
+datadir            : ${prefix}/share
+
+MySQL support      : yes
+Drizzle support    : no
+AttachSQL support  : no
+Oracle support     : no
+PostgreSQL support : no
+
+LuaJIT             : bundled
+LUAJIT_CFLAGS      : -I$(abs_top_builddir)/third_party/luajit/inc
+LUAJIT_LIBS        : $(abs_top_builddir)/third_party/luajit/lib/libluajit-5.1.a -ldl
+LUAJIT_LDFLAGS     : -rdynamic
+
+Concurrency Kit    : bundled
+CK_CFLAGS          : -I$(abs_top_builddir)/third_party/concurrency_kit/include
+CK_LIBS            : $(abs_top_builddir)/third_party/concurrency_kit/lib/libck.a
+configure flags    : 
+===============================================================================
+Making all in doc
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+Making all in xsl
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc/xsl'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc/xsl'
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/doc'
+Making all in third_party/luajit
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/luajit'
+Making all in third_party/concurrency_kit
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit'
+Making all in src
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+Making all in drivers
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+Making all in mysql
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers/mysql'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers/mysql'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/drivers'
+Making all in tests
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+Making all in cpu
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/cpu'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/cpu'
+Making all in fileio
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/fileio'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/fileio'
+Making all in memory
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/memory'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/memory'
+Making all in threads
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/threads'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/threads'
+Making all in mutex
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/mutex'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests/mutex'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/tests'
+Making all in lua
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+Making all in internal
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make  all-am
+make[4]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua/internal'
+make[3]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src/lua'
+Making all in .
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/src'
+Making all in tests
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/tests'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/tests'
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src'

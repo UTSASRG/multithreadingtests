@@ -1,0 +1,22 @@
+configure.ac:59: installing 'config/ar-lib'
+configure.ac:40: installing 'config/compile'
+configure.ac:27: installing 'config/config.guess'
+configure.ac:27: installing 'config/config.sub'
+configure.ac:32: installing 'config/install-sh'
+configure.ac:32: installing 'config/missing'
+src/Makefile.am: installing 'config/depcomp'
+parallel-tests: installing 'config/test-driver'
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+In file included from /usr/include/string.h:495,
+                 from sb_logger.c:29:
+In function ‘strncpy’,
+    inlined from ‘text_handler_process’ at sb_logger.c:468:7:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:10: warning: ‘__builtin_strncpy’ specified bound 4096 equals destination size [-Wstringop-truncation]
+  106 |   return __builtin___strncpy_chk (__dest, __src, __len, __bos (__dest));
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

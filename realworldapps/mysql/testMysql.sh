@@ -1,1 +1,0 @@
-examplescripts/testMysql.sh

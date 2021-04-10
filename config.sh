@@ -11,3 +11,5 @@ export BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
 #==============================================================================
 # User config zone (Please override settings here)
 #==============================================================================
+
+export MAKE_JOB_NUMBER=10

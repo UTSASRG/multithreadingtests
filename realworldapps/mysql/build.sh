@@ -2,7 +2,7 @@
 
 #Print commands and their arguments while this script is executed(-x)
 #Exit if there's any error (-e)
-set -e
+#set -x
 
 echo "Loading benchmark configuration"
 source config.sh
@@ -22,22 +22,32 @@ if [ $PRE_BUILD_SCRIPT != "NULL" ]; then
     unset SCRIPT_EXEC_ARG
 fi
 
+if false; then
+
+
 echo "Remove previous build"
 #Remove binaries
 rm -rf src/build
 #Remove libraries
-rm -f src/boost_*.tar.gz
+rm -rf src/boost_*
 
 echo "Use cmake to build mysql (log prefix: mysqlcmake_$BUILD_TIMESTAMP)"
 mkdir -p src/build
+mkdir -p src/install/$1/usr/local/mysql/data
+
 cd src/build
 
-cmake .. -DOWNLOAD_BOOST=1 -DWITH_BOOST=.. >> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err"
 
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+cmake .. -DDOWNLOAD_BOOST=1 -DWITH_BOOST=`realpath ..` -DMYSQL_DATADIR=`realpath ../install/$1/usr/local/mysql/data` >> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err"
+
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
 
 cd ../..
 
@@ -57,59 +67,77 @@ cd src/build
 
 make -j $MAKE_JOB_NUMBER >> "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err"
 
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
+
 cd ../..
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+fi
 
 
 #Assume the first argument is the name of allocator
 echo "Start installing mysql to local folder  (log prefix: mysqlinstall_$BUILD_TIMESTAMP)"
 cd src/build
 make install DESTDIR="`realpath ../install/$1`"  >> "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err"
+
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
+
+
+
 export MYSQL_INSTALLATION_FOLDER=`realpath ../install/$1/usr/local/mysql`
 
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
 cd ../..
 echo "Mysql installed at $MYSQL_INSTALLATION_FOLDER"
 
 echo "Writing mysql activation script to installation folder"
-echo "export PS1=\"(benchmark-mysql) \$PS1\"" > $MYSQL_INSTALLATION_FOLDER/bechmarkEnv.sh
-echo "export LD_LIBRARY_PATH=$MYSQL_INSTALLATION_FOLDER/lib:$LD_LIBRARY_PATH" >> $MYSQL_INSTALLATION_FOLDER/bechmarkEnv.sh
-echo "export PATH=$MYSQL_INSTALLATION_FOLDER/bin:$PATH" >>  $MYSQL_INSTALLATION_FOLDER/bechmarkEnv.sh 
+echo "export PS1=\"(benchmark-mysql) \$PS1\"" > $MYSQL_INSTALLATION_FOLDER/benchmarkEnv.sh
+echo "export LD_LIBRARY_PATH=$MYSQL_INSTALLATION_FOLDER/lib:\$LD_LIBRARY_PATH" >> $MYSQL_INSTALLATION_FOLDER/benchmarkEnv.sh
+echo "export PATH=$MYSQL_INSTALLATION_FOLDER/bin:\$PATH" >>  $MYSQL_INSTALLATION_FOLDER/benchmarkEnv.sh
 
-echo "Building sysbench (A tool that send requests) (log prefix: sysbench(autogen/configure/make)_$BUILD_TIMESTAMP)"> /dev/null
+echo "Building sysbench (A tool that send requests) (log prefix: sysbenchmake_$BUILD_TIMESTAMP)"> /dev/null
 
 cd $MYSQL_BENCHMARK_ROOT_DIR
 
 cd tools/sysbench
 echo "sysbench autogen.sh"
-./autogen.sh  >> "$BUILD_LOG_FOLDER/sysbenchautogen_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchautogen_$BUILD_TIMESTAMP.err"
-
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchautogen_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchautogen_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-
+./autogen.sh  >> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err"
 echo "sysbench configure"
-./configure  >> "$BUILD_LOG_FOLDER/sysbenchconfigure_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchconfigure_$BUILD_TIMESTAMP.err"
-
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchconfigure_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchconfigure_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-
+./configure  >> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err"
 echo "sysbench make"
 make -j $MAKE_JOB_NUMBER   >> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err"
 
-echo "Log sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-echo "Error sneakpeak: "| sed 's/^/  /'
-tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
+
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
+
+echo "Writing sysbench activation script to installation folder"
+echo "export PATH=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src:\$PATH" >  $MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src/benchmarkEnv.sh
 
 if [ $AFTER_BUILD_SCRIPT != "NULL" ]; then
     echo "====> Executing after build script $AFTER_BUILD_SCRIPT" > /dev/null

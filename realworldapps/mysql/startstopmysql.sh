@@ -1,1 +1,0 @@
-examplescripts/startstopmysql.sh

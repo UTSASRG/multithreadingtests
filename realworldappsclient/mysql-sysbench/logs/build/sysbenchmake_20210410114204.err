@@ -1,0 +1,27 @@
+configure.ac:25: installing 'config/compile'
+configure.ac:17: installing 'config/missing'
+src/Makefile.am: installing 'config/depcomp'
+drv_mysql.c: In function ‘mysql_drv_thread_init’:
+drv_mysql.c:278:9: error: unknown type name ‘my_bool’
+  278 |   const my_bool rc = mysql_thread_init();
+      |         ^~~~~~~
+drv_mysql.c: In function ‘mysql_drv_bind_param’:
+drv_mysql.c:557:3: error: unknown type name ‘my_bool’; did you mean ‘bool’?
+  557 |   my_bool rc;
+      |   ^~~~~~~
+      |   bool
+drv_mysql.c:591:23: warning: assignment to ‘_Bool *’ from incompatible pointer type ‘char *’ [-Wincompatible-pointer-types]
+  591 |       bind[i].is_null = params[i].is_null;
+      |                       ^
+drv_mysql.c: In function ‘mysql_drv_bind_result’:
+drv_mysql.c:630:3: error: unknown type name ‘my_bool’; did you mean ‘bool’?
+  630 |   my_bool rc;
+      |   ^~~~~~~
+      |   bool
+drv_mysql.c:651:21: warning: assignment to ‘_Bool *’ from incompatible pointer type ‘char *’ [-Wincompatible-pointer-types]
+  651 |     bind[i].is_null = params[i].is_null;
+      |                     ^
+make[3]: *** [Makefile:458: libsbmysql_a-drv_mysql.o] Error 1
+make[2]: *** [Makefile:433: all-recursive] Error 1
+make[1]: *** [Makefile:620: all-recursive] Error 1
+make: *** [Makefile:494: all-recursive] Error 1

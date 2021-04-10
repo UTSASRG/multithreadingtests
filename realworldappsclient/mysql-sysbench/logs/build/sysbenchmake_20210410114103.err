@@ -1,0 +1,66 @@
+configure.ac:25: installing 'config/compile'
+configure.ac:17: installing 'config/missing'
+src/Makefile.am: installing 'config/depcomp'
+ar: `u' modifier ignored since `D' is the default (see `U')
+In file included from /home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht.c:44:
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h: In function ‘MurmurHash64A’:
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:198:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  198 |   case 7: h ^= (uint64_t)(data2[6]) << 48;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:199:3: note: here
+  199 |   case 6: h ^= (uint64_t)(data2[5]) << 40;
+      |   ^~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:199:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  199 |   case 6: h ^= (uint64_t)(data2[5]) << 40;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:200:3: note: here
+  200 |   case 5: h ^= (uint64_t)(data2[4]) << 32;
+      |   ^~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:200:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  200 |   case 5: h ^= (uint64_t)(data2[4]) << 32;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:201:3: note: here
+  201 |   case 4: h ^= (uint64_t)(data2[3]) << 24;
+      |   ^~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:201:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  201 |   case 4: h ^= (uint64_t)(data2[3]) << 24;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:202:3: note: here
+  202 |   case 3: h ^= (uint64_t)(data2[2]) << 16;
+      |   ^~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:202:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  202 |   case 3: h ^= (uint64_t)(data2[2]) << 16;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:203:3: note: here
+  203 |   case 2: h ^= (uint64_t)(data2[1]) << 8;
+      |   ^~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:203:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  203 |   case 2: h ^= (uint64_t)(data2[1]) << 8;
+      |           ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/st/Projects/multithreadingtests/realworldappsclient/mysql-sysbench/src/third_party/concurrency_kit/tmp/ck/src/ck_ht_hash.h:204:3: note: here
+  204 |   case 1: h ^= (uint64_t)(data2[0]);
+      |   ^~~~
+drv_mysql.c: In function ‘mysql_drv_thread_init’:
+drv_mysql.c:278:9: error: unknown type name ‘my_bool’
+  278 |   const my_bool rc = mysql_thread_init();
+      |         ^~~~~~~
+drv_mysql.c: In function ‘mysql_drv_bind_param’:
+drv_mysql.c:557:3: error: unknown type name ‘my_bool’; did you mean ‘bool’?
+  557 |   my_bool rc;
+      |   ^~~~~~~
+      |   bool
+drv_mysql.c:591:23: warning: assignment to ‘_Bool *’ from incompatible pointer type ‘char *’ [-Wincompatible-pointer-types]
+  591 |       bind[i].is_null = params[i].is_null;
+      |                       ^
+drv_mysql.c: In function ‘mysql_drv_bind_result’:
+drv_mysql.c:630:3: error: unknown type name ‘my_bool’; did you mean ‘bool’?
+  630 |   my_bool rc;
+      |   ^~~~~~~
+      |   bool
+drv_mysql.c:651:21: warning: assignment to ‘_Bool *’ from incompatible pointer type ‘char *’ [-Wincompatible-pointer-types]
+  651 |     bind[i].is_null = params[i].is_null;
+      |                     ^
+make[3]: *** [Makefile:458: libsbmysql_a-drv_mysql.o] Error 1
+make[2]: *** [Makefile:433: all-recursive] Error 1
+make[1]: *** [Makefile:620: all-recursive] Error 1
+make: *** [Makefile:494: all-recursive] Error 1

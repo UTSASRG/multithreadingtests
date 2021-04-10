@@ -28,6 +28,10 @@ export BUILD_LOG_FOLDER="$SYSBENCH_BENCHMARK_ROOT_DIR/logs/build"
 
 export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 
+export MEMCACHED_SERVER_IP=localhost
+
+export MEMCACHED_SERVER_PORT=11211
+
 #==============================================================================
 # User config zone (Please override settings here)
 #==============================================================================

@@ -10,7 +10,7 @@ mkdir -p $TEST_RESULT_LOG_FOLDER
 
 while IFS= read -r line; do
   printf '%s\n' "$line"
-  echo "$line" >> $TEST_RESULT_LOG_FOLDER/mysqlresult_$2_memory_$BUILD_TIMESTAMP.log
+  echo "$line" >> $TEST_RESULT_LOG_FOLDER/mysqlresult_$2_cpu_$BUILD_TIMESTAMP.log
 done
 
-echo "I (AfterTest_Printresult.sh) has saved the testing result to $TEST_RESULT_LOG_FOLDER/mysqlresult_$2_memory_$BUILD_TIMESTAMP.log"
+echo "I (AfterTest_Printresult.sh) has saved the testing result to $TEST_RESULT_LOG_FOLDER/mysqlresult_$2_cpu_$BUILD_TIMESTAMP.log"

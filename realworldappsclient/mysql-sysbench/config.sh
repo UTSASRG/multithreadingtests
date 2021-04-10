@@ -29,6 +29,8 @@ export AFTER_TEST_SCRIPT="NULL"
 
 export BUILD_LOG_FOLDER="$MYSQL_BENCHMARK_ROOT_DIR/logs/build"
 
+export TEST_RESULT_LOG_FOLDER="$MYSQL_BENCHMARK_ROOT_DIR/logs/testresult"
+
 export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 
 export MYSQL_SERVER_IP=127.0.0.1
@@ -40,3 +42,4 @@ export MYSQL_SERVER_PORT=3306
 #==============================================================================
 
 
+export AFTER_TEST_SCRIPT="$MYSQL_BENCHMARK_ROOT_DIR/myscripts/AfterTest_Printresult.sh"

@@ -33,6 +33,6 @@ export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 # User config zone (Please override settings here)
 #==============================================================================
 
-export BUILD_ARG_PROCESS_SCRIPT="`pwd`/myscripts/ArgParser_addExtraArgProcessorBasedOnArg.py"
+export BUILD_ARG_PROCESS_SCRIPT="$MEMCACHED_BENCHMARK_ROOT_DIR/myscripts/ArgParser_addExtraArgProcessorBasedOnArg.py"
 
-export AFTER_TEST_SCRIPT="`pwd`/myscripts/AfterTest_Printresult.sh"
+export AFTER_TEST_SCRIPT="$MEMCACHED_BENCHMARK_ROOT_DIR/myscripts/AfterTest_Printresult.sh"

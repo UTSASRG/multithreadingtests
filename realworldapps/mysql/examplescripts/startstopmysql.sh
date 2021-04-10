@@ -63,6 +63,7 @@ if [ $1 == "stop" ]; then
   if [ $AFTER_TEST_SCRIPT != "NULL" ]; then
       echo "Executing your after-test script $PRE_TEST_SCRIPT" > /dev/null
       #build.sh will pass all it's arguments to environment variable
+
       echo $_result | $AFTER_TEST_SCRIPT $@
   fi
   cd $MYSQL_INSTALLATION_FOLDER

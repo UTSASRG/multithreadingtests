@@ -4,11 +4,24 @@
 #Exit if there's any error (-e)
 #set -x
 
+funcCheckLog () {
+    #logName,errorLogName,retValue
+
+    if [ $3 -eq 0 ]; then
+        echo "Log sneakpeek: "| sed 's/^/  /'
+        tail -n3 $1 | sed 's/^/  /'
+    else
+        echo "Error sneakpeek: "| sed 's/^/  /'
+        tail -n3 $2 | sed 's/^/  /'
+        exit -1
+    fi
+}
+
 echo "Loading benchmark configuration"
 source config.sh
 
 #Check parameters
-if [ "$#" -ne 2 ]
+if [ "$#" -ne 1 ]
 then
   echo "Usage: ./build.sh BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under $BUILD_NAME folder)"
   exit 1
@@ -30,9 +43,6 @@ if [ $PRE_BUILD_SCRIPT != "NULL" ]; then
     unset SCRIPT_EXEC_ARG
 fi
 
-if false; then
-
-
 echo "Remove previous build"
 #Remove binaries
 rm -rf src/build
@@ -48,14 +58,9 @@ cd src/build
 
 cmake .. -DDOWNLOAD_BOOST=1 -DWITH_BOOST=`realpath ..` -DMYSQL_DATADIR=`realpath ../install/$1/usr/local/mysql/data` >> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err"
 
-if [ $? -eq 0 ]; then
-    echo "Log sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-else
-    echo "Error sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-    exit -1
-fi
+funcCheckLog "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err" $?
+
+exit 0
 
 cd ../..
 
@@ -75,17 +80,9 @@ cd src/build
 
 make -j $MAKE_JOB_NUMBER >> "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err"
 
-if [ $? -eq 0 ]; then
-    echo "Log sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-else
-    echo "Error sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-    exit -1
-fi
+funcCheckLog "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlmake_$BUILD_TIMESTAMP.err" $?
 
 cd ../..
-fi
 
 
 #Assume the first argument is the name of allocator
@@ -93,14 +90,8 @@ echo "Start installing mysql to local folder  (log prefix: mysqlinstall_$BUILD_T
 cd src/build
 make install DESTDIR="`realpath ../install/$1`"  >> "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err"
 
-if [ $? -eq 0 ]; then
-    echo "Log sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-else
-    echo "Error sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-    exit -1
-fi
+funcCheckLog "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlinstall_$BUILD_TIMESTAMP.err" $?
+
 
 
 
@@ -126,23 +117,7 @@ echo "sysbench configure"
 echo "sysbench make"
 make -j $MAKE_JOB_NUMBER   >> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err"
 
-if [ $? -eq 0 ]; then
-    echo "Log sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-else
-    echo "Error sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-    exit -1
-fi
-
-if [ $? -eq 0 ]; then
-    echo "Log sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
-else
-    echo "Error sneakpeek: "| sed 's/^/  /'
-    tail -n3 "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
-    exit -1
-fi
+funcCheckLog "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err" $?
 
 echo "Writing sysbench activation script to installation folder"
 echo "export PATH=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src:\$PATH" >  $MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src/benchmarkEnv.sh

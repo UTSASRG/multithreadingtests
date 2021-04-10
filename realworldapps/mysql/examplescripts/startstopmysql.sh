@@ -28,11 +28,12 @@ if [ $1 == "start" ]; then
       $PRE_TEST_SCRIPT $@ 
   fi
   
-  echo "Starting mysql server (log prefix: mysqlstart_$BUILD_TIMESTAMP) [Async]"
+  echo "Starting mysql server $PRE_TEST_SCRIPT \(log prefix: mysqlstart_$BUILD_TIMESTAMP\) [Async]"
   cd $MYSQL_INSTALLATION_FOLDER
-  ./bin/mysqld_safe --user=$user  >> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.err" &
+  (./bin/mysqld_safe --user=$user  >> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.err" && 
+  
+  funcCheckLog "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.err" $? ) 
   sleep 5
-  exit
 fi
 
 if [ $1 == "stop" ]; then
@@ -54,7 +55,6 @@ if [ $1 == "stop" ]; then
   cd $MYSQL_INSTALLATION_FOLDER
   ./bin/mysqladmin shutdown -u root -p2oiegrji23rjk1kuh12kj -S /tmp/mysql.sock &
   sleep 5
-  exit
 fi
 
 

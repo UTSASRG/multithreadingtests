@@ -84,7 +84,7 @@ export SYSBENCH_DIR=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src
 source $SYSBENCH_DIR/benchmarkEnv.sh
 cd $SYSBENCH_DIR/lua 
 
-./oltp_read_write.lua --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=2oiegrji23rjk1kuh12kj prepare >> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err"
+./oltp_read_only.lua --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=2oiegrji23rjk1kuh12kj prepare >> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err"
 
 funcCheckLog "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err" $?
 

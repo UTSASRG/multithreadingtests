@@ -7,7 +7,8 @@
 export MYSQL_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
 
 cd $MYSQL_BENCHMARK_ROOT_DIR
-source ../../$config.sh
+source ../../config.sh
+
 
 #If no pre build script, pass null
 export PRE_BUILD_SCRIPT="NULL"

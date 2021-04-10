@@ -4,6 +4,8 @@
 # Benchmark config zone (changes not recommended)
 #==============================================================================
 
+export MEMCACHED_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
+cd $MEMCACHED_BENCHMARK_ROOT_DIR
 source ../../config.sh
 
 #If no pre build script, pass null
@@ -17,7 +19,6 @@ export BUILD_ARG_PROCESS_SCRIPT="NULL"
 #If no after build script, pass null
 export AFTER_BUILD_SCRIPT="NULL"
 
-export MEMCACHED_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
 
 
 export PRE_TEST_SCRIPT="NULL"

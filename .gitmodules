@@ -28,3 +28,9 @@
 [submodule "realworldapps/memcached/libs/libevent"]
 	path = realworldapps/memcached/libs/libevent
 	url = https://github.com/libevent/libevent.git
+[submodule "realworldappsclient/mysql-sysbench/--name=src"]
+	path = realworldappsclient/mysql-sysbench/--name=src
+	url = https://github.com/akopytov/sysbench.git
+[submodule "realworldappsclient/mysql-sysbench/src"]
+	path = realworldappsclient/mysql-sysbench/src
+	url = https://github.com/akopytov/sysbench.git

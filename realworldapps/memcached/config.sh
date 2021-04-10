@@ -27,6 +27,9 @@ export AFTER_TEST_SCRIPT="NULL"
 
 export BUILD_LOG_FOLDER="$MEMCACHED_BENCHMARK_ROOT_DIR/logs/build"
 
+export TEST_RESULT_LOG_FOLDER="$MEMCACHED_BENCHMARK_ROOT_DIR/logs/testresult"
+
+
 export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 
 #==============================================================================

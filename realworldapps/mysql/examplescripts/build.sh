@@ -60,8 +60,6 @@ cmake .. -DDOWNLOAD_BOOST=1 -DWITH_BOOST=`realpath ..` -DMYSQL_DATADIR=`realpath
 
 funcCheckLog "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlcmake_$BUILD_TIMESTAMP.err" $?
 
-exit 0
-
 cd ../..
 
 echo "Backup cmake generated build scirpts"
@@ -123,7 +121,7 @@ echo "Writing sysbench activation script to installation folder"
 echo "export PATH=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src:\$PATH" >  $MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src/benchmarkEnv.sh
 
 if [ $AFTER_BUILD_SCRIPT != "NULL" ]; then
-    echo "====> Executing after build script $AFTER_BUILD_SCRIPT" > /dev/null
+    echo "Executing after build script $AFTER_BUILD_SCRIPT"
     export SCRIPT_EXEC_ARG=$@
     $AFTER_BUILD_SCRIPT $@
     unset SCRIPT_EXEC_ARG

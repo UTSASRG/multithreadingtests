@@ -17,14 +17,14 @@ export BUILD_ARG_PROCESS_SCRIPT="NULL"
 #If no after build script, pass null
 export AFTER_BUILD_SCRIPT="NULL"
 
-export MYSQL_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
+export MEMCACHED_BENCHMARK_ROOT_DIR=`dirname $(realpath ${BASH_SOURCE})`
 
 
 export PRE_TEST_SCRIPT="NULL"
 
 export AFTER_TEST_SCRIPT="NULL"
 
-export BUILD_LOG_FOLDER="$MYSQL_BENCHMARK_ROOT_DIR/logs/build"
+export BUILD_LOG_FOLDER="$MEMCACHED_BENCHMARK_ROOT_DIR/logs/build"
 
 export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 
@@ -33,7 +33,5 @@ export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 #==============================================================================
 
 export BUILD_ARG_PROCESS_SCRIPT="`pwd`/myscripts/ArgParser_addExtraArgProcessorBasedOnArg.py"
-
-export AFTER_BUILD_SCRIPT="`pwd`/myscripts/AfterBuild_install.sh"
 
 export AFTER_TEST_SCRIPT="`pwd`/myscripts/AfterTest_Printresult.sh"

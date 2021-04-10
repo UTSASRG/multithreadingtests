@@ -3,20 +3,34 @@
 #Print commands and their arguments while this script is executed
 #set -x
 
+funcCheckLog () {
+    #logName,errorLogName,retValue
+
+    if [ $3 -eq 0 ]; then
+        echo "Log sneakpeek: "| sed 's/^/  /'
+        tail -n3 $1 | sed 's/^/  /'
+    else
+        echo "Error sneakpeek: "| sed 's/^/  /'
+        tail -n3 $2 | sed 's/^/  /'
+        exit -1
+    fi
+}
+
+
 echo "Load configuration"
 source config.sh
 
 if [ "$#" -ne 2 ]; then
-  echo "Usage: ./startstomysql.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"
+  echo "Usage: ./startstopmemcached.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"
   exit -1
 fi
 
-cd $MYSQL_BENCHMARK_ROOT_DIR
-export MYSQL_INSTALLATION_FOLDER=$MYSQL_BENCHMARK_ROOT_DIR/src/install/$2/usr/local/mysql
+cd $MEMCACHED_BENCHMARK_ROOT_DIR
+export MEMCACHED_INSTALLATION_FOLDER=$MEMCACHED_BENCHMARK_ROOT_DIR/src/install/$2
 
-if [ ! -d "$MYSQL_INSTALLATION_FOLDER" ]; then
+if [ ! -d "$MEMCACHED_INSTALLATION_FOLDER" ]; then
     echo "Install with name $2 not found"
-    echo "Folder $MYSQL_INSTALLATION_FOLDER not exist"
+    echo "Folder $MEMCACHED_INSTALLATION_FOLDER not exist"
     exit -1;
 fi
 
@@ -28,12 +42,11 @@ if [ $1 == "start" ]; then
       $PRE_TEST_SCRIPT $@ 
   fi
   
-  echo "Starting mysql server $PRE_TEST_SCRIPT \(log prefix: mysqlstart_$BUILD_TIMESTAMP\) [Async]"
-  cd $MYSQL_INSTALLATION_FOLDER
-  (./bin/mysqld_safe --user=$user  >> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.err" && 
-  
-  funcCheckLog "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlstart_$BUILD_TIMESTAMP.err" $? ) 
+  echo "Starting memcached server \(log prefix: memcachedstart_$BUILD_TIMESTAMP\) [Async]"
+  cd $MEMCACHED_INSTALLATION_FOLDER
+  (./bin/memcached -l 0.0.0.0 -p 11211  >> "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.err" && funcCheckLog "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.err" $? ) &
   sleep 5
+  exit 0
 fi
 
 if [ $1 == "stop" ]; then
@@ -55,6 +68,7 @@ if [ $1 == "stop" ]; then
   cd $MYSQL_INSTALLATION_FOLDER
   ./bin/mysqladmin shutdown -u root -p2oiegrji23rjk1kuh12kj -S /tmp/mysql.sock &
   sleep 5
+  exit 0
 fi
 
 

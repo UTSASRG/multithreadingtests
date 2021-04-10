@@ -1,0 +1,1 @@
+examplescripts/startstopmemcached.sh

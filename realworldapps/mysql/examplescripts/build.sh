@@ -38,9 +38,7 @@ cd $MYSQL_BENCHMARK_ROOT_DIR
 if [ $PRE_BUILD_SCRIPT != "NULL" ]; then
     #build.sh will pass all it's arguments to environment variable
     echo "Executing pre build script $PRE_BUILD_SCRIPT"
-    export SCRIPT_EXEC_ARG=$@
     $PRE_BUILD_SCRIPT $@
-    unset SCRIPT_EXEC_ARG
 fi
 
 echo "Remove previous build"
@@ -67,7 +65,6 @@ echo "Backup cmake generated build scirpts"
 mv src/build/sql/CMakeFiles/mysqld.dir/link.txt src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp
 
 #build.sh will pass all it's arguments to environment variable
-export SCRIPT_EXEC_ARG=$@
 if [ $BUILD_ARG_PROCESS_SCRIPT != "NULL" ]; then
     echo "Processing build command with your argument parser \"$BUILD_ARG_PROCESS_SCRIPT\""
     cat "src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp" | ${BUILD_ARG_PROCESS_SCRIPT}  $@ > "src/build/sql/CMakeFiles/mysqld.dir/link.txt"

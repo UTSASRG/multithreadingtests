@@ -21,27 +21,21 @@ if(len(buildCommand) != 1):
 
 buildCommand = buildCommand[0].strip()
 
-#make sure there are arguemtns
-if('SCRIPT_EXEC_ARG' not in os.environ):
-    print("Shell script error. build.sh should pass all its arguemnts to SCRIPT_EXEC_ARG", file=sys.stderr)
-    sys.exit(-1)
-
 #Split build arguments by space
-argV = list(os.environ['SCRIPT_EXEC_ARG'].split(' '))
-
+argV = sys.argv
 
 
 memoryAllocatorsLibPath = {"tcmalloc": "tcmalloc.so",
                            "jemalloc": "jemalloc.so"}
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
-if(not (len(argV) == 1 and argV[0] in memoryAllocatorsLibPath)):
+if(not (len(argV) == 1 and argV[1] in memoryAllocatorsLibPath)):
     print("You need to pass one and only one allocator name to build.sh" %(len()), file=sys.stderr)
     print("Configured allocators:\n" +memoryAllocatorsLibPath, file=sys.stderr)
     sys.exit(-1)
 
 #Dynamically select build arg
-extraBuildArgs = "-rdynamic "+memoryAllocatorsLibPath[argV[0]]
+extraBuildArgs = "-rdynamic "+memoryAllocatorsLibPath[argV[1]]
 
 buildCommand = buildCommand+" "+extraBuildArgs
 

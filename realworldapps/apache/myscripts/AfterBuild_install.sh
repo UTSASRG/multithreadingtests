@@ -29,4 +29,4 @@ cd $APACHE_BENCHMARK_ROOT_DIR/src/install/$1/conf
 
 echo "Changing listening ip and port to $APACHE_LISTENING_IP:$APACHE_LISTENING_PORT as instructed"
 cp ./httpd.conf ./httpd.conf.bkp
-cat ./httpd.conf.bkp | sed "s/^Listen \d*/Listen $APACHE_LISTENING_IP:$APACHE_LISTENING_PORT/" > ./httpd.conf
+cat ./httpd.conf.bkp | sed "s/^Listen 80/Listen $APACHE_LISTENING_IP:$APACHE_LISTENING_PORT/" > ./httpd.conf

@@ -25,6 +25,8 @@ if [ "$#" -ne 2 ]; then
   exit -1
 fi
 
+mkdir -p $BUILD_LOG_FOLDER
+
 cd $APACHE_BENCHMARK_ROOT_DIR
 export APACHE_INSTALLATION_FOLDER=$APACHE_BENCHMARK_ROOT_DIR/src/install/$2
 

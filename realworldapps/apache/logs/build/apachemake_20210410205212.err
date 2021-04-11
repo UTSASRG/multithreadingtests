@@ -1,0 +1,197 @@
+gen_test_char.c:29:10: fatal error: apr.h: No such file or directory
+   29 | #include "apr.h"
+      |          ^~~~~~~
+main.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+compilation terminated.
+util_fcgi.c:17:10: fatal error: httpd.h: No such file or directory
+   17 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+log.c:24:10: fatal error: apr.h: No such file or directory
+   24 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+config.c:32:10: fatal error: apr.h: No such file or directory
+   32 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+vhost.c:23:10: fatal error: apr.h: No such file or directory
+   23 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+util_md5.c:46:10: fatal error: ap_config.h: No such file or directory
+   46 | #include "ap_config.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+util_cfgtree.c:17:10: fatal error: util_cfgtree.h: No such file or directory
+   17 | #include "util_cfgtree.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: config.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: main.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: log.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: vhost.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: gen_test_char.lo] Error 1 (ignored)
+util_ebcdic.c:17:10: fatal error: ap_config.h: No such file or directory
+   17 | #include "ap_config.h"
+      |          ^~~~~~~~~~~~~
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_fcgi.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_md5.lo] Error 1 (ignored)
+compilation terminated.
+util_script.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_script.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_cfgtree.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_ebcdic.lo] Error 1 (ignored)
+connection.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+util_time.c:17:10: fatal error: util_time.h: No such file or directory
+   17 | #include "util_time.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+mpm_common.c:28:10: fatal error: apr.h: No such file or directory
+   28 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+util_mutex.c:23:10: fatal error: apr.h: No such file or directory
+   23 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+util_debug.c:18:10: fatal error: apr_want.h: No such file or directory
+   18 | #include "apr_want.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+listen.c:17:10: fatal error: apr_network_io.h: No such file or directory
+   17 | #include "apr_network_io.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from mpm_fdqueue.c:17:
+mpm_fdqueue.h:28:10: fatal error: apr.h: No such file or directory
+   28 | #include <apr.h>
+      |          ^~~~~~~
+compilation terminated.
+mpm_unix.c:30:10: fatal error: apr.h: No such file or directory
+   30 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+util_charset.c:17:10: fatal error: ap_config.h: No such file or directory
+   17 | #include "ap_config.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: connection.lo] Error 1 (ignored)
+util_cookies.c:17:10: fatal error: util_cookies.h: No such file or directory
+   17 | #include "util_cookies.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: mpm_common.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: listen.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_mutex.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_time.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: mpm_unix.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: mpm_fdqueue.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_debug.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_charset.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_cookies.lo] Error 1 (ignored)
+ls: cannot access '/home/st/Projects/multithreadingtests/realworldapps/apache/src/os//*.h': No such file or directory
+util_pcre.c:55:10: fatal error: httpd.h: No such file or directory
+   55 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+protocol.c:24:10: fatal error: apr.h: No such file or directory
+   24 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+core.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+util_regex.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+util_xml.c:17:10: fatal error: apr_xml.h: No such file or directory
+   17 | #include "apr_xml.h"
+      |          ^~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+util_filter.c:18:10: fatal error: apr_want.h: No such file or directory
+   18 | #include "apr_want.h"
+      |          ^~~~~~~~~~~~
+scoreboard.c:17:10: fatal error: apr.h: No such file or directory
+   17 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+compilation terminated.
+error_bucket.c:17:10: fatal error: http_protocol.h: No such file or directory
+   17 | #include "http_protocol.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_pcre.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: protocol.lo] Error 1 (ignored)
+request.c:28:10: fatal error: apr_strings.h: No such file or directory
+   28 | #include "apr_strings.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_filter.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_xml.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_regex.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: scoreboard.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: core.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: error_bucket.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: request.lo] Error 1 (ignored)
+/bin/sh: 1: f: not found
+make[2]: [Makefile:77: export_vars.h] Error 127 (ignored)
+provider.c:17:10: fatal error: apr_pools.h: No such file or directory
+   17 | #include "apr_pools.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+cc: error: gen_test_char.lo: No such file or directory
+cc: fatal error: no input files
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: provider.lo] Error 1 (ignored)
+make[2]: [Makefile:34: gen_test_char] Error 1 (ignored)
+/bin/sh: 1: f: not found
+make[2]: [Makefile:74: exports.c] Error 127 (ignored)
+/bin/sh: 1: ./gen_test_char: not found
+make[2]: *** [Makefile:37: test_char.h] Error 127
+make[2]: *** Waiting for unfinished jobs....
+eor_bucket.c:17:10: fatal error: httpd.h: No such file or directory
+   17 | #include "httpd.h"
+      |          ^~~~~~~~~
+eoc_bucket.c:17:10: fatal error: httpd.h: No such file or directory
+   17 | #include "httpd.h"
+      |          ^~~~~~~~~
+In file included from util_expr_parse.y:32:
+util_expr_private.h:20:10: fatal error: httpd.h: No such file or directory
+   20 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+compilation terminated.
+compilation terminated.
+util_expr_eval.c:21:10: fatal error: httpd.h: No such file or directory
+   21 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: eoc_bucket.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: eor_bucket.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_expr_parse.lo] Error 1 (ignored)
+core_filters.c:22:10: fatal error: apr.h: No such file or directory
+   22 | #include "apr.h"
+      |          ^~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_expr_eval.lo] Error 1 (ignored)
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: core_filters.lo] Error 1 (ignored)
+In file included from util_expr_scan.l:43:
+util_expr_private.h:20:10: fatal error: httpd.h: No such file or directory
+   20 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_expr_scan.lo] Error 1 (ignored)
+make[1]: *** [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:75: all-recursive] Error 1
+make: *** [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:75: all-recursive] Error 1

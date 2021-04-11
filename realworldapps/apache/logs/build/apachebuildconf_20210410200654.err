@@ -1,0 +1,9 @@
+rm: cannot remove 'conftest*': No such file or directory
+rm: cannot remove 'conftest*': No such file or directory
+rm: cannot remove 'libtoolT': No such file or directory
+configure: WARNING: apr/apr-util is compiled without ldap support
+configure: WARNING: apr/apr-util is compiled without ldap support
+configure: WARNING: Your APR does not include SSL/EVP support. To enable it: configure --with-crypto
+configure: WARNING: nghttp2 version is too old
+configure: WARNING: libjansson not found
+configure: WARNING: libcurl not found

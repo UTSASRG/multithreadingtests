@@ -1,0 +1,67 @@
+Making all in srclib
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/srclib'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/srclib'
+Making all in os
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/os'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/os'
+Making all in server
+make[1]: Entering directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server'
+Making all in mpm
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server/mpm'
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server/mpm'
+make[2]: Entering directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server'
+mode=compile cc                -c config.c && touch config.lo
+mode=compile cc                -c log.c && touch log.lo
+mode=compile cc                -c main.c && touch main.lo
+mode=compile cc                -c vhost.c && touch vhost.lo
+mode=compile cc                -c gen_test_char.c && touch gen_test_char.lo
+mode=compile cc                -c util_fcgi.c && touch util_fcgi.lo
+mode=compile cc                -c util_script.c && touch util_script.lo
+mode=compile cc                -c util_md5.c && touch util_md5.lo
+mode=compile cc                -c util_cfgtree.c && touch util_cfgtree.lo
+Found newer headers. Will rebuild exports.c.
+rm -f exports.c export_files
+mode=compile cc                -c util_ebcdic.c && touch util_ebcdic.lo
+mode=compile cc                -c util_time.c && touch util_time.lo
+mode=compile cc                -c connection.c && touch connection.lo
+mode=compile cc                -c listen.c && touch listen.lo
+mode=compile cc                -c util_mutex.c && touch util_mutex.lo
+mode=compile cc                -c mpm_common.c && touch mpm_common.lo
+mode=compile cc                -c mpm_unix.c && touch mpm_unix.lo
+mode=compile cc                -c mpm_fdqueue.c && touch mpm_fdqueue.lo
+mode=compile cc                -c util_charset.c && touch util_charset.lo
+mode=compile cc                -c util_cookies.c && touch util_cookies.lo
+mode=compile cc                -c util_debug.c && touch util_debug.lo
+mode=compile cc                -c util_xml.c && touch util_xml.lo
+mode=compile cc                -c util_filter.c && touch util_filter.lo
+mode=compile cc                -c util_pcre.c && touch util_pcre.lo
+mode=compile cc                -c util_regex.c && touch util_regex.lo
+( for dir in /home/st/Projects/multithreadingtests/realworldapps/apache/src/include /home/st/Projects/multithreadingtests/realworldapps/apache/src/os/; do \
+      ls $dir/*.h ; \
+  done; \
+  echo "/home/st/Projects/multithreadingtests/realworldapps/apache/src/server/mpm_fdqueue.h"; \
+  for dir in  ; do \
+      ls $dir/ap[ru].h $dir/ap[ru]_*.h 2>/dev/null; \
+  done; \
+) | sed -e s,//,/,g | sort -u > export_files
+mode=compile cc                -c scoreboard.c && touch scoreboard.lo
+mode=compile cc                -c error_bucket.c && touch error_bucket.lo
+mode=compile cc                -c protocol.c && touch protocol.lo
+mode=compile cc                -c core.c && touch core.lo
+mode=compile cc                -c request.c && touch request.lo
+mode=compile cc                -c provider.c && touch provider.lo
+mode=compile cc                -c eoc_bucket.c && touch eoc_bucket.lo
+mode=compile cc                -c eor_bucket.c && touch eor_bucket.lo
+mode=compile cc                -c core_filters.c && touch core_filters.lo
+mode=compile cc                -c util_expr_parse.c && touch util_expr_parse.lo
+mode=compile cc                -c util_expr_scan.c && touch util_expr_scan.lo
+mode=compile cc                -c util_expr_eval.c && touch util_expr_eval.lo
+f /home/st/Projects/multithreadingtests/realworldapps/apache/src/build/make_var_export.awk `cat export_files` > export_vars.h
+mode=link cc           -o gen_test_char  gen_test_char.lo 
+f /home/st/Projects/multithreadingtests/realworldapps/apache/src/build/make_exports.awk `cat export_files` > exports.c
+./gen_test_char > test_char.h
+mode=compile cc                -c exports.c && touch exports.lo
+cc -E          exports.c | grep "ap_hack_" | grep -v apr_ | sed -e 's/^.*[)]\(.*\);$/\1/' >> httpd.exp
+cc -E          export_vars.h | grep -v apr_ | sed -e 's/^\#[^!]*//' | sed -e '/^$/d' >> httpd.exp
+make[2]: Leaving directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server'
+make[1]: Leaving directory '/home/st/Projects/multithreadingtests/realworldapps/apache/src/server'

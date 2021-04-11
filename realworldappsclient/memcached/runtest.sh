@@ -45,7 +45,7 @@ cd libs
 for i in `seq 5`             
   do
     echo "begin test ---$i:" >> "$TEST_RESULT_LOG_FOLDER/memcacheruntest_$BUILD_TIMESTAMP"
-    /usr/bin/time -a -o "$TEST_RESULT_LOG_FOLDER/memcacheruntest_$BUILD_TIMESTAMP" ./run.py
+    /usr/bin/time -a -o "$TEST_RESULT_LOG_FOLDER/memcacheruntest_$BUILD_TIMESTAMP" ./runtest.py
     sleep 5                    
 done
 
@@ -55,5 +55,11 @@ if [ $AFTER_TEST_SCRIPT != "NULL" ]; then
     cat $TEST_RESULT_LOG_FOLDER/memcacheruntest_$BUILD_TIMESTAMP | $AFTER_TEST_SCRIPT $@
 fi
 
-
 echo "These results are time on the client side. If you want to know server side metric you need to run startstopmemcached.sh stop BUILD_NAME"
+
+if [ $AFTER_BUILD_SCRIPT != "NULL" ]; then
+    echo "Executing after build script $AFTER_BUILD_SCRIPT"
+    export SCRIPT_EXEC_ARG=$@
+    $AFTER_BUILD_SCRIPT $@
+    unset SCRIPT_EXEC_ARG
+fi

@@ -1,0 +1,15 @@
+libtool: warning: relinking 'libaprutil-1.la'
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/modules
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/conf
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/conf/extra
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/conf/original
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/conf/original/extra
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/htdocs
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/error
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/icons
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/logs
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/cgi-bin
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/man
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/man/man1
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/man/man8
+mkdir /home/st/Projects/multithreadingtests/realworldapps/apache/src/install/hoard/manual

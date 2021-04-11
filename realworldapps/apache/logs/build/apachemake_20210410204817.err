@@ -1,0 +1,12 @@
+In file included from util_expr_parse.y:32:
+util_expr_private.h:20:10: fatal error: httpd.h: No such file or directory
+   20 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_expr_parse.lo] Error 1 (ignored)
+In file included from util_expr_scan.l:43:
+util_expr_private.h:20:10: fatal error: httpd.h: No such file or directory
+   20 | #include "httpd.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[2]: [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:206: util_expr_scan.lo] Error 1 (ignored)

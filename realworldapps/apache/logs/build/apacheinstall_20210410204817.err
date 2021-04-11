@@ -1,0 +1,4 @@
+/bin/sh: 2: Syntax error: ";" unexpected
+make[2]: *** [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:172: program-install] Error 2
+make[1]: *** [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:75: install-recursive] Error 1
+make: *** [/home/st/Projects/multithreadingtests/realworldapps/apache/src/build/rules.mk:75: install-recursive] Error 1

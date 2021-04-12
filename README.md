@@ -37,11 +37,10 @@ The typical testing workflow is like this:
     ```
     cd ROOT_FOLDER_OF_THIS_REPO
     git submodule init #Init local submodule config
-    git submodule update realworldapps/mysql/src
+    git submodule update --init --recursive realworldapps/mysql/src
     ```
     eg: If you want to test everything
     ```
     cd ROOT_FOLDER_OF_THIS_REPO
-    git submodule init #Init local submodule config
-    git submodule update
+    git submodule update --init --recursive
     ```

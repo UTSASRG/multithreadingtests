@@ -18,12 +18,14 @@ print("Checking parameters", file=sys.stderr)
 #Split build arguments by space
 argV = sys.argv
 
-MY_ARTIFECTS_DIR = '/home/st/Projects/multithreadingtests/myartifects'
+MY_ARTIFECTS_DIR = os.environ['BENCHMARK_ROOT_DIR']+"/myartifects"
+
 memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
                            "libc228": MY_ARTIFECTS_DIR+"/libmalloc228.so",
                            "tcmalloc": MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc": MY_ARTIFECTS_DIR+"/libjemalloc.so"}
+mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
                            
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
@@ -34,12 +36,12 @@ if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
 print('Replacing -pthread with -rdynamic *.so -pthread',file=sys.stderr)
 pthreadPattern= re.compile('\-pthread')
 for lid,line in enumerate(buildCommand):
-   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
+   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
 
 print('Replacing -lpthread with -rdynamic *.so -lpthread',file=sys.stderr)
 pthreadPattern= re.compile('\-lpthread')
 for lid,line in enumerate(buildCommand):
-   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 
+   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 
 
 print('Replacing CPPFLAGS = with CPPFLAGS = -Wl,--no-as-needed',file=sys.stderr)
 pthreadPattern= re.compile('^CPPFLAGS =')

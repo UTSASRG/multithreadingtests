@@ -42,5 +42,5 @@ The typical testing workflow is like this:
     eg: If you want to test everything
     ```
     cd ROOT_FOLDER_OF_THIS_REPO
-    git submodule update --init --recursive
+    git submodule update --init --recursive --depth=1
     ```

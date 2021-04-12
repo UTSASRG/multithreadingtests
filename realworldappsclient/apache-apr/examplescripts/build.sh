@@ -46,13 +46,9 @@ rm -rf src/install
 
 mkdir -p src/install
 
-echo "Copying apr apr-util to srclib folder"
-cp -r $APACHE_BENCHMARK_ROOT_DIR/libs/apr ./src/srclib
-cp -r $APACHE_BENCHMARK_ROOT_DIR/libs/apr-util ./src/srclib
-
 echo "Use buildconf to generate build configure (log prefix apachebuildconf_$BUILD_TIMESTAMP.log)"
 cd src
-./buildconf >> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err"
+./buildconf --with-apr=`realpath ../libs/apr`>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err"
 funcCheckLog "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err" $?
 
 echo "Use configure to generate (log prefix apacheconfigure_$BUILD_TIMESTAMP.log)"

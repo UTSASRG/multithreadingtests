@@ -39,3 +39,7 @@ export APACHE_LISTENING_PORT=1976
 #==============================================================================
 
 export AFTER_TEST_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/AfterTest_Printresult.sh"
+
+export PRE_TEST_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/PreBuildTest_SetEnv.sh"
+
+export PRE_BUILD_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/PreBuildTest_SetEnv.sh"

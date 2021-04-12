@@ -43,16 +43,24 @@ fi
 echo "Remove previous build"
 #Remove binaries
 rm -rf src/install
-
 mkdir -p src/install
+
+cd src
+make clean >/dev/null 2>/dev/null
+cd ..
+
+echo "Copying apr apr-util to srclib folder"
+cp -r $APACHE_BENCHMARK_ROOT_DIR/libs/apr ./src/srclib
+cp -r $APACHE_BENCHMARK_ROOT_DIR/libs/apr-util ./src/srclib
+
 
 echo "Use buildconf to generate build configure (log prefix apachebuildconf_$BUILD_TIMESTAMP.log)"
 cd src
-./buildconf --with-apr=`realpath ../libs/apr`>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err"
+./buildconf>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err"
 funcCheckLog "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err" $?
 
 echo "Use configure to generate (log prefix apacheconfigure_$BUILD_TIMESTAMP.log)"
-./configure --with-included-apr --prefix=$APACHE_BENCHMARK_ROOT_DIR/src/install >> "$BUILD_LOG_FOLDER/apacheconfigure_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apachebuildconf_$BUILD_TIMESTAMP.err"
+./configure --with-included-apr --prefix=$APACHE_BENCHMARK_ROOT_DIR/src/install >> "$BUILD_LOG_FOLDER/apacheconfigure_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/apacheconfigure_$BUILD_TIMESTAMP.err"
 funcCheckLog "$BUILD_LOG_FOLDER/apacheconfigure_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/apacheconfigure_$BUILD_TIMESTAMP.err" $?
 
 echo "Use configure to generate (log prefix apacheconfigure_$BUILD_TIMESTAMP.log)"

@@ -43,3 +43,6 @@
 [submodule "realworldapps/apache/libs/apr-util"]
 	path = realworldapps/apache/libs/apr-util
 	url = https://github.com/apache/apr-util.git
+[submodule "realworldappsclient/apache-apr/libs/apr-util"]
+	path = realworldappsclient/apache-apr/libs/apr-util
+	url = https://github.com/apache/apr-util.git

@@ -43,8 +43,10 @@ fi
 echo "Remove previous build"
 #Remove binaries
 rm -rf src/install/$1
-
 mkdir -p src/install/$1
+cd src
+make clean >/dev/null 2>/dev/null
+cd ..
 
 echo "Copying apr apr-util to srclib folder"
 cp -r $APACHE_BENCHMARK_ROOT_DIR/libs/apr ./src/srclib

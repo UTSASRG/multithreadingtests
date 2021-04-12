@@ -38,6 +38,7 @@ The typical testing workflow is like this:
     cd ROOT_FOLDER_OF_THIS_REPO
     git submodule init #Init local submodule config
     git submodule status #
+    git submodule update realworldapps/mysql/src --recursive --remote
     git submodule update realworldapps/mysql/src --depth=1
     ```
     eg: If you want to test everything
@@ -45,5 +46,6 @@ The typical testing workflow is like this:
     cd ROOT_FOLDER_OF_THIS_REPO
     git submodule init #Init local submodule config
     git submodule status #
+    git submodule update --recursive --remote
     git submodule update --depth=1
     ```

@@ -43,3 +43,8 @@ export BUILD_ARG_PROCESS_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/ArgParser_
 export AFTER_BUILD_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/AfterBuild_install.sh"
 
 export AFTER_TEST_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/AfterTest_Printresult.sh"
+
+
+export PRE_TEST_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/PreBuildTest_SetEnv.sh"
+
+export PRE_BUILD_SCRIPT="$APACHE_BENCHMARK_ROOT_DIR/myscripts/PreBuildTest_SetEnv.sh"

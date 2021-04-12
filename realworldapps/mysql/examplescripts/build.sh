@@ -43,7 +43,7 @@ fi
 
 echo "Remove previous build"
 #Remove binaries
-rm -rf src/build
+#rm -rf src/build
 #Remove libraries
 rm -rf src/boost_*
 

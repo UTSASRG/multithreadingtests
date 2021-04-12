@@ -21,13 +21,8 @@ if(len(buildCommand) != 1):
 
 buildCommand = buildCommand[0].strip()
 
-#make sure there are arguemtns
-if('SCRIPT_EXEC_ARG' not in os.environ):
-    print("Shell script error. build.sh should pass all its arguemnts to SCRIPT_EXEC_ARG", file=sys.stderr)
-    sys.exit(-1)
-
 #Split build arguments by space
-argV = list(os.environ['SCRIPT_EXEC_ARG'].split(' '))
+argV = sys.argv
 
 
 MY_ARTIFECTS_DIR='/home/st/Projects/multithreadingtests/myartifects'

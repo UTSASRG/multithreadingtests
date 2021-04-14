@@ -1,1 +1,1 @@
-examplescripts/startstopmysql.sh
+./examplescripts/mmprof/startstopmysql.sh

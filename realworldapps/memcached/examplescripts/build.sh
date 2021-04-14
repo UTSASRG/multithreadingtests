@@ -46,8 +46,8 @@ fi
 echo "Build memcached (log prefix: memcachedbuild_$BUILD_TIMESTAMP)"
 cd src
 
-rm -rf install
-mkdir install
+rm -rf install/$1
+mkdir install/$1
 
 ./autogen.sh  >> "$BUILD_LOG_FOLDER/memcachedbuild_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/memcachedbuild_$BUILD_TIMESTAMP.err"
 funcCheckLog "$BUILD_LOG_FOLDER/memcachedbuild_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/memcachedbuild_$BUILD_TIMESTAMP.err" $?

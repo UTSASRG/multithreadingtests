@@ -17,6 +17,13 @@ funcCheckLog () {
     fi
 }
 
+funcExitIfErr(){
+    retVal=$?
+    if [ $retVal -ne 0 ]; then
+        exit -1
+    fi
+}
+
 echo "Loading benchmark configuration"
 source config.sh
 
@@ -39,13 +46,15 @@ if [ $PRE_BUILD_SCRIPT != "NULL" ]; then
     #build.sh will pass all it's arguments to environment variable
     echo "Executing pre build script $PRE_BUILD_SCRIPT"
     $PRE_BUILD_SCRIPT $@
+    
+    funcExitIfErr
 fi
 
 echo "Remove previous build"
 #Remove binaries
-#rm -rf src/build
+/bin/rm -rf src/build
 #Remove libraries
-rm -rf src/boost_*
+/bin/rm -rf src/boost_*
 
 echo "Use cmake to build mysql (log prefix: mysqlcmake_$BUILD_TIMESTAMP)"
 mkdir -p src/build
@@ -68,6 +77,7 @@ mv src/build/sql/CMakeFiles/mysqld.dir/link.txt src/build/sql/CMakeFiles/mysqld.
 if [ $BUILD_ARG_PROCESS_SCRIPT != "NULL" ]; then
     echo "Processing build command with your argument parser \"$BUILD_ARG_PROCESS_SCRIPT\""
     cat "src/build/sql/CMakeFiles/mysqld.dir/link.txt.bkp" | ${BUILD_ARG_PROCESS_SCRIPT}  $@ > "src/build/sql/CMakeFiles/mysqld.dir/link.txt"
+    funcExitIfErr
 fi
 
 echo "Start compiling mysql using $MAKE_JOB_NUMBER jobs  (log prefix: mysqlmake_$BUILD_TIMESTAMP)"
@@ -104,6 +114,7 @@ echo "Building sysbench (A tool that send requests) (log prefix: sysbenchmake_$B
 
 cd $MYSQL_BENCHMARK_ROOT_DIR
 
+#This build is used to initialized sysbench
 cd tools/sysbench
 echo "sysbench autogen.sh"
 ./autogen.sh  >> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchmake_$BUILD_TIMESTAMP.err"
@@ -121,5 +132,6 @@ if [ $AFTER_BUILD_SCRIPT != "NULL" ]; then
     echo "Executing after build script $AFTER_BUILD_SCRIPT"
     export SCRIPT_EXEC_ARG=$@
     $AFTER_BUILD_SCRIPT $@
+    funcExitIfErr
     unset SCRIPT_EXEC_ARG
 fi

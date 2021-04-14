@@ -24,7 +24,12 @@ buildCommand = buildCommand[0].strip()
 #Split build arguments by space
 argV = sys.argv
 
-print(argV)
+MY_ARTIFECTS_DIR=os.environ['BENCHMARK_ROOT_DIR']+'/myartifects'
+memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
+                           "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
+                           "libc228":MY_ARTIFECTS_DIR+"/libmalloc228.so",
+                           "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
+                           "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
@@ -32,13 +37,6 @@ if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
     print("Configured allocators:\n" +memoryAllocatorsLibPath, file=sys.stderr)
     sys.exit(-1)
 
-MY_ARTIFECTS_DIR='/home/st/Projects/multithreadingtests/myartifects'
-#mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
-memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
-                           "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
-                           "libc228":MY_ARTIFECTS_DIR+"/libmalloc228.so",
-                           "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
-                           "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 #Dynamically select build arg
 extraBuildArgs = " -rdynamic "+memoryAllocatorsLibPath[argV[1]]#" -rdynamic "+mmprofPath+" -rdynamic "+memoryAllocatorsLibPath[argV[1]]
 

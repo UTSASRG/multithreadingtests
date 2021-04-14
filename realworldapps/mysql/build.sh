@@ -1,1 +1,1 @@
-examplescripts/build.sh
+./examplescripts/mmprof/build.sh

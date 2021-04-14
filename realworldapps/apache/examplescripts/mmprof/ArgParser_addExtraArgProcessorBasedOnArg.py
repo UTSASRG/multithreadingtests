@@ -36,12 +36,12 @@ if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
 print('Replacing -pthread with -rdynamic *.so -pthread',file=sys.stderr)
 pthreadPattern= re.compile('\-pthread')
 for lid,line in enumerate(buildCommand):
-   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
+   buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
 
 print('Replacing -lpthread with -rdynamic *.so -lpthread',file=sys.stderr)
 pthreadPattern= re.compile('\-lpthread')
 for lid,line in enumerate(buildCommand):
-   buildCommand[lid]= re.sub(pthreadPattern,'-rdynamic '+mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 
+   buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 
 
 print('Replacing CPPFLAGS = with CPPFLAGS = -Wl,--no-as-needed',file=sys.stderr)
 pthreadPattern= re.compile('^CPPFLAGS =')

@@ -17,8 +17,12 @@ print("Checking parameters", file=sys.stderr)
 #Split build arguments by space
 argV = sys.argv
 
-memoryAllocatorsLibPath = {"tcmalloc": "tcmalloc.so",
-                           "jemalloc": "jemalloc.so"}
+MY_ARTIFECTS_DIR=os.environ['BENCHMARK_ROOT_DIR']+'/myartifects'
+memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
+                           "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
+                           "libc228":MY_ARTIFECTS_DIR+"/libmalloc228.so",
+                           "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
+                           "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
                            
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):

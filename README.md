@@ -121,29 +121,29 @@ When you finish benchmarking. Create a folder in the examplescript folder and te
 
 
 ### Copy/link example scripts. Customized them.
-![image-20210412073432617](image-20210412073432617.png)
+![image-20210412073432617](imgs/image-20210412073432617.png)
 
 ### Put compiled binary in myartifacts folder for easier reference
 
-![image-20210412073829556](image-20210412073829556.png)
+![image-20210412073829556](imgs/image-20210412073829556.png)
 
 ### Link your customized scripts in config.sh User Config Zone
 
-![image-20210412073604251](image-20210412073604251.png)
+![image-20210412073604251](imgs/image-20210412073604251.png)
 
 ### Build
 
-![image-20210412074504714](image-20210412074504714.png)
+![image-20210412074504714](imgs/image-20210412074504714.png)
 
 ### Test on one build
 
-![image-20210412074546705](image-20210412074546705.png)
+![image-20210412074546705](imgs/image-20210412074546705.png)
 
 ### Write your scripts to test in bulk
 
 ### After you finalized, put your scripts under examplescripts for future reference
 
-![image-20210412074733503](image-20210412074733503.png)
+![image-20210412074733503](imgs/image-20210412074733503.png)
 
 ## Caution
 

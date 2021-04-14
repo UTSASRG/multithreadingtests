@@ -3,25 +3,11 @@
 #Print commands and their arguments while this script is executed
 #set -x
 
-funcCheckLog () {
-    #logName,errorLogName,retValue
-
-    if [ $3 -eq 0 ]; then
-        echo "Log sneakpeek: "| sed 's/^/  /'
-        tail -n3 $1 | sed 's/^/  /'
-    else
-        echo "Error sneakpeek: "| sed 's/^/  /'
-        tail -n3 $2 | sed 's/^/  /'
-        exit -1
-    fi
-}
-
-
 echo "Checking parameters"
 
 if [ "$#" -ne 1 ]
 then
-  echo "Usage: AfterBuild_install BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under $BUILD_NAME folder"
+  echo "This installation script is for mmprof. So a memory allocator name should be passed as the first parameter!"
   exit 1
 fi
 
@@ -29,12 +15,6 @@ fi
 cd $MYSQL_BENCHMARK_ROOT_DIR
 # Initialize database 
 export MYSQL_INSTALLATION_FOLDER=$MYSQL_BENCHMARK_ROOT_DIR/src/install/$1/usr/local/mysql
-
-if [ ! -d "$MYSQL_INSTALLATION_FOLDER" ]; then
-    echo "Install with name $1 not found"
-    echo "Folder $MYSQL_INSTALLATION_FOLDER not exist"
-    exit -1;
-fi
 
 echo "Initialize mysql datadir"
 
@@ -53,28 +33,35 @@ if [ -f "/tmp/mysql.sock" ]; then
     exit 0
 fi
 
-echo "Initialize mysql datadir  (log prefix: mysqlinitserver_$BUILD_TIMESTAMP)"
+echo "Initialize mysql datadir  (log prefix: mysqlinitialize_$BUILD_TIMESTAMP)"
 cd $MYSQL_INSTALLATION_FOLDER
-./bin/mysqld --initialize-insecure --user=$USER --datadir="`pwd`/data">> "$BUILD_LOG_FOLDER/mysqlinitserver_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitserver_$BUILD_TIMESTAMP.err"
+./bin/mysqld --initialize-insecure --user=$USER --datadir="`pwd`/data">> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
 
-funcCheckLog "$BUILD_LOG_FOLDER/mysqlinitserver_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlinitserver_$BUILD_TIMESTAMP.err" $?
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
 
+echo "Initialize database (log prefix: mysqlinitialize_$BUILD_TIMESTAMP)"
 #create test databases & inite test data
 cd $MYSQL_INSTALLATION_FOLDER
-echo "Starting mysql server (log prefix: mysqlstartmysqlserver_$BUILD_TIMESTAMP) [Async]"
-
-(./bin/mysqld_safe --user=$USER --socket=/tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlstartmysqlserver_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlstartmysqlserver_$BUILD_TIMESTAMP.err" && 
-funcCheckLog "$BUILD_LOG_FOLDER/mysqlstartmysqlserver_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlstartmysqlserver_$BUILD_TIMESTAMP.err" $?
- )&
+./bin/mysqld_safe --user=$USER --socket=/tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err" &
 sleep 5
+./bin/mysql -u root -S /tmp/mysql.sock < "$MYSQL_BENCHMARK_ROOT_DIR/artifects/create_database.sql" >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
+./bin/mysqladmin -u root password 2oiegrji23rjk1kuh12kj >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
 
-echo "Initialize database (log prefix: mysqlinitdb_$BUILD_TIMESTAMP) "
-
-./bin/mysql -u root -S /tmp/mysql.sock < "$MYSQL_BENCHMARK_ROOT_DIR/artifects/create_database.sql" >> "$BUILD_LOG_FOLDER/mysqlinitdb_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
-./bin/mysqladmin -u root password 2oiegrji23rjk1kuh12kj >> "$BUILD_LOG_FOLDER/mysqlinitdb_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitdb_$BUILD_TIMESTAMP.err"
-
-funcCheckLog "$BUILD_LOG_FOLDER/mysqlinitdb_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlinitdb_$BUILD_TIMESTAMP.err" $?
-
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
 
 echo "Initialize sysbench database (log prefix: sysbenchinitialize_$BUILD_TIMESTAMP)"
 
@@ -84,16 +71,28 @@ export SYSBENCH_DIR=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src
 source $SYSBENCH_DIR/benchmarkEnv.sh
 cd $SYSBENCH_DIR/lua 
 
-./oltp_read_only.lua --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=2oiegrji23rjk1kuh12kj prepare >> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err"
+./oltp_read_write.lua --mysql-socket=/tmp/mysql.sock --mysql-user=root --mysql-password=2oiegrji23rjk1kuh12kj prepare >> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err"
 
-funcCheckLog "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err" $?
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/sysbenchinitialize_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
 
 sleep 5
-
-echo "Turn off mysql (log prefix: mysqlshutdown_$BUILD_TIMESTAMP) [Async]"> /dev/null
-cd $MYSQL_INSTALLATION_FOLDER
-(./bin/mysqladmin shutdown -u root -p2oiegrji23rjk1kuh12kj -S /tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.err" &&
-funcCheckLog "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.err" $?
-)& 
+echo "Turn off mysql (log prefix: mysqlshutdown_$BUILD_TIMESTAMP)"> /dev/null
+cd $BUILD_DIR
+./bin/mysqladmin shutdown -u root -p2oiegrji23rjk1kuh12kj -S /tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.err" & 
+if [ $? -eq 0 ]; then
+    echo "Log sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.log" | sed 's/^/  /'
+else
+    echo "Error sneakpeek: "| sed 's/^/  /'
+    tail -n3 "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.err" | sed 's/^/  /'
+    exit -1
+fi
 
 cd $MYSQL_BENCHMARK_ROOT_DIR

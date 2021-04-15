@@ -12,21 +12,20 @@ then
 fi
 
 
-cd $MYSQL_BENCHMARK_ROOT_DIR
+cd $TEST_ROOT_DIR
 # Initialize database 
-export MYSQL_INSTALLATION_FOLDER=$MYSQL_BENCHMARK_ROOT_DIR/src/install/$1/usr/local/mysql
 
 echo "Initialize mysql datadir"
 
 echo "Making mysql datadir"
-cd $MYSQL_INSTALLATION_FOLDER
+cd $INSTALLATION_FOLDER/usr/local/mysql
 rm -rf "data"
 mkdir "data"
 
 if [ -f "/tmp/mysql.sock" ]; then
     echo "Mysql socket exists, please kill it manually."
     echo "After that, you need to do the following to continue (Or you could also build again):"
-    echo "    cd $MYSQL_BENCHMARK_ROOT_DIR"
+    echo "    cd $TEST_ROOT_DIR"
     echo "    bash"
     echo "    source config.sh"
     echo "    source ABSOLUTE_PATH_OF_THIS_SCRIPT $1"
@@ -34,7 +33,7 @@ if [ -f "/tmp/mysql.sock" ]; then
 fi
 
 echo "Initialize mysql datadir  (log prefix: mysqlinitialize_$BUILD_TIMESTAMP)"
-cd $MYSQL_INSTALLATION_FOLDER
+cd $INSTALLATION_FOLDER/usr/local/mysql
 ./bin/mysqld --initialize-insecure --user=$USER --datadir="`pwd`/data">> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
 
 if [ $? -eq 0 ]; then
@@ -48,10 +47,10 @@ fi
 
 echo "Initialize database (log prefix: mysqlinitialize_$BUILD_TIMESTAMP)"
 #create test databases & inite test data
-cd $MYSQL_INSTALLATION_FOLDER
+cd $INSTALLATION_FOLDER/usr/local/mysql
 ./bin/mysqld_safe --user=$USER --socket=/tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err" &
 sleep 5
-./bin/mysql -u root -S /tmp/mysql.sock < "$MYSQL_BENCHMARK_ROOT_DIR/artifects/create_database.sql" >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
+./bin/mysql -u root -S /tmp/mysql.sock < "$TEST_ROOT_DIR/artifects/create_database.sql" >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
 ./bin/mysqladmin -u root password 2oiegrji23rjk1kuh12kj >> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlinitialize_$BUILD_TIMESTAMP.err"
 
 if [ $? -eq 0 ]; then
@@ -66,8 +65,8 @@ fi
 echo "Initialize sysbench database (log prefix: sysbenchinitialize_$BUILD_TIMESTAMP)"
 
 #Benchmark 
-source $MYSQL_INSTALLATION_FOLDER/benchmarkEnv.sh
-export SYSBENCH_DIR=$MYSQL_BENCHMARK_ROOT_DIR/tools/sysbench/src
+source $INSTALLATION_FOLDER/benchmarkEnv.sh
+export SYSBENCH_DIR=$TEST_ROOT_DIR/tools/sysbench/src
 source $SYSBENCH_DIR/benchmarkEnv.sh
 cd $SYSBENCH_DIR/lua 
 
@@ -95,4 +94,4 @@ else
     exit -1
 fi
 
-cd $MYSQL_BENCHMARK_ROOT_DIR
+cd $TEST_ROOT_DIR

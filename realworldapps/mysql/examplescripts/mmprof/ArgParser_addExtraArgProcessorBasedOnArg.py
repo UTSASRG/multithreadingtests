@@ -31,14 +31,31 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 
+mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
+
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
-if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
-    print("You need to pass one and only one allocator name to build.sh" %(len()), file=sys.stderr)
-    print("Configured allocators:\n" +memoryAllocatorsLibPath, file=sys.stderr)
+#Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
+if(len(argV) == 2 and (not argV[1] in memoryAllocatorsLibPath)):
+    print("You need to pass one and only one allocator name to build.sh", file=sys.stderr)
+    print("Configured allocators:\n" + str(memoryAllocatorsLibPath), file=sys.stderr)
+    print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
     sys.exit(-1)
+elif (len(argV) ==3 and not( argV[2] == "mmprof")):
+   print("If you to link mmprof. The third parameter would have to be mmprof", file=sys.stderr)
+   print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
+   sys.exit(-1)
+elif len(argV) > 3:
+   print("Your arugment number doesn't look right", file=sys.stderr)
+   print("Usage1: ./build.sh ALLOCATOR_NAME", file=sys.stderr)
+   print("Usage2: ./build.sh ALLOCATOR_NAME mmprof", file=sys.stderr)
+   sys.exit(-1)
 
 #Dynamically select build arg
-extraBuildArgs = " -rdynamic "+memoryAllocatorsLibPath[argV[1]]#" -rdynamic "+mmprofPath+" -rdynamic "+memoryAllocatorsLibPath[argV[1]]
+extraBuildArgs = None
+if(sys.argv[-1]=='mmprof'):
+    extraBuildArgs = " -rdynamic "+mmprofPath+" -rdynamic " + memoryAllocatorsLibPath[argV[1]]
+else:
+    extraBuildArgs = " -rdynamic "+memoryAllocatorsLibPath[argV[1]]
 
 buildCommand = buildCommand+" "+extraBuildArgs
 

@@ -39,8 +39,10 @@ if (len(argV) == 3):
       mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
     elif (argV[2].startswith("mmprof_MALLOCNUM")):
       mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
+    elif (argV[2].startswith("mmprof")):
+      mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof.so"
     else:
-      print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+      print("mmprof has four versions: mmprof_UTIL, mmprof_NOUTIL, mmprof_MALLOCNUM and mmprof", file=sys.stderr)
       sys.exit(-1)
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator

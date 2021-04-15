@@ -59,9 +59,14 @@ if (len(argV) ==3):
       mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
       buildArgList.append('-rdynamic ')
       buildArgList.append(mmprofPath+" ")
+    elif (argV[2]==("mmprof")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
+      buildArgList.append('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
     else:
-      print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+      print("mmprof has four versions: mmprof_UTIL, mmprof_NOUTIL, mmprof_MALLOCNUM and mmprof", file=sys.stderr)
       sys.exit(-1)
+
 
 print("Adding memory allocators",file=sys.stderr)
 

@@ -25,15 +25,17 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "tcmalloc": MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc": MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 
-if (len(argV) ==3):
-   if(argV[2].startswith("mmprof_NOUTIL")):
-      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
-   elif (argV[2].startswith("mmprof_UTIL")):
-      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
-   elif (argV[2].startswith("mmprof_MALLOCNUM")):
-      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
-   else:
-      print("mmprof has three versions: mmprof_UTIL, mmprof_NOUTIL, and mmprof_MALLOCNUM", file=sys.stderr)
+if (len(argV) == 3):
+    if(argV[2].startswith("mmprof_NOUTIL")):
+      mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+    elif (argV[2].startswith("mmprof_UTIL")):
+      mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+    elif (argV[2].startswith("mmprof_MALLOCNUM")):
+      mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
+    elif (argV[2].startswith("mmprof")):
+      mmprofPath = MY_ARTIFECTS_DIR+"/libmallocprof.so"
+    else:
+      print("mmprof has four versions: mmprof_UTIL, mmprof_NOUTIL, mmprof_MALLOCNUM and mmprof", file=sys.stderr)
       sys.exit(-1)
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator

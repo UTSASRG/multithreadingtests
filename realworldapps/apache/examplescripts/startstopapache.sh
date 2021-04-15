@@ -18,9 +18,9 @@ funcCheckLog () {
 
 
 echo "Load configuration"
-source config.sh
+source config.sh $@
 
-if [ "$#" -ne 2 ]; then
+if (( $# < 2 )); then
   echo "Usage: ./startstopapache.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"
   exit -1
 fi
@@ -28,11 +28,9 @@ fi
 mkdir -p $BUILD_LOG_FOLDER
 
 cd $APACHE_BENCHMARK_ROOT_DIR
-export APACHE_INSTALLATION_FOLDER=$APACHE_BENCHMARK_ROOT_DIR/src/install/$2
 
-if [ ! -d "$APACHE_INSTALLATION_FOLDER" ]; then
-    echo "Install with name $2 not found"
-    echo "Folder $APACHE_INSTALLATION_FOLDER not exist"
+if [ ! -d "$INSTALLATION_FOLDER" ]; then
+    echo "Folder $INSTALLATION_FOLDER not exist"
     exit -1;
 fi
 
@@ -45,7 +43,7 @@ if [ $1 == "start" ]; then
   fi
   
   echo "Starting apache server"
-  cd $APACHE_INSTALLATION_FOLDER
+  cd $INSTALLATION_FOLDER
   
 
   echo "Starting apache server (log prefix: apachestart_$BUILD_TIMESTAMP) [Async]"
@@ -71,7 +69,7 @@ if [ $1 == "stop" ]; then
       echo $_result | $AFTER_TEST_SCRIPT $@
   fi
 
-  cd $APACHE_INSTALLATION_FOLDER
+  cd $INSTALLATION_FOLDER
   ./bin/httpd -k stop
  
   exit 0

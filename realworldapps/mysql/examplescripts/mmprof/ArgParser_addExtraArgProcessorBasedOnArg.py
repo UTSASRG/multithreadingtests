@@ -31,7 +31,13 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 
-mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
+if (len(argV) ==3 and argV[2].startswith("mmprof_NOUTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+elif (len(argV) ==3 and argV[2].startswith("mmprof_UTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+else:
+   print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+   sys.exit(-1)
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
@@ -40,7 +46,7 @@ if(len(argV) == 2 and (not argV[1] in memoryAllocatorsLibPath)):
     print("Configured allocators:\n" + str(memoryAllocatorsLibPath), file=sys.stderr)
     print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
     sys.exit(-1)
-elif (len(argV) ==3 and not( argV[2] == "mmprof")):
+elif (len(argV) ==3 and not( argV[2].startswith("mmprof"))):
    print("If you to link mmprof. The third parameter would have to be mmprof", file=sys.stderr)
    print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
    sys.exit(-1)
@@ -52,7 +58,7 @@ elif len(argV) > 3:
 
 #Dynamically select build arg
 extraBuildArgs = None
-if(sys.argv[-1]=='mmprof'):
+if(sys.argv[-1].startswith('mmprof')):
     extraBuildArgs = " -rdynamic "+mmprofPath+" -rdynamic " + memoryAllocatorsLibPath[argV[1]]
 else:
     extraBuildArgs = " -rdynamic "+memoryAllocatorsLibPath[argV[1]]

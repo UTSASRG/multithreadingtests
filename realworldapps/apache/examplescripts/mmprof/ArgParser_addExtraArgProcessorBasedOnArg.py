@@ -25,15 +25,22 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "libc228": MY_ARTIFECTS_DIR+"/libmalloc228.so",
                            "tcmalloc": MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc": MY_ARTIFECTS_DIR+"/libjemalloc.so"}
-mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof.so"
-                           
+
+if (len(argV) ==3 and argV[2].startswith("mmprof_NOUTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+elif (len(argV) ==3 and argV[2].startswith("mmprof_UTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+else:
+   print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+   sys.exit(-1)
+
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 if(len(argV) == 2 and (not argV[1] in memoryAllocatorsLibPath)):
     print("You need to pass one and only one allocator name to build.sh", file=sys.stderr)
     print("Configured allocators:\n" + str(memoryAllocatorsLibPath), file=sys.stderr)
     print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
     sys.exit(-1)
-elif (len(argV) ==3 and not( argV[2] == "mmprof")):
+elif (len(argV) ==3 and not( argV[2].startswith("mmprof"))):
    print("If you to link mmprof. The third parameter would have to be mmprof", file=sys.stderr)
    print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
    sys.exit(-1)
@@ -47,7 +54,7 @@ elif len(argV) > 3:
 print('Replacing -pthread with -rdynamic *.so -pthread',file=sys.stderr)
 pthreadPattern= re.compile('\-pthread')
 for lid,line in enumerate(buildCommand):
-   if(sys.argv[-1]=='mmprof'):
+   if(sys.argv[-1].startswith('mmprof')):
       buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+ mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
    else:
       buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -pthread',line) 
@@ -55,7 +62,7 @@ for lid,line in enumerate(buildCommand):
 print('Replacing -lpthread with -rdynamic *.so -lpthread',file=sys.stderr)
 pthreadPattern= re.compile('\-lpthread')
 for lid,line in enumerate(buildCommand):
-   if(sys.argv[-1]=='mmprof'):
+   if(sys.argv[-1].startswith('mmprof')):
       buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+ mmprofPath+' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 
    else:
       buildCommand[lid]= re.sub(pthreadPattern,' -rdynamic '+memoryAllocatorsLibPath[sys.argv[1]]+' -lpthread',line) 

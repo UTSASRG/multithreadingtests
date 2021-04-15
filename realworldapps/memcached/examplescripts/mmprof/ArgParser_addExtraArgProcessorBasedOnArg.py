@@ -17,18 +17,36 @@ print("Checking parameters", file=sys.stderr)
 #Split build arguments by space
 argV = sys.argv
 
-MY_ARTIFECTS_DIR=os.environ['BENCHMARK_ROOT_DIR']+'/myartifects'
+MY_ARTIFECTS_DIR = '/home/st/Projects/multithreadingtests/myartifects'
 memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
-                           "libc228":MY_ARTIFECTS_DIR+"/libmalloc228.so",
-                           "tcmalloc":MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
-                           "jemalloc":MY_ARTIFECTS_DIR+"/libjemalloc.so"}
-                           
+                           "libc228": MY_ARTIFECTS_DIR+"/libmalloc228.so",
+                           "tcmalloc": MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
+                           "jemalloc": MY_ARTIFECTS_DIR+"/libjemalloc.so"}
+
+if (len(argV) ==3 and argV[2].startswith("mmprof_NOUTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+elif (len(argV) ==3 and argV[2].startswith("mmprof_UTIL")):
+    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+else:
+   print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+   sys.exit(-1)
+
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
-if(not (len(argV) == 2 and argV[1] in memoryAllocatorsLibPath)):
+if(len(argV) == 2 and (not argV[1] in memoryAllocatorsLibPath)):
     print("You need to pass one and only one allocator name to build.sh", file=sys.stderr)
-    print("Configured allocators:\n" + memoryAllocatorsLibPath, file=sys.stderr)
+    print("Configured allocators:\n" + str(memoryAllocatorsLibPath), file=sys.stderr)
+    print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
     sys.exit(-1)
+elif (len(argV) ==3 and not( argV[2].startswith("mmprof"))):
+   print("If you to link mmprof. The third parameter would have to be mmprof", file=sys.stderr)
+   print("Current Arguments:\n" + str(sys.argv), file=sys.stderr)
+   sys.exit(-1)
+elif len(argV) > 3:
+   print("Your arugment number doesn't look right", file=sys.stderr)
+   print("Usage1: ./build.sh ALLOCATOR_NAME", file=sys.stderr)
+   print("Usage2: ./build.sh ALLOCATOR_NAME mmprof", file=sys.stderr)
+   sys.exit(-1)
 
 print('Finding CFLAGS in makefile',file=sys.stderr)
 
@@ -46,6 +64,12 @@ for id, line in enumerate(buildCommand):
                 buildArgList.append(' ')
 
 print("Adding my libraries",file=sys.stderr)
+
+
+if(sys.argv[-1]=='mmprof'):
+    buildArgList.append('-rdynamic ')
+    buildArgList.append(mmprofPath+" ")
+
 buildArgList.append('-rdynamic ')
 buildArgList.append(memoryAllocatorsLibPath[argV[1]]+" ")
 
@@ -56,5 +80,3 @@ buildCommand[cflagsLineId]=''.join(buildArgList)
 
 for line in buildCommand:
     print(line,end='')
-
-

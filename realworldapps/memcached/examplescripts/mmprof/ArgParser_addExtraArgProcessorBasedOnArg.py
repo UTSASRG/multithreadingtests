@@ -44,7 +44,33 @@ print('Finding CFLAGS in makefile',file=sys.stderr)
 
 buildArgList = []
 
+print("Adding my libraries",file=sys.stderr)
+
+if (len(argV) ==3):
+   if(argV[2].startswith("mmprof_NOUTIL")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+      buildArgList.insert('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    elif (argV[2].startswith("mmprof_UTIL")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+      buildArgList.append('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    elif (argV[2].startswith("mmprof_MALLOCNUM")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
+      buildArgList.append('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    else:
+      print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+      sys.exit(-1)
+
+print("Adding memory allocators",file=sys.stderr)
+
+
+buildArgList.append('-rdynamic ')
+buildArgList.append(memoryAllocatorsLibPath[argV[1]]+" ")
+
 print("Removing -Werror", file=sys.stderr)
+
 cflagsLineId = 0
 for id, line in enumerate(buildCommand):
     if(line.strip().startswith("CFLAGS")):
@@ -55,28 +81,10 @@ for id, line in enumerate(buildCommand):
                 buildArgList.append(arg)
                 buildArgList.append(' ')
 
-print("Adding my libraries",file=sys.stderr)
-
-
-if (len(argV) ==3):
-   if(argV[2].startswith("mmprof_NOUTIL")):
-      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
-      buildArgList.append('-rdynamic ')
-      buildArgList.append(mmprofPath+" ")
-   elif (argV[2].startswith("mmprof_UTIL")):
-      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
-      buildArgList.append('-rdynamic ')
-      buildArgList.append(mmprofPath+" ")
-   else:
-      print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
-      sys.exit(-1)
-
-buildArgList.append('-rdynamic ')
-buildArgList.append(memoryAllocatorsLibPath[argV[1]]+" ")
-
-
 buildArgList.insert(0,'CFLAGS= ')
 buildArgList.append('\n')
+print("Final Build args "+str(buildArgList),file=sys.stderr)
+
 buildCommand[cflagsLineId]=''.join(buildArgList)
 
 for line in buildCommand:

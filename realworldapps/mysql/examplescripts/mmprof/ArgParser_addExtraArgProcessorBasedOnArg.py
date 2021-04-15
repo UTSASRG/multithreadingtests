@@ -34,9 +34,17 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
 if (len(argV) ==3):
    if(argV[2].startswith("mmprof_NOUTIL")):
       mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
-   elif (argV[2].startswith("mmprof_UTIL")):
+      buildArgList.insert('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    elif (argV[2].startswith("mmprof_UTIL")):
       mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
-   else:
+      buildArgList.append('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    elif (argV[2].startswith("mmprof_MALLOCNUM")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_mallocnum.so"
+      buildArgList.append('-rdynamic ')
+      buildArgList.append(mmprofPath+" ")
+    else:
       print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
       sys.exit(-1)
 
@@ -64,7 +72,9 @@ if(sys.argv[-1].startswith('mmprof')):
 else:
     extraBuildArgs = " -rdynamic "+memoryAllocatorsLibPath[argV[1]]
 
-buildCommand = buildCommand+" "+extraBuildArgs
+insertLoc=buildCommand.find('-O3 -g ')
+
+buildCommand = buildCommand[0:insertLoc]+" "+extraBuildArgs+" "+buildCommand[insertLoc:]
 
 # Put final command to stdout. You shouldn't print anything else to stdout.
 # Otherwide after I/O redirection you will get wrong result.

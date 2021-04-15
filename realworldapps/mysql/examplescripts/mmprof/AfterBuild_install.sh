@@ -83,7 +83,7 @@ fi
 
 sleep 5
 echo "Turn off mysql (log prefix: mysqlshutdown_$BUILD_TIMESTAMP)"
-cd $BUILD_DIR
+cd $INSTALLATION_FOLDER
 ./bin/mysqladmin shutdown -u root -p2oiegrji23rjk1kuh12kj -S /tmp/mysql.sock >> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/mysqlshutdown_$BUILD_TIMESTAMP.err" & 
 if [ $? -eq 0 ]; then
     echo "Log sneakpeek: "| sed 's/^/  /'

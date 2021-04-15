@@ -65,8 +65,8 @@ make install  >> "$BUILD_LOG_FOLDER/apacheinstall_$BUILD_TIMESTAMP.log" 2>> "$BU
 funcCheckLog "$BUILD_LOG_FOLDER/apacheinstall_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/apacheinstall_$BUILD_TIMESTAMP.err" $?
 
 echo "Writing apache activation script to installation folder"
-echo "export PATH=$TEST_ROOT_DIR/bin:\$PATH" >  $TEST_ROOT_DIR/tools/sysbench/src/benchmarkEnv.sh
-echo "export LD_LIBRARY_PATH=$TEST_ROOT_DIR/lib:\$LD_LIBRARY_PATH" >>  $TEST_ROOT_DIR/tools/sysbench/src/benchmarkEnv.sh
+echo "export PATH=$INSTALLATION_FOLDER/bin:\$PATH" >  $INSTALLATION_FOLDER/benchmarkEnv.sh
+echo "export LD_LIBRARY_PATH=$INSTALLATION_FOLDER/lib:\$LD_LIBRARY_PATH" >>  $INSTALLATION_FOLDER/benchmarkEnv.sh
 
 
 cd $TEST_ROOT_DIR

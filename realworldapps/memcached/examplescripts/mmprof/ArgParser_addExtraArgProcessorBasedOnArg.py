@@ -24,13 +24,14 @@ memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "tcmalloc": MY_ARTIFECTS_DIR+"/libtcmalloc_minimal.so",
                            "jemalloc": MY_ARTIFECTS_DIR+"/libjemalloc.so"}
 
-if (len(argV) ==3 and argV[2].startswith("mmprof_NOUTIL")):
-    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
-elif (len(argV) ==3 and argV[2].startswith("mmprof_UTIL")):
-    mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
-else:
-   print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
-   sys.exit(-1)
+if (len(argV) ==3):
+   if(argV[2].startswith("mmprof_NOUTIL")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
+   elif (argV[2].startswith("mmprof_UTIL")):
+      mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_util.so"
+   else:
+      print("mmprof has two versions: mmprof_UTIL and mmprof_NOUTIL", file=sys.stderr)
+      sys.exit(-1)
 
 #Map memory allocator with the first argument. I susppose there are only one argument. And it must be the name of an allocator
 if(len(argV) == 2 and (not argV[1] in memoryAllocatorsLibPath)):

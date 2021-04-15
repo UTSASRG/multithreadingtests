@@ -26,6 +26,9 @@ fi
 echo "Build memcached (log prefix: memcachedbuild_$BUILD_TIMESTAMP)"
 cd src
 
+echo "Remove previous build at $INSTALLATION_FOLDER"
+make clean
+
 rm -rf $INSTALLATION_FOLDER
 mkdir $INSTALLATION_FOLDER
 

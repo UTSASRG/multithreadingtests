@@ -28,7 +28,6 @@ cd src
 
 echo "Remove previous build at $INSTALLATION_FOLDER"
 make clean >> "$BUILD_LOG_FOLDER/memcachedbuildclean_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/memcachedbuildclean_$BUILD_TIMESTAMP.err"
-funcCheckLog "$BUILD_LOG_FOLDER/memcachedbuildclean_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/memcachedbuildclean_$BUILD_TIMESTAMP.err" $?
 
 rm -rf $INSTALLATION_FOLDER
 mkdir $INSTALLATION_FOLDER

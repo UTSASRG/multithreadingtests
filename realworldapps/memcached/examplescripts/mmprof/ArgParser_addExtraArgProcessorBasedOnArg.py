@@ -47,7 +47,7 @@ buildArgList = []
 print("Adding my libraries",file=sys.stderr)
 
 if (len(argV) ==3):
-   if(argV[2].startswith("mmprof_NOUTIL")):
+    if(argV[2].startswith("mmprof_NOUTIL")):
       mmprofPath=MY_ARTIFECTS_DIR+"/libmallocprof_noutil.so"
       buildArgList.insert('-rdynamic ')
       buildArgList.append(mmprofPath+" ")

@@ -3,20 +3,6 @@
 #Print commands and their arguments while this script is executed
 #set -x
 
-funcCheckLog () {
-    #logName,errorLogName,retValue
-
-    if [ $3 -eq 0 ]; then
-        echo "Log sneakpeek: "| sed 's/^/  /'
-        tail -n3 $1 | sed 's/^/  /'
-    else
-        echo "Error sneakpeek: "| sed 's/^/  /'
-        tail -n3 $2 | sed 's/^/  /'
-        exit -1
-    fi
-}
-
-
 echo "Load configuration"
 source config.sh ${@:2} # Skip start/stop parameter
 
@@ -27,7 +13,7 @@ fi
 
 mkdir -p $BUILD_LOG_FOLDER
 
-cd $APACHE_BENCHMARK_ROOT_DIR
+cd $TEST_ROOT_DIR
 
 if [ ! -d "$INSTALLATION_FOLDER" ]; then
     echo "Folder $INSTALLATION_FOLDER not exist"

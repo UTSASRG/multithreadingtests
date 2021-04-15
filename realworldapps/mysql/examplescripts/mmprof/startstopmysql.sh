@@ -7,7 +7,7 @@
 echo "Load configuration"
 source config.sh ${@:2}
 
-if [ "$#" -ne 2 ]; then
+if (( $# < 2 )); then
   echo "Usage: ./startstomysql.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"
   exit -1
 fi

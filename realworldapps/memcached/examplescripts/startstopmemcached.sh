@@ -2,35 +2,19 @@
 
 #Print commands and their arguments while this script is executed
 #set -x
-
-funcCheckLog () {
-    #logName,errorLogName,retValue
-
-    if [ $3 -eq 0 ]; then
-        echo "Log sneakpeek: "| sed 's/^/  /'
-        tail -n3 $1 | sed 's/^/  /'
-    else
-        echo "Error sneakpeek: "| sed 's/^/  /'
-        tail -n3 $2 | sed 's/^/  /'
-        exit -1
-    fi
-}
-
-
 echo "Load configuration"
-source config.sh
+source config.sh ${@:2}
 
-if [ "$#" -ne 2 ]; then
+if (( $# < 2 )); then
   echo "Usage: ./startstopmemcached.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"
   exit -1
 fi
 
-cd $MEMCACHED_BENCHMARK_ROOT_DIR
-export MEMCACHED_INSTALLATION_FOLDER=$MEMCACHED_BENCHMARK_ROOT_DIR/src/install/$2
+cd $TEST_ROOT_DIR
 
-if [ ! -d "$MEMCACHED_INSTALLATION_FOLDER" ]; then
+if [ ! -d "$INSTALLATION_FOLDER" ]; then
     echo "Install with name $2 not found"
-    echo "Folder $MEMCACHED_INSTALLATION_FOLDER not exist"
+    echo "Folder $INSTALLATION_FOLDER not exist"
     exit -1;
 fi
 
@@ -43,7 +27,7 @@ if [ $1 == "start" ]; then
   fi
   
   echo "Starting memcached server (log prefix: memcachedstart_$BUILD_TIMESTAMP) [Async]"
-  cd $MEMCACHED_INSTALLATION_FOLDER/bin
+  cd $INSTALLATION_FOLDER/bin
   (./memcached -l 0.0.0.0 -p 11211  >> "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.err" && funcCheckLog "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/memcachedstart_$BUILD_TIMESTAMP.err" $? ) &
   sleep 5
   exit 0

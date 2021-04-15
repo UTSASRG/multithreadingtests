@@ -17,7 +17,7 @@ print("Checking parameters", file=sys.stderr)
 #Split build arguments by space
 argV = sys.argv
 
-MY_ARTIFECTS_DIR = '/home/st/Projects/multithreadingtests/myartifects'
+MY_ARTIFECTS_DIR=os.environ['BENCHMARK_ROOT_DIR']+'/myartifects'
 memoryAllocatorsLibPath = {"hoard": MY_ARTIFECTS_DIR+"/libhoard.so",
                            "libc221": MY_ARTIFECTS_DIR+"/libmalloc221.so",
                            "libc228": MY_ARTIFECTS_DIR+"/libmalloc228.so",

@@ -5,7 +5,7 @@
 
 echo "Checking parameters"
 
-if [ "$#" -ne 1 ]
+if (( $# < 1 ))
 then
   echo "Usage: AfterBuild_install BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under $BUILD_NAME folder"
   exit 1

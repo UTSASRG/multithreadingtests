@@ -5,7 +5,7 @@
 
 echo "Checking parameters"
 
-if [ "$#" -ne 1 ]
+if (( $# < 1 ))
 then
   echo "This installation script is for mmprof. So a memory allocator name should be passed as the first parameter!"
   exit 1

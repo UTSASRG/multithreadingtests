@@ -18,7 +18,7 @@ funcCheckLog () {
 
 
 echo "Load configuration"
-source config.sh $@
+source config.sh ${@:2} # Skip start/stop parameter
 
 if (( $# < 2 )); then
   echo "Usage: ./startstopapache.sh start BUILD_NAME (This BUILD_NAME is passed to all scripts. And we'll install compiled binaries under \$BUILD_NAME folder)"

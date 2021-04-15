@@ -1,6 +1,39 @@
 #!/bin/bash
 
 #==============================================================================
+# Common functions
+#==============================================================================
+
+funcCheckLog () {
+    #logName,errorLogName,retValue
+
+    if [ $3 -eq 0 ]; then
+        echo "Log sneakpeek: "| sed 's/^/  /'
+        tail -n3 $1 | sed 's/^/  /'
+    else
+        echo "Error sneakpeek: "| sed 's/^/  /'
+        tail -n3 $2 | sed 's/^/  /'
+        exit -1
+    fi
+}
+
+concatenateArgs (){
+    string=""
+    for a in "$@" # Loop over arguments
+    do
+        if [[ "${a:0:1}" != "-" ]] # Ignore flags (first character is -)
+        then
+            if [[ "$string" != "" ]]
+            then
+                string+="_" # Delimeter
+            fi
+            string+="$a"
+        fi
+    done
+    echo "$string"
+}
+
+#==============================================================================
 # Benchmark config zone (changes not recommended)
 #==============================================================================
 
@@ -28,7 +61,10 @@ export BUILD_LOG_FOLDER="$APACHE_BENCHMARK_ROOT_DIR/logs/build"
 
 export TEST_RESULT_LOG_FOLDER="$APACHE_BENCHMARK_ROOT_DIR/logs/testresult"
 
-export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
+#Make sure timestamp is consistent
+if [[ -z "${BUILD_TIMESTAMP}" ]]; then
+    export BUILD_TIMESTAMP=`date "+%Y%m%d%H%M%S"`
+fi
 
 export APACHE_LISTENING_IP=127.0.0.1
 

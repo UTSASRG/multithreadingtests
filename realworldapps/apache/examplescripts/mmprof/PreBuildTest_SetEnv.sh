@@ -1,3 +1,4 @@
 #!/bin/bash
+#I should log config for all scripts
 
-export MALLOC_PROGRAM_FULL=$APACHE_BENCHMARK_ROOT_DIR/src/install/$1/httpd-$1
+export MALLOC_PROGRAM_FULL=$INSTALLATION_FOLDER/httpd-$1

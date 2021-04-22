@@ -46,3 +46,6 @@
 [submodule "realworldappsclient/apache-apr/libs/apr-util"]
 	path = realworldappsclient/apache-apr/libs/apr-util
 	url = https://github.com/apache/apr-util.git
+[submodule "benchmarks/pyperformance/src"]
+	path = benchmarks/pyperformance/src
+	url = https://github.com/python/pyperformance.git

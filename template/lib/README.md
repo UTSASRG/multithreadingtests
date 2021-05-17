@@ -1,0 +1,2 @@
+This folder is used to place libraries used to build this application.
+Typically you should use git submodule and specify the library version if it's managed by git rather than directly download the source code into this folder.

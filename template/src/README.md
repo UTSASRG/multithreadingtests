@@ -1,0 +1,2 @@
+This folder is used to place the source code of this application.
+Typically you should use git submodule and specify the application version if it's managed by git rather than directly download the source code into this folder.

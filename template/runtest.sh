@@ -54,6 +54,8 @@ if [ $1 == "start" ]; then
     funcCheckLog "$TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.log" "$TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.err" $?
 
     echo "Results placed in $TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.json"
+    rm -rf $TEST_ROOT_DIR/result.json
+    echo "Results also hardlinked to ./restuls.json"
     ln -T "$TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.json" $TEST_ROOT_DIR/result.json
     exit 0
 fi

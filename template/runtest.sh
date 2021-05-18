@@ -42,7 +42,7 @@ if [ $1 == "start" ]; then
 # Load environment variable
 #=========================================================================================
 
-    echo "Starting ${APP_NAME} $PRE_TEST_SCRIPT (log prefix: ${APP_NAME}_$BUILD_TIMESTAMP) [Async]"
+    echo "Starting ${APP_NAME} (log prefix: ${APP_NAME}_$BUILD_TIMESTAMP) [Async]"
     cd $INSTALLATION_FOLDER
     source benchmarkEnv.sh
 
@@ -55,7 +55,7 @@ if [ $1 == "start" ]; then
 
     echo "Results placed in $TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.json"
     rm -rf $TEST_ROOT_DIR/result.json
-    echo "Results also hardlinked to ./restuls.json"
+    echo "Results also hardlinked to ./results.json"
     ln -T "$TEST_RESULT_LOG_FOLDER/${APP_NAME}_$BUILD_TIMESTAMP.json" $TEST_ROOT_DIR/result.json
     exit 0
 fi

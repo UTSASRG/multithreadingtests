@@ -120,6 +120,8 @@ echo "!.gitignore" >> $INSTALLATION_FOLDER/.gitignore
 make install >> "$BUILD_LOG_FOLDER/${APP_NAME}install_$BUILD_TIMESTAMP.log" 2>> "$BUILD_LOG_FOLDER/${APP_NAME}install_$BUILD_TIMESTAMP.err"
 funcCheckLog "$BUILD_LOG_FOLDER/${APP_NAME}install_$BUILD_TIMESTAMP.log" "$BUILD_LOG_FOLDER/${APP_NAME}install_$BUILD_TIMESTAMP.err" $?
 
+cp $TEST_ROOT_DIR/src/build/libtestlib.so $INSTALLATION_FOLDER/lib
+
 cd ../..
 echo "${APP_NAME} was installed at $INSTALLATION_FOLDER"
 

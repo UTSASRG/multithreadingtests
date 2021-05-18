@@ -8,9 +8,11 @@ The test is simplified, so it shouldn't be hard. For build.sh and runtest.sh, yo
 
 To create a new benchmark, you can copy this template as a starting point.
 
-## To test this example:
+The main program is placed in **src** and will need a library in **lib** to compile.
 
-### Preparation
+A seperate pseodu allotor that will hook main function and execute before it will be added by a custom arg parsing script.
+
+## To test this example:
 
 1. Link example scripts to myscripts
 
@@ -51,3 +53,60 @@ To create a new benchmark, you can copy this template as a starting point.
    ```
 
 The result is a json file, you could use your favourite tools to process it without any hassle.
+
+## Example results
+
+### Not specifying any hook in config.sh
+
+If you don't add scripts in config.sh, then all the processing scripts will not run. And the pseudo allocator won't be linked. You will get the following output.
+
+But this benchmark (and all other benchmarks) should compile successfully without any modification.
+
+Since all scripts are unused, the pseudo allocator won't be linked.
+
+```
+st@PW:~/Projects/multithreadingtests/template$ ./runtest.sh start normal
+Load configuration
+Starting template (log prefix: template_20210518101119) [Async]
+  Log sneakpeek: 
+  I'll then allocate 1MB memory to simulate actual memory usage.
+  I'll then read and print input.
+  Test library was linked. 1+2=3
+Results placed in /home/st/Projects/multithreadingtests/template/logs/testresult/template_20210518101119.json
+Results also hardlinked to ./results.json
+
+st@PW:~/Projects/multithreadingtests/template$ cat logs/testresult/template_20210518101119.log 
+Benchmark running, I'll sleep for 1sec to simulate actual computation.
+I'll then allocate 1MB memory to simulate actual memory usage.
+I'll then read and print input.
+Test library was linked. 1+2=3
+```
+
+### Specifying every hook in config.sh
+
+Don't forget to put scripts to myscripts folder as discussed before.\
+
+```
+st@PW:~/Projects/multithreadingtests/template$ ./runtest.sh start normal
+Load configuration
+Executing your pre-test script /home/st/Projects/multithreadingtests/template/myscripts/PreTest.sh
+I'm PreTest.sh. I'm executing.
+Starting template (log prefix: template_20210518131758) [Async]
+  Log sneakpeek: 
+  I'll then allocate 1MB memory to simulate actual memory usage.
+  I'll then read and print input.
+  This is a smaple input.Test library was linked. 1+2=3
+Results placed in /home/st/Projects/multithreadingtests/template/logs/testresult/template_20210518131758.json
+Results also hardlinked to ./results.json
+
+st@PW:~/Projects/multithreadingtests/template$ cat logs/testresult/template_20210518131758.log
+I'm a test allocator that execute before main.
+Benchmark running, I'll sleep for 1sec to simulate actual computation.
+I'll then allocate 1MB memory to simulate actual memory usage.
+I'll then read and print input.
+This is a smaple input.Test library was linked. 1+2=3
+```
+
+You can see outputs like "xecuting your pre-test script ..." This is built by output.
+You can also see "I'm a test allocator that execute before main." which means the allocator has been linked by your customized scripts.
+

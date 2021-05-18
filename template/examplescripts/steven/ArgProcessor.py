@@ -24,15 +24,19 @@ buildCommand = buildCommand[0].strip()
 #Split build arguments by space
 argV = sys.argv
 
-MY_ARTIFECTS_PATH = os.environ['TEST_ROOT_DIR']+'/myartifects/exampleMemAllocator.so'
+MY_ARTIFECTS_PATH = os.environ['TEST_ROOT_DIR']+'/myartifects'
 
-extraBuildArgs=' -L '+MY_ARTIFECTS_PATH
+
 
 #Make sure mallocperf is inserted in front of other libraries
-insertLoc = buildCommand.find('-o testapp')
+insertLoc = buildCommand.find('-Wl,-rpath,')
 
-buildCommand = buildCommand[0:insertLoc]+" " + \
-    extraBuildArgs+" "+buildCommand[insertLoc:]
+
+
+buildCommand = buildCommand[0:insertLoc]+ '-Wl,-L,%s,-L,%s,-l:libprehook.so,-l:libtestlib.so'\
+     % (os.environ['TEST_ROOT_DIR']+'/myartifects',\
+         os.environ['TEST_ROOT_DIR']+'/src/build')
+
 
 # Put final command to stdout. You shouldn't print anything else to stdout.
 # Otherwide after I/O redirection you will get wrong result.

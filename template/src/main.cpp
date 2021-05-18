@@ -6,7 +6,7 @@
 using namespace std;
 
 #ifdef USE_TESTLIB
-#include "/home/st/Projects/multithreadingtests/template/lib/include/main.h"
+#include "main.h"
 #endif
 
 int main(){

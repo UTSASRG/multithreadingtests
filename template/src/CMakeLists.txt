@@ -19,10 +19,10 @@ if(BUILD_WITH_TEST_LIB)
     add_library(testlib SHARED ${TEST_LIB_LOCATION}/mainlib.cpp)
        
     target_link_libraries(testapp testlib)
-    install(TARGETS testlib)
+    install(TARGETS testlib DESTINATION "${CMAKE_INSTALL_PREFIX}/lib")
 
 
 
 endif()
 
-install(TARGETS testapp)
+install(TARGETS testapp DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")

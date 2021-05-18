@@ -7,6 +7,10 @@
 echo "Loading benchmark configuration"
 source config.sh $@
 
+if (( $# < 1 )); then
+  echo "Usage: ./build.sh start BUILD_NAME"
+  exit -1
+fi
 
 #We don't check parameter here. Arg parser script will check parameters
 
